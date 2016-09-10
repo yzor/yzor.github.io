@@ -1,0 +1,156 @@
+<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+      }
+
+      .cls-1, .cls-10 {
+        stroke-linejoin: round;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        filter: url(#filter);
+      }
+
+      .cls-4 {
+        fill: #8ff806;
+        filter: url(#filter-2);
+      }
+
+      .cls-10, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill-opacity: 0;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-5 {
+        fill: #00fffb;
+        filter: url(#filter-3);
+      }
+
+      .cls-5, .cls-6, .cls-8, .cls-9 {
+        fill-rule: evenodd;
+      }
+
+      .cls-6 {
+        fill: #ff3700;
+        filter: url(#filter-4);
+      }
+
+      .cls-7 {
+        fill: #ff6dfa;
+        filter: url(#filter-5);
+      }
+
+      .cls-8 {
+        fill: #7800ff;
+      }
+
+      .cls-8, .cls-9 {
+        filter: url(#filter-6);
+      }
+
+      .cls-9 {
+        fill: #fff600;
+      }
+
+      .cls-10 {
+        fill: #d24a43;
+        stroke: #d96868;
+        opacity: 0.77;
+        filter: url(#filter-8);
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#fff" flood-opacity="0"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="0" y="60" width="60" height="20" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-3" x="0" y="20" width="100" height="40" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-4" x="40" y="20" width="60" height="80" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-5" x="40" y="40" width="60" height="20" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-6" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-8" x="19" y="19" width="63" height="63" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="2.121" dy="2.121" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#d96868"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feOffset result="offset-2" dx="-1.286" dy="1.532" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood result="flood-2" flood-color="#d96868"/>
+      <feComposite result="composite-2" operator="in" in2="blur-2"/>
+      <feBlend result="blend" mode="darken" in2="composite"/>
+      <feOffset result="offset-3" dx="1.554" dy="-1.259" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood result="flood-3" flood-color="#d96868"/>
+      <feComposite result="composite-3" operator="in" in2="blur-3"/>
+      <feBlend result="blend-2" mode="darken" in2="blend"/>
+      <feOffset result="offset-4" dx="-1.414" dy="-1.414" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-4"/>
+      <feFlood result="flood-4" flood-color="#d96868"/>
+      <feComposite result="composite-4" operator="in" in2="blur-4"/>
+      <feBlend result="blend-3" mode="darken" in2="blend-2"/>
+      <feBlend result="blend-4" in="SourceGraphic"/>
+      <feGaussianBlur result="blur-5" in="SourceAlpha"/>
+      <feFlood result="flood-5" flood-color="#d96868"/>
+      <feComposite result="composite-5" operator="out" in2="blur-5"/>
+      <feOffset result="offset-5" dx="2.121" dy="2.121"/>
+      <feComposite result="composite-6" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-5" mode="darken" in2="blend-4"/>
+    </filter>
+  </defs>
+  <g id="Раскраски0" class="cls-1">
+    <rect id="Холст" class="cls-2" width="100" height="100"/>
+    <g id="Раскраски" class="cls-3">
+      <rect id="шесть" data-name="дв протяж" class="cls-4" y="60" width="60" height="20"/>
+      <path id="пять" data-name="накид скинуть со спицы" class="cls-5" d="M80,20h20V40H80V20ZM0,40H40V60H0V40Z"/>
+      <path id="четыре" data-name="1 нак провяз и добав 1 накид" class="cls-6" d="M40,20H80V40H40V20ZM80,80h20v20H80V80Z"/>
+      <rect id="три" class="cls-7" x="40" y="40" width="60" height="20"/>
+      <path id="два" class="cls-8" d="M0,0H60V20H0V0ZM60,60h40V80H60V60ZM0,80H20v20H0V80Z"/>
+      <path id="адин" class="cls-9" d="M60,0h40V20H60V0ZM0,20H20V40H0V20ZM20,80H80v20H20V80Z"/>
+    </g>
+  </g>
+  <g style="fill: #d24a43; filter: url(#filter-8)">
+    <rect id="Рапорт" class="cls-10" x="20" y="20" width="60" height="60" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#Рапорт" style="stroke: #d96868; filter: none; fill: none"/>
+</svg>
