@@ -16,127 +16,54 @@ var svgFolder = "/SVG/";
 function numEdit(n) { //jshint ignore:line
   //изменение кнопками
   var $tag = $("#number");
-  var $znach = $tag.val() * 1 + n;
+  var $znach = $tag.val() * 1 + n; //увеличиваем/уменьшаем значение
   $tag.val($znach);
-  $tag.addClass("impulse");
+  $tag.addClass("impulse"); //анимация инпута указывающего номер схемы
   $(this).delay(110).queue(function () {
     $tag.removeClass("impulse");
     $(this).dequeue();
   });
-  numLaunch($znach);
+  fileUrl($znach);
 }
-$("#number").change(function () { //отлов ручного изменения
-  numLaunch($(this).val() * 1);
+
+
+$(function () {
+  $("#number").change(function () { //отлов ручного изменения
+    console.info("ручное изменение");
+    fileUrl($(this).val() * 1);
+  });
 });
 
-function numLaunch(n) { //создание ссылки
-  console.log(svgFolder + n + '.svg');
-  fileUrl3(svgFolder + n + '.svg'); //jshint ignore:line
-  //#TODO объеденить fileUrl и numLaunch
-}
+//function numLaunch(n) { //создание ссылки
+//  console.log(svgFolder + n + '.svg');
+//  fileUrl(svgFolder + n + '.svg');
+//  //#TODO объеденить fileUrl и numLaunch
+//}
 //ajax
-function fileUrl(url) {
-  //#FIXME сделать обработку 404 ошибки, т.е. если файла нет
+function fileUrl(name) {
+  var url = svgFolder + name + ".svg";
+  //#[x]FIXME сделать обработку 404 ошибки, т.е. если файла нет
   $.ajax({
     url: url,
     dataType: "xml",
-    success: xmlParser //jshint ignore:line
+    success: ajaxTrue, //обработка файла
+    error: ajaxFalse //функция если файла нет
   });
-}
 
-function fileUrl2(url) {
-  /*
-    //#FIXME сделать обработку 404 ошибки, т.е. если файла нет
-    $.ajax({
-      url: url,
-      dataType: "xml",
-      success: function (a, b, c) {
-          console.log(a.lastModified);
-          console.log(c.responseXML.lastModified);
-          console.log(a);
-          console.log(b);
-          console.log(c);
+  function ajaxTrue(data, textStatus, request) {
+    //извлекаем дату
+    var date = new Date(request.getResponseHeader("Last-Modified")); //дата редактирования
+    $("#number").removeClass("impulseError"); //убрать класс ошибки
+    $("#header").addClass("light"); //увеличение прозрачночти шторки
+    xmlParser(data, date, name); //jshint ignore:line
+  }
 
-
-          success: function (response) {
-            alert("Data is " + response.data + ", last modified: " + xhr.getResponseHeader("Last-Modified"));
-          }
-
-
-        }
-        //jshint ignore:line
-    });
-  */
-}
-var url1 = "https://pp.vk.me/c636419/v636419262/26b57/bS8l83sO1Ho.jpg";
-var url2 = "https://yzor.github.io/image/cat.png";
-var url3 = "https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E";
-var url4 = "/SVG/1.svg";
-
-//https://pp.vk.me/c11451/u31905868/e_8a4a408e.jpg
-
-function fileUrl3(url, dataT) {
-//  dataT2 = dataT;
-//  urlll = url;
-  //#FIXME сделать обработку 404 ошибки, т.е. если файла нет
-  $.ajax({
-    url: url,
-    dataType: dataT,
-    //    dataType: "html",
-    success: methodName //jshint ignore:line
-  });
-function methodName(p1, p2, p3) {
-  console.info("type-" + dataT + " url-" + url)
-    //  console.log(p1);
-    //  console.warn("###################################");
-    //  console.log(p2);
-    //  console.warn("###################################");
-//  console.log(p3);
-  //  console.log(p3.setRequestHeader());
-
-  /*
-    try{console.log("p1 ALL - ", p1.getAllResponseHeaders());}catch(err){}
-//  console.warn("#######");
-    try{console.log("p2 ALL - ", p2.getAllResponseHeaders());}catch(err){}
-//  console.warn("#######");
-    try{console.log("p3 ALL - ", p3.getAllResponseHeaders());}catch(err){}
-  console.error("#########");
-
-    try{console.log("p1 ДАТА - ", p1.getResponseHeader("date"));}catch(err){}
-//  console.warn("#######");
-    try{console.log("p2 ДАТА - ", p2.getResponseHeader("date"));}catch(err){}
-//  console.warn("#######");
-    try{console.log("p3 ДАТА - ", p3.getResponseHeader("date"));}catch(err){}
-  console.error("#########");
-  */
-try{console.log("p1 ластМодиф - ", p1.getResponseHeader("Last-Modified"));}catch(err){}
-//  console.warn("#######");
-try{console.log("p2 ластМодиф - ", p2.getResponseHeader("Last-Modified"));}catch(err){}
-//  console.warn("#######");
-try{console.log("p3 ластМодиф - ", p3.getResponseHeader("Last-Modified"));}catch(err){}
-  console.error("#########");
-
-
-
-
-
-  //  console.error("###################################");
+  function ajaxFalse() {
+    $("#number").addClass("impulseError");
+    console.error("Нет такого файла!!!");
+  }
 
 }
-}
-fileUrl3(url4, "html");
-//fileUrl3(url2, "html");
-//fileUrl3(url3, "html");
-//fileUrl3(url4, "html");
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////
 //ВЫБОР Drag-and-drop
 /////////
@@ -175,7 +102,6 @@ function handleDragOver(evt) {
 // document.getElementById('files').addEventListener('change', fileOpen, false);//вызов функции
 $(function () {
   $("#file_box").click(function () {
-    console.log("qwerrr");
     $("input[type='file'").trigger('click');
   });
   $('input[type=file]').change(function () { //получение файла из инпута
@@ -186,18 +112,9 @@ $(function () {
 
 
 function fileOpen(file) { //получение текста из файла
-
-
-    console.log(
-      file.name + " Имя ",
-      file.size + " Байт",
-      file.lastModifiedDate.toLocaleDateString() +
-      " - дата ");
-
-  console.log(file);
-
-
-
+  var date = file.lastModifiedDate;
+  var name = file.name;
+  name = name.substring(0, name.length - 4);
   var reader = new FileReader(); //jshint ignore:line
   reader.onload = function (event) {
     if (!file.type.match('.svg')) { //проверка типа файла
@@ -206,7 +123,7 @@ function fileOpen(file) { //получение текста из файла
     }
     var contents = $.parseXML(event.target.result);
     //отправляем свг на разбор
-    xmlParser(contents); //jshint ignore:line
+    xmlParser(contents, date, name); //jshint ignore:line
 
     // fileSelect(url2);
     // fileSelect(contents);

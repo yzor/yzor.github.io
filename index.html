@@ -38,7 +38,7 @@
 
 <body id="drop_zone" class="scheme">
   <!--waiting scheme-->
-  <div id="header" class="header_show0">
+  <div id="header" class="header_show light0">
     <div id="file_box">
       <p>Перетащите файл редактора схем</p>
       <p>Или кликните здесь для выбора файла</p>
@@ -50,7 +50,9 @@
       <li onclick="numEdit(-3)">-3</li>
       <li onclick="numEdit(-2)">-2</li>
       <li onclick="numEdit(-1)">-1</li>
-      <input id="number" type="number" min="0" value="10">
+      <span>
+        <input id="number" type="number" min="0" value="11" title="Указать номер схемы">
+      </span>
       <li onclick="numEdit(1)">+1</li>
       <li onclick="numEdit(2)">+2</li>
       <li onclick="numEdit(3)">+3</li>
@@ -58,10 +60,10 @@
       <li onclick="numEdit(10)">+10</li>
       <br>
       <br>
-      <p class="onlyS">последнее редактирование файла 27.11.1991</p>
+      <p id="date" class="onlyS">последнее редактирование файла 27.11.1991</p>
     </div>
     <div id="futer_header" class="onlyS">
-      Сейчас выбрана <span>схема №23</span>
+      Сейчас выбрана схема <span>№0</span>
     </div>
   </div>
 
@@ -82,7 +84,7 @@
 
 
 
-
+<!--#TODO разме  140 на 300 изменить на авто подстройку-->
   <canvas height="140" width="300" id="CANVA">Обновите браузер</canvas>
   <!--поле для канваса-->
   <canvas height="1" width="1" id="CANVA2">Обновите браузер</canvas>

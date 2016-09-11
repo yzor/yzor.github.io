@@ -1,10 +1,15 @@
-/*
-Включить холст(если холста нет то считать холстом всё изображение)
-С ректа #Рапорт взять x y ширину и высоту затем высчитывать по ним ЗВЁЗДОЧКИ
-С ректа #Холст  взять x y ширину и высоту . Это  и есть холст, остальное поле не учитывать
-*/
+/*global $*/ //JSLinT error - '$' was used....
+/*jslint sloppy: true*/ //JSLinT error - Missing...
+/*jslint indent: 2 */ //2 пробела
+/*jslint white: true */ //отключение проверки пробелов
+
+//#TODO Включить холст(если холста нет то считать холстом всё изображение)
+//#TODO С ректа #Рапорт взять x y ширину и высоту затем высчитывать по ним ЗВЁЗДОЧКИ
+//#TODO[x]  С ректа #Холст  взять x y ширину и высоту . Это  и есть холст, остальное поле не учитывать
+
 
 //console.clear();
+var SVG; //чтоб js lint не ругался
 
 
 
@@ -13,6 +18,7 @@ https://drive.google.com/folderview?id=0B0zTgDj4fTXrYzZIdXE4cjhWbFE&usp=sharing
 0B0zTgDj4fTXrYzZIdXE4cjhWbFE*/
 //googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/AJAX/SVG/1.svg
 //cоздание
+/*
 var url2;
 var url3 = "//output.jsbin.com/ziqico.svg"; //ok rect path
 url2 = "//googledrive.com/host/0B0zTgDj4fTXrclc3dGlpUUVnVjA/AJAX/SVG/1.svg";
@@ -48,21 +54,24 @@ function file2(p){
 
 
 
-
 /////////////////////////
 //Парсинг текстового содержимого файла
 //////////
-function xmlParser(xml) {
-  //  console.log(xml);
+function xmlParser(xml, date, name) { //jshint ignore:line
+  //  console.log(date);
+  //  console.log(name);
+  //    console.log(xml);
   SVG = {
+    RAP: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    date: date, //дата
+    name: name, //имя файла
     TILES: {},
     LIST: [],
     GRID2: [],
     D: ""
   };
-  // console.log(xml);
-  //парсим параметры svg
-  $f = $(xml).find("svg");
+  //парсим параметры тега <svg>
+  var $f = $(xml).find("svg");
   SVG.height = calk("height");
   SVG.width = calk("width");
   SVG.viewBox = $f.attr('viewBox');
@@ -80,12 +89,7 @@ function xmlParser(xml) {
   SVG.holst.Y = calk("y");
   SVG.holst.W = calk("width");
   SVG.holst.H = calk("height");
-
-  /*
-
-  если нет холста то указать ему размеры из viewBox?
-
-  */
+  //#TODOесли нет холста то указать ему размеры из viewBox?
 
   $f = $(xml).find("text"); //тип нумерации
   if ($f.is("#Справа1_3_5") && $f.is("#Слева2_4_6")) {
@@ -96,17 +100,32 @@ function xmlParser(xml) {
     SVG.nymberType = 3;
   }
 
-  $(xml).find("#Раскраски>rect, #Раскраски>path").each(function (i) { //перебор патчей и ректов в раскраске
-    PathConvertor2($(this));
+  $(xml).find("#Раскраски>rect, #Раскраски>path").each(function () { //перебор патчей и ректов в раскраске
+    PathConvertor2($(this), SVG.LIST);
+    //    console.warn($(this).attr('id'));
+
+  });
+  $(xml).find("#Рапорт").each(function () { //перебор патчей и ректов в раскраске
+    PathConvertor2($(this), SVG.RAP, 1);
+    //        console.log($(this).attr('id'));
+
+    //    console.log($(this));
   });
 
   function calk(p) { //делим результат на 20, если нет данных то подставляем 0
     return ($f.attr(p) > 0) ? $f.attr(p) / 20 : 0;
   }
+  console.warn(SVG);
+  //  console.warn(SVG.LIST);
+
   // console.log(SVG.LIST);
   // $('#description').html(SVG.LIST);
-  // console.log(SVG);
-  descrip();
+  //  console.log(SVG.RAP);
+
+  //запуск описания
+  descrip(); //jshint ignore:line
+  //вывод имени и даты
+  uiNameData(); //jshint ignore:line
 }
 
 
@@ -117,7 +136,7 @@ function xmlParser(xml) {
 
 
 
-function PathConvertor2(t) { //t-this
+function PathConvertor2(t, LINK, name) { //t-this, link-ссылка для сохранения массива, name
   /////////////////////
   // рисуем в канвасе изображение
   /////
@@ -135,7 +154,7 @@ function PathConvertor2(t) { //t-this
   }
 
   function attr(t, p) { //получаем параметры тега, недостающие заменяем на 0//t -teg p-param
-    param = t.attr(p);
+    var param = t.attr(p);
     if (param === undefined) {
       param = 0;
     }
@@ -169,13 +188,21 @@ function PathConvertor2(t) { //t-this
     //         var tileY=(i+1-tileX)/SVGx+1; //высчитываем номер строки
     //         Tiles[i]=[tileX,tileY];       //вписываем в масив координаты
     if (Pixel.data[(i + 1) * 4 - 1] > 0) { //если пиксель не прозрачен, то записываем класс
-      SVG.LIST[i] = t.attr('id');
-      //             Tiles[i].push(SVGid);
+      //      console.log(name);
+      if (name) {
+        LINK[i] = name; //если есть name, то ложить в атрибут его, а не id
+      } else {
+        LINK[i] = t.attr('id'); //отправляем в объект id
+      }
+      //Tiles[i].push(SVGid);//DEL
     }
     return (Pixel.data.length / 4 - 1 != i); //закончить перебор на четверти масива
   });
-  //     return Tiles;//возвращаем набор тайлов
+  //return Tiles;//возвращаем набор тайлов//DEL
 }
+
+
+
 
 
 

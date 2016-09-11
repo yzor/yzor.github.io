@@ -1,11 +1,37 @@
-/*global $, jQuery, alert, console*/ //JSLinT error - '$' was used....
+/*global $, console*/ //JSLinT error - '$' was used....
 /*jslint sloppy: true*/ //JSLinT error - Missing...
 /*jslint indent: 2 */ //2 пробела
 /*jslint white: true */ //отключение проверки пробелов
+var SVG;
 console.clear();
 
 
 
+function uiNameData() { //jshint ignore:line
+  //вывод имени
+  var name = SVG.name;
+  if (name * 1) {
+    name = "№" + name;
+  }
+  $("#futer_header>span").text(name); //вывод
+
+  //вывод даты
+  var txt;
+  var date = SVG.date; //дата редактирования
+  var now = new Date(); //сегодня
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); //00:00 сегодя
+  if (date >= today) { //если сегодня
+    var mm = date.getMinutes();
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    txt = "сегодня в " + date.getHours() + ":" + mm;
+  } else if (date < today) { //если давно
+    var mes = ["Января", "Февраля", "Марта", "Апеля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
+    txt = date.getDate() + " " + mes[date.getMonth()] + " " + date.getFullYear() + "г.";
+  }
+  $("#date").text("Дата создания файла: " + txt); //вывод
+}
 
 
 
@@ -40,7 +66,7 @@ $(function () { //$$$$$$$$$$$$$$$$$$$$$$$$$;
     //else{                        console.log("4 Не наведён и должен");}
     $(this).queue("fx", []); //очистка очереди
     $(this).delay(550).queue(function () {
-      $(this).addClass("header_hide").removeClass("header_show");
+      $(this).addClass("header_hide").removeClass("header_show light");
       //console.log( $(this).queue("fx").length+" - убрал");
       $(this).dequeue();
     });
