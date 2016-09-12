@@ -4,20 +4,6 @@ var SVG;
 function descrip() { //генерация описания
   var counter = 1; //устанавливаем значение счётчика на единицу
   $.each(SVG.LIST.reverse(), function (i) { //перебор списка клеток
-    //    console.warn(SVG.RAP[i]);
-    //    console.log(SVG.LIST[i]);
-    //    if (SVG.RAP[i] != SVG.RAP[i - 1] && SVG.RAP[i - 1] !== undefined) console.error("qwe");
-    if (SVG.RAP[i] != SVG.RAP[i - 1]) console.error("qwe");
-
-    console.info(
-      i + 1 + " - " +
-      SVG.RAP[i - 1] + ":" +
-      SVG.RAP[i] + ":" +
-      SVG.RAP[i + 1]
-    );
-    //    SVG.RAP[i]
-
-
     //      console.log(SVG.D);
     var counter2 = counter; //копируем значение счётчика в текущем цикле
     counter++; //увеличиваем значение счётчика
@@ -25,6 +11,88 @@ function descrip() { //генерация описания
     var num = 1 + i - ((i / SVG.holst.W | 0) * SVG.holst.W); //текущий номер в строке
     var thisSymbol = i; //копиуем текущий символ чтобы можно было его переопределить во втором типе нумерации
     var nextSymbol = i + 1; //копируем следующий символ для тех же целей
+    //########################################################################
+    //1 - 2/3 4/5
+    //2 - 0/1 6/
+    //3 - 1/2 3/4 | 5/6 7/8
+
+
+    //+|+|+   -срабатывают оба события "рапорт"
+    //|+|+    -вначале срабатывает событие "рапорт"
+    //+|+|    -НЕ СРАБАТЫВАЕТ ВКОНЦЕ событие "рапорт"
+
+
+
+    //    console.warn(SVG.RAP[i]);
+    //    console.log(SVG.LIST[i]);
+    //    if (SVG.RAP[i] != SVG.RAP[i - 1] && SVG.RAP[i - 1] !== undefined) console.error("qwe");
+    if (SVG.RAP[i] != SVG.RAP[i - 1]) { //рапорт поменялся
+      //      console.error("рапорт");
+      //      console.error(
+      //        "№стр" + num + " " +
+      //        "№" + (i + 1) + " - " +
+      //        SVG.RAP[i - 1] + ":" +
+      //        SVG.RAP[i] + ":" +
+      //        SVG.RAP[i + 1] +
+      //        " рапорт"
+      //      );
+    }
+    if (num == 1) { //первый символ
+      //      console.error("1 символ");
+      //      console.info(
+      //        "№стр" + num + " " +
+      //        "№" + (i + 1) + " - " +
+      //        SVG.RAP[i - 1] + ":" +
+      //        SVG.RAP[i] + ":" +
+      //        SVG.RAP[i + 1] +
+      //        " 1символ"
+      //      );
+    }
+    if (num == SVG.holst.W) { //последний символ
+      //      console.error("last символ ");
+      //      console.info(
+      //        "№стр" + num + " " +
+      //        "№" + (i + 1) + " - " +
+      //        SVG.RAP[i - 1] + ":" +
+      //        SVG.RAP[i] + ":" +
+      //        SVG.RAP[i + 1] +
+      //        " lastCимвол"
+      //      );
+    }
+
+
+
+    //    console.info(
+    //      "№стр" + num + " " +
+    //      "№" + (i + 1) + " - " +
+    //      SVG.RAP[i - 1] + ":" +
+    //      SVG.RAP[i] + ":" +
+    //      SVG.RAP[i + 1] +
+    //      ""
+    //    );
+    //    SVG.RAP[i]
+    var ochered = " сред";
+    if (num == 1) ochered = " перв";
+    if (num == SVG.holst.W) ochered = " посл";
+    var doo = SVG.RAP[i - 1];
+    var posle = SVG.RAP[i + 1];
+    if (doo === undefined) doo = "U";
+    if (posle === undefined) posle = "U";
+    var triger = "Рапорт";
+    var qwe =
+      num +
+      ochered + " " +
+      doo + ":" +
+      SVG.RAP[i] + ":" +
+      posle + " " +
+      triger;
+
+    console.info(qwe);
+
+    //########################################################################
+
+
+
 
     if (num == 1) { //действия в начле каждой строки
       if (line != 1) { //if первый номер в сторке, то выводим закрывающий тег(кроме 1 строки)
@@ -33,21 +101,15 @@ function descrip() { //генерация описания
       var n = (SVG.nymberType == 2) ? line * 2 - 1 : line; //меняем вторую нумерацию
       SVG.D = SVG.D + "<ul><b>" + n + "-й ряд:</b> ";
     }
-
-
-
     if (SVG.nymberType == 1 && line % 2 === 0) { //если чётная строка и тип нумерации один
       // console.log("это чётная строка детка");
       thisSymbol = line * SVG.holst.W - num;
       nextSymbol = thisSymbol - 1; //неправильный символ в последнем элементе, но это не важно
     }
     // console.log(i+1+" "+SVG.LIST[thisSymbol]+" ts-"+thisSymbol+" nt-"+nextSymbol);
-
-
-
-
     if (SVG.LIST[thisSymbol] != SVG.LIST[nextSymbol] || num == SVG.holst.W) {
       //вывод если символ последний в строке
+      //#TODO вывод если рапорт
       //вывод если следующий символ иной
       counter = 1; //обнуление счётчика
       var zpt = (num != SVG.holst.W) ? "," : ""; //убрать запятую у последнего элемента

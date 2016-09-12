@@ -4,6 +4,8 @@ $(function () { //jshint ignore:line
   //  fileUrl(11);
   fake2();
   fake3();
+  fake4();
+
 
   uiNameData(); //jshint ignore:line
 });
@@ -48,13 +50,14 @@ function fake() { //jshint ignore:line
   descrip(); //jshint ignore:line
 }
 
+
 function fake2() { //jshint ignore:line
   SVG = {
     LIST: [
-      "a", "a", "a", "a", "a", "a",
+      "a", "a", "a", "a", "a", "a"
     ],
     RAP: [
-      0, 0, 1, 1, 0, 0,
+      0, 0, 1, 1, 0, 0
     ],
     name: "test3",
     GRID2: [],
@@ -74,7 +77,26 @@ function fake2() { //jshint ignore:line
 
 function fake3() { //jshint ignore:line
   SVG.RAP = [
-      1, 1, 1, 1, 0, 0,
+      1, 1, 1, 1, 1, 1
     ];
+  descrip(); //jshint ignore:line
+  console.warn("-------------");
+}
+
+function fake4() { //jshint ignore:line
+  SVG.LIST = [
+    "a", "a", "a", "a",
+    "a", "a", "a", "a"
+    ];
+  SVG.RAP = [
+      0, 1, 1, 0,
+      0, 1, 1, 0
+    ];
+  SVG.holst = {
+    H: 8,
+    W: 4,
+    X: 1,
+    Y: 0
+  };
   descrip(); //jshint ignore:line
 }
