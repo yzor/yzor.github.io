@@ -102,14 +102,9 @@ function xmlParser(xml, date, name) { //jshint ignore:line
 
   $(xml).find("#Раскраски>rect, #Раскраски>path").each(function () { //перебор патчей и ректов в раскраске
     PathConvertor2($(this), SVG.LIST);
-    //    console.warn($(this).attr('id'));
-
   });
-  $(xml).find("#Рапорт").each(function () { //перебор патчей и ректов в раскраске
+  $(xml).find("#Рапорт").each(function () {//создание масива рапорта
     PathConvertor2($(this), SVG.RAP, 1);
-    //        console.log($(this).attr('id'));
-
-    //    console.log($(this));
   });
 
   function calk(p) { //делим результат на 20, если нет данных то подставляем 0

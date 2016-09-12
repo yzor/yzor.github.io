@@ -6,7 +6,9 @@ var SVG;
 console.clear();
 
 
-
+////////////////////////
+//ВЫВОД ДАТЫ И ВРЕМЕНИ
+////////
 function uiNameData() { //jshint ignore:line
   //вывод имени
   var name = SVG.name;

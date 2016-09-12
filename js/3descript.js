@@ -1,60 +1,23 @@
-/* T E S T **************************/
-// fileUrl('//googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/2.svg');
-
-function fake() {
-  //  console.clear();
-  SVG = {
-    GRID2: [],
-    D: "",
-    LIST: ["кишкаблуда", "кишкаблуда", "кишкаблуда", "", "толстая&nbspкишка", "толстая&nbspкишка", "толстая&nbspкишка", "толстая&nbspкишка", "вантуз", "вантуз", "вантуз", "рпхтухопаз",
-           "ганорея",
-           "школопенда", "базальт", "питерский&nbspбомж", "шаверма", "таракан", "чебуратор", "чебуратор", "болгарский&nbspперец", "бергамот", "велосипед", "чемодан", "чегивара", "чебуреки", "челядь", "чех", "чурбан", "чувак", "чашка", "портовая&nbspшлюха", "одно", "два&nbspслова", "тут&nbspтри&nbspслова", "тут&nbspцелых&nbspчетыре", "пять&nbspслов&nbspслов&nbspслов&nbspслов", "Эшельбе&nbspбешельме", "шайтанама обычная пробела", "обычный пробел", "обычный пробел без &nbsр"],
-    holst: {
-      H: 8,
-      W: 8,
-      X: 1,
-      Y: 0
-    },
-    // raport: {H: 2,W: 2,X: 2,Y: 1},
-    nymberType: 2,
-    height: 4,
-    width: 3
-  };
-  SVG = {
-    GRID2: [],
-    D: "",
-    LIST: ["один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"],
-    holst: {
-      H: 3,
-      W: 3,
-      X: 1,
-      Y: 0
-    },
-    // raport: {H: 2,W: 2,X: 2,Y: 1},
-    nymberType: 3,
-    height: 4,
-    width: 3
-  };
-
-  descrip();
-}
-// fake();
-/* T E S T   E N D ******************/
-
-
-
-
-
-
-
-
-// console.log(SVG);
-
+var SVG;
 
 
 function descrip() { //генерация описания
   var counter = 1; //устанавливаем значение счётчика на единицу
   $.each(SVG.LIST.reverse(), function (i) { //перебор списка клеток
+    //    console.warn(SVG.RAP[i]);
+    //    console.log(SVG.LIST[i]);
+    //    if (SVG.RAP[i] != SVG.RAP[i - 1] && SVG.RAP[i - 1] !== undefined) console.error("qwe");
+    if (SVG.RAP[i] != SVG.RAP[i - 1]) console.error("qwe");
+
+    console.info(
+      i + 1 + " - " +
+      SVG.RAP[i - 1] + ":" +
+      SVG.RAP[i] + ":" +
+      SVG.RAP[i + 1]
+    );
+    //    SVG.RAP[i]
+
+
     //      console.log(SVG.D);
     var counter2 = counter; //копируем значение счётчика в текущем цикле
     counter++; //увеличиваем значение счётчика
