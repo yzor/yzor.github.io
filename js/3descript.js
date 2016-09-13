@@ -80,16 +80,27 @@ function descrip() { //генерация описания
     if (posle === undefined) posle = "U";
     var triger = "Рапорт";
     var qwe =
-      num +
+
+      num + "/" +
+      thisSymbol +
       ochered + " " +
       doo + ":" +
       SVG.RAP[i] + ":" +
       posle + " " +
       triger;
+    //    if (SVG.RAP[i] = 1 && SVG.RAP[i - 1] == 0)
+    //    console.error("ДО " + SVG.RAP[i - 1] + "/" + SVG.RAP[i]);
+    //    console.warn("ДО " + SVG.RAP[i - 1] + "/" + SVG.RAP[i]);
 
-    console.info(qwe);
 
+
+    if (num == SVG.holst.W) console.warn("---------------------------");
     //########################################################################
+
+
+
+
+
 
 
 
@@ -101,6 +112,16 @@ function descrip() { //генерация описания
       var n = (SVG.nymberType == 2) ? line * 2 - 1 : line; //меняем вторую нумерацию
       SVG.D = SVG.D + "<ul><b>" + n + "-й ряд:</b> ";
     }
+    //### ДО 1 ####################################################################
+    if (doo == 0 && SVG.RAP[i] == 1) {
+      console.error("до " + doo + "/" + SVG.RAP[i]);
+      SVG.D = SVG.D + " <li><@</li> ";
+    }
+    if (num == 1 && SVG.RAP[i] == 1) {
+      console.error("до перв");
+      SVG.D = SVG.D + " <li><@</li> ";
+    }
+    //### ДО 2 ####################################################################
     if (SVG.nymberType == 1 && line % 2 === 0) { //если чётная строка и тип нумерации один
       // console.log("это чётная строка детка");
       thisSymbol = line * SVG.holst.W - num;
@@ -116,6 +137,17 @@ function descrip() { //генерация описания
       SVG.D = SVG.D + "<li><i>" + counter2 + "</i>&nbsp" + SVG.LIST[thisSymbol] + "</li>" + zpt + " ";
     }
 
+    //### ПОСЛЕ 1 ####################################################################
+    console.info(qwe);
+    if (posle == 0 && SVG.RAP[i] == 1) {
+      console.error("после " + posle + "/" + SVG.RAP[i]);
+      SVG.D = SVG.D + " <li>@></li> ";
+    }
+    if (num == SVG.holst.W && SVG.RAP[i] == 1) {
+      console.error("после last");
+      SVG.D = SVG.D + " <li>@></li> ";
+    }
+    //### ПОСЛЕ 2 ####################################################################
 
 
 

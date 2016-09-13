@@ -3,8 +3,8 @@ $(function () { //jshint ignore:line
   //  console.clear();
   //  fileUrl(11);
   fake2();
-  fake3();
-  fake4();
+  //  fake3();
+  //  fake4();
 
 
   uiNameData(); //jshint ignore:line
@@ -12,6 +12,37 @@ $(function () { //jshint ignore:line
 
 
 // fileUrl('//googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/2.svg');
+function fake2() { //jshint ignore:line
+  SVG = {
+    LIST: [
+      "1", "2", "3", "4", "5", "6",
+      "1", "2", "3", "4", "5", "6",
+      "1", "2", "3", "4", "5", "6",
+      "1", "2", "3", "4", "5", "6"
+
+    ],
+    RAP: [
+      1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1
+
+    ],
+    name: "test3",
+    GRID2: [],
+    D: "",
+    holst: {
+      H: 2,
+      W: 6,
+      X: 1,
+      Y: 0
+    },
+    // raport: {H: 2,W: 2,X: 2,Y: 1},
+    nymberType: 2
+  };
+  descrip(); //jshint ignore:line
+  console.warn("-------------");
+}
 
 function fake() { //jshint ignore:line
 
@@ -51,29 +82,6 @@ function fake() { //jshint ignore:line
 }
 
 
-function fake2() { //jshint ignore:line
-  SVG = {
-    LIST: [
-      "a", "a", "a", "a", "a", "a"
-    ],
-    RAP: [
-      0, 0, 1, 1, 0, 0
-    ],
-    name: "test3",
-    GRID2: [],
-    D: "",
-    holst: {
-      H: 2,
-      W: 6,
-      X: 1,
-      Y: 0
-    },
-    // raport: {H: 2,W: 2,X: 2,Y: 1},
-    nymberType: 3
-  };
-  descrip(); //jshint ignore:line
-  console.warn("-------------");
-}
 
 function fake3() { //jshint ignore:line
   SVG.RAP = [
