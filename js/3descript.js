@@ -10,13 +10,15 @@ function descrip() { //генерация описания
     var line = 1 + i / SVG.holst.W | 0; //текущая строка
     var num = 1 + i - ((i / SVG.holst.W | 0) * SVG.holst.W); //текущий номер в строке
     var thisSymbol = i; //копиуем текущий символ чтобы можно было его переопределить во втором типе нумерации
-    var nextSymbol = i + 1; //#TODO удалить
+    //#1 var nextSymbol = i + 1; //#TODO удалить
     var afterSymbol = i + 1; //копируем следующий символ для тех же целей
     var beforeSymbol = i - 1; //копируем следующий символ для тех же целей
+
+
     //########################################################################
-    var ochered = " ср";
-    if (num == 1) ochered = " пе"; //jshint ignore:line
-    if (num == SVG.holst.W) ochered = " по"; //jshint ignore:line
+    //    var ochered = " ср";
+    //    if (num == 1) ochered = " пе"; //jshint ignore:line
+    //    if (num == SVG.holst.W) ochered = " по"; //jshint ignore:line
 
 
     //    if (SVG.RAP[i] = 1 && SVG.RAP[i - 1] == 0)
@@ -45,42 +47,68 @@ function descrip() { //генерация описания
       var n = (SVG.nymberType == 2) ? line * 2 - 1 : line; //меняем вторую нумерацию
       SVG.D = SVG.D + "<ul><b>" + n + "-й ряд:</b> ";
     }
-    if (SVG.nymberType == 1 && line % 2 === 0) { //если чётная строка и тип нумерации один
-      // console.log("это чётная строка детка");
+    if (SVG.nymberType == 1 && line % 2 === 0) { //ЧЁТНАЯ СТРОКА В "1" ТИПЕ НУМЕРАЦИИ
       thisSymbol = line * SVG.holst.W - num; //отсчитываем с конца
       beforeSymbol = thisSymbol + 1; //предыдущий символ с другой стороны
       afterSymbol = thisSymbol - 1; //следующий символ с другой стороны
       //beforeSymbol и afterSymbol неправильный символ в последнем элементе, но это не важно 14.09.16
-      nextSymbol = thisSymbol - 1; //#TODO удалить
+      //#1 nextSymbol = thisSymbol - 1; //#TODO удалить
     }
+
+
+
     //### ДО 1 ####################################################################
-    //doo
+    var beforeStar = "";
+    var afterStar = "";
 
     var doo = SVG.RAP[beforeSymbol]; //#TODO избавится
     var posle = SVG.RAP[afterSymbol]; //#TODO избавится
-    if (doo === undefined) doo = "U"; //#TODO избавится
-    if (posle === undefined) posle = "U"; //#TODO избавится
+    //    if (doo === undefined) doo = "U"; //#TODO избавится
+    //    if (posle === undefined) posle = "U"; //#TODO избавится
 
 
 
 
-    if (doo == 0 && SVG.RAP[thisSymbol] == 1) {
-      console.error("до " + doo + "/" + SVG.RAP[thisSymbol]);
-      SVG.D = SVG.D + " <li><@</li> ";
+    //    if (doo === 0 && SVG.RAP[thisSymbol] == 1) {
+    //      console.error("до " + doo + "/" + SVG.RAP[thisSymbol]);
+    //      SVG.D = SVG.D + " <li><@</li> ";
+    //    }
+    //    if (num == 1 && SVG.RAP[thisSymbol] == 1) {
+    //      console.error("до перв");
+    //      SVG.D = SVG.D + " <li><@</li> ";
+    //    }
+    if (SVG.RAP[thisSymbol] == 1 && (doo === 0 || num == 1)) {
+      console.error("до UNI");
+      //SVG.D = SVG.D + " <li>(@</li> ";
+      beforeStar = "<li>(@</li> "; //#TODO - пробел в конце убрать, но добавить через css
     }
-    if (num == 1 && SVG.RAP[thisSymbol] == 1) {
-      console.error("до перв");
-      SVG.D = SVG.D + " <li><@</li> ";
+    if (SVG.RAP[thisSymbol] == 1 && (num == SVG.holst.W || posle === 0)) {
+      afterStar = " <li>@)</li>"; //#TODO - пробел в начале убрать, но добавить через css
+    }
+
+
+
+    if (SVG.RAP[thisSymbol] == 1 && num == SVG.holst.W || posle === 0) {
+      //      afterStar = "<li>(@</li> "; //
     }
     //### ДО 2 ####################################################################
     // console.log(i+1+" "+SVG.LIST[thisSymbol]+" ts-"+thisSymbol+" nt-"+nextSymbol);
-    if (SVG.LIST[thisSymbol] != SVG.LIST[nextSymbol] || num == SVG.holst.W) {
+    if (SVG.LIST[thisSymbol] != SVG.LIST[afterSymbol] || num == SVG.holst.W) {
       //вывод если символ последний в строке
       //#TODO вывод если рапорт
       //вывод если следующий символ иной
       counter = 1; //обнуление счётчика
       var zpt = (num != SVG.holst.W) ? "," : ""; //убрать запятую у последнего элемента
-      SVG.D = SVG.D + "<li><i>" + counter2 + "</i>&nbsp" + SVG.LIST[thisSymbol] + "</li>" + zpt + " ";
+      SVG.D = SVG.D +
+        beforeStar + //первая звёздочка если есть
+        "<li><i>" +
+        counter2 + //номер
+        "</i>&nbsp" + //закрываем тег номера+ неразрывный пробел
+        SVG.LIST[thisSymbol] + "</li>" +
+        afterStar + //вторая звёздочка если есть
+        zpt + //запятая
+        " " // пробел #TODO перенести в запятую мб?
+      ;
     }
     var qwe =
       //      "c-" + counter + "|" +
@@ -96,16 +124,23 @@ function descrip() { //генерация описания
     ;
 
     //### ПОСЛЕ 1 ####################################################################
-    //posle = after
     console.info(qwe);
-    if (posle == 0 && SVG.RAP[thisSymbol] == 1) {
-      console.error("после " + posle + "/" + SVG.RAP[thisSymbol]);
-      SVG.D = SVG.D + " <li>@></li> ";
+    //    if (posle === 0 && SVG.RAP[thisSymbol] == 1) {
+    //      console.error("после " + posle + "/" + SVG.RAP[thisSymbol]);
+    //      SVG.D = SVG.D + " <li>@></li> ";
+    //    }
+    //    if (num == SVG.holst.W && SVG.RAP[thisSymbol] == 1) {
+    //      console.error("после last");
+    //      SVG.D = SVG.D + " <li>@></li> ";
+    //    }
+
+    if (SVG.RAP[thisSymbol] == 1 && (num == SVG.holst.W || posle === 0)) {
+      console.error("после UNI");
+      //      SVG.D = SVG.D + "<li>@)</li> ";
     }
-    if (num == SVG.holst.W && SVG.RAP[thisSymbol] == 1) {
-      console.error("после last");
-      SVG.D = SVG.D + " <li>@></li> ";
-    }
+
+
+
     //### ПОСЛЕ 2 ####################################################################
     if (num == SVG.holst.W) console.warn("---------------------------"); //test
 
@@ -123,7 +158,7 @@ function descrip() { //генерация описания
     */
     //+новую строчку начинать с номера один даже если пеед этим такой же символ
     //+обнулять счётчик если символ другой
-    //запятую в конце каждого символа кроме последнего
+    //+запятую в конце каждого символа кроме последнего
     //+не выводить повторы
     //+указание ряда
     //+перенос у второго и последующих рядов
