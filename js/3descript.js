@@ -10,16 +10,13 @@ function descrip() { //генерация описания
     var line = 1 + i / SVG.holst.W | 0; //текущая строка
     var num = 1 + i - ((i / SVG.holst.W | 0) * SVG.holst.W); //текущий номер в строке
     var thisSymbol = i; //копиуем текущий символ чтобы можно было его переопределить во втором типе нумерации
-    var nextSymbol = i + 1; //копируем следующий символ для тех же целей
+    var nextSymbol = i + 1; //#TODO удалить
+    var afterSymbol = i + 1; //копируем следующий символ для тех же целей
+    var beforeSymbol = i - 1; //копируем следующий символ для тех же целей
     //########################################################################
     var ochered = " ср";
     if (num == 1) ochered = " пе"; //jshint ignore:line
     if (num == SVG.holst.W) ochered = " по"; //jshint ignore:line
-
-    var doo = SVG.RAP[i - 1];
-    var posle = SVG.RAP[i + 1];
-    if (doo === undefined) doo = "U";
-    if (posle === undefined) posle = "U";
 
 
     //    if (SVG.RAP[i] = 1 && SVG.RAP[i - 1] == 0)
@@ -48,21 +45,34 @@ function descrip() { //генерация описания
       var n = (SVG.nymberType == 2) ? line * 2 - 1 : line; //меняем вторую нумерацию
       SVG.D = SVG.D + "<ul><b>" + n + "-й ряд:</b> ";
     }
+    if (SVG.nymberType == 1 && line % 2 === 0) { //если чётная строка и тип нумерации один
+      // console.log("это чётная строка детка");
+      thisSymbol = line * SVG.holst.W - num; //отсчитываем с конца
+      beforeSymbol = thisSymbol + 1; //предыдущий символ с другой стороны
+      afterSymbol = thisSymbol - 1; //следующий символ с другой стороны
+      //beforeSymbol и afterSymbol неправильный символ в последнем элементе, но это не важно 14.09.16
+      nextSymbol = thisSymbol - 1; //#TODO удалить
+    }
     //### ДО 1 ####################################################################
-    if (doo == 0 && SVG.RAP[i] == 1) {
-      console.error("до " + doo + "/" + SVG.RAP[i]);
+    //doo
+
+    var doo = SVG.RAP[beforeSymbol]; //#TODO избавится
+    var posle = SVG.RAP[afterSymbol]; //#TODO избавится
+    if (doo === undefined) doo = "U"; //#TODO избавится
+    if (posle === undefined) posle = "U"; //#TODO избавится
+
+
+
+
+    if (doo == 0 && SVG.RAP[thisSymbol] == 1) {
+      console.error("до " + doo + "/" + SVG.RAP[thisSymbol]);
       SVG.D = SVG.D + " <li><@</li> ";
     }
-    if (num == 1 && SVG.RAP[i] == 1) {
+    if (num == 1 && SVG.RAP[thisSymbol] == 1) {
       console.error("до перв");
       SVG.D = SVG.D + " <li><@</li> ";
     }
     //### ДО 2 ####################################################################
-    if (SVG.nymberType == 1 && line % 2 === 0) { //если чётная строка и тип нумерации один
-      // console.log("это чётная строка детка");
-      thisSymbol = line * SVG.holst.W - num;
-      nextSymbol = thisSymbol - 1; //неправильный символ в последнем элементе, но это не важно
-    }
     // console.log(i+1+" "+SVG.LIST[thisSymbol]+" ts-"+thisSymbol+" nt-"+nextSymbol);
     if (SVG.LIST[thisSymbol] != SVG.LIST[nextSymbol] || num == SVG.holst.W) {
       //вывод если символ последний в строке
@@ -72,25 +82,27 @@ function descrip() { //генерация описания
       var zpt = (num != SVG.holst.W) ? "," : ""; //убрать запятую у последнего элемента
       SVG.D = SVG.D + "<li><i>" + counter2 + "</i>&nbsp" + SVG.LIST[thisSymbol] + "</li>" + zpt + " ";
     }
-
-    //### ПОСЛЕ 1 ####################################################################
     var qwe =
-
       //      "c-" + counter + "|" +
       //      "c2-" + counter2 + "|" +
       //      "l-" + line + "|" +
-      "n-" + num + "|" +
-      "tS-" + thisSymbol + "|" +
-      "nS-" + nextSymbol + "|" +
+      "" + (i - 1) + "<" + i + ">" + (i + 1) + "|" +
+      //      "n-" + num + "|" +
+      beforeSymbol + "<" +
+      thisSymbol + ">" +
+      afterSymbol + "|" + SVG.LIST[thisSymbol]
+      //+ ochered
+      //    + " " + doo + ":" + SVG.RAP[i] + ":" + posle
+    ;
 
-      ochered + " " +
-      doo + ":" + SVG.RAP[i] + ":" + posle;
+    //### ПОСЛЕ 1 ####################################################################
+    //posle = after
     console.info(qwe);
-    if (posle == 0 && SVG.RAP[i] == 1) {
-      console.error("после " + posle + "/" + SVG.RAP[i]);
+    if (posle == 0 && SVG.RAP[thisSymbol] == 1) {
+      console.error("после " + posle + "/" + SVG.RAP[thisSymbol]);
       SVG.D = SVG.D + " <li>@></li> ";
     }
-    if (num == SVG.holst.W && SVG.RAP[i] == 1) {
+    if (num == SVG.holst.W && SVG.RAP[thisSymbol] == 1) {
       console.error("после last");
       SVG.D = SVG.D + " <li>@></li> ";
     }
