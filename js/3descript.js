@@ -12,89 +12,25 @@ function descrip() { //генерация описания
     var thisSymbol = i; //копиуем текущий символ чтобы можно было его переопределить во втором типе нумерации
     var nextSymbol = i + 1; //копируем следующий символ для тех же целей
     //########################################################################
-    //1 - 2/3 4/5
-    //2 - 0/1 6/
-    //3 - 1/2 3/4 | 5/6 7/8
+    var ochered = " ср";
+    if (num == 1) ochered = " пе"; //jshint ignore:line
+    if (num == SVG.holst.W) ochered = " по"; //jshint ignore:line
 
-
-    //+|+|+   -срабатывают оба события "рапорт"
-    //|+|+    -вначале срабатывает событие "рапорт"
-    //+|+|    -НЕ СРАБАТЫВАЕТ ВКОНЦЕ событие "рапорт"
-
-
-
-    //    console.warn(SVG.RAP[i]);
-    //    console.log(SVG.LIST[i]);
-    //    if (SVG.RAP[i] != SVG.RAP[i - 1] && SVG.RAP[i - 1] !== undefined) console.error("qwe");
-    if (SVG.RAP[i] != SVG.RAP[i - 1]) { //рапорт поменялся
-      //      console.error("рапорт");
-      //      console.error(
-      //        "№стр" + num + " " +
-      //        "№" + (i + 1) + " - " +
-      //        SVG.RAP[i - 1] + ":" +
-      //        SVG.RAP[i] + ":" +
-      //        SVG.RAP[i + 1] +
-      //        " рапорт"
-      //      );
-    }
-    if (num == 1) { //первый символ
-      //      console.error("1 символ");
-      //      console.info(
-      //        "№стр" + num + " " +
-      //        "№" + (i + 1) + " - " +
-      //        SVG.RAP[i - 1] + ":" +
-      //        SVG.RAP[i] + ":" +
-      //        SVG.RAP[i + 1] +
-      //        " 1символ"
-      //      );
-    }
-    if (num == SVG.holst.W) { //последний символ
-      //      console.error("last символ ");
-      //      console.info(
-      //        "№стр" + num + " " +
-      //        "№" + (i + 1) + " - " +
-      //        SVG.RAP[i - 1] + ":" +
-      //        SVG.RAP[i] + ":" +
-      //        SVG.RAP[i + 1] +
-      //        " lastCимвол"
-      //      );
-    }
-
-
-
-    //    console.info(
-    //      "№стр" + num + " " +
-    //      "№" + (i + 1) + " - " +
-    //      SVG.RAP[i - 1] + ":" +
-    //      SVG.RAP[i] + ":" +
-    //      SVG.RAP[i + 1] +
-    //      ""
-    //    );
-    //    SVG.RAP[i]
-    var ochered = " сред";
-    if (num == 1) ochered = " перв";
-    if (num == SVG.holst.W) ochered = " посл";
     var doo = SVG.RAP[i - 1];
     var posle = SVG.RAP[i + 1];
     if (doo === undefined) doo = "U";
     if (posle === undefined) posle = "U";
-    var triger = "Рапорт";
-    var qwe =
 
-      num + "/" +
-      thisSymbol +
-      ochered + " " +
-      doo + ":" +
-      SVG.RAP[i] + ":" +
-      posle + " " +
-      triger;
+
     //    if (SVG.RAP[i] = 1 && SVG.RAP[i - 1] == 0)
     //    console.error("ДО " + SVG.RAP[i - 1] + "/" + SVG.RAP[i]);
     //    console.warn("ДО " + SVG.RAP[i - 1] + "/" + SVG.RAP[i]);
 
 
 
-    if (num == SVG.holst.W) console.warn("---------------------------");
+    //    console.warn("qwe-" +
+    //      (line * SVG.holst.W - num)
+    //    );
     //########################################################################
 
 
@@ -138,6 +74,17 @@ function descrip() { //генерация описания
     }
 
     //### ПОСЛЕ 1 ####################################################################
+    var qwe =
+
+      //      "c-" + counter + "|" +
+      //      "c2-" + counter2 + "|" +
+      //      "l-" + line + "|" +
+      "n-" + num + "|" +
+      "tS-" + thisSymbol + "|" +
+      "nS-" + nextSymbol + "|" +
+
+      ochered + " " +
+      doo + ":" + SVG.RAP[i] + ":" + posle;
     console.info(qwe);
     if (posle == 0 && SVG.RAP[i] == 1) {
       console.error("после " + posle + "/" + SVG.RAP[i]);
@@ -148,6 +95,7 @@ function descrip() { //генерация описания
       SVG.D = SVG.D + " <li>@></li> ";
     }
     //### ПОСЛЕ 2 ####################################################################
+    if (num == SVG.holst.W) console.warn("---------------------------"); //test
 
 
 

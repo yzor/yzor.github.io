@@ -15,30 +15,28 @@ $(function () { //jshint ignore:line
 function fake2() { //jshint ignore:line
   SVG = {
     LIST: [
-      "1", "2", "3", "4", "5", "6",
-      "1", "2", "3", "4", "5", "6",
-      "1", "2", "3", "4", "5", "6",
-      "1", "2", "3", "4", "5", "6"
+      "1", "2", "3",
+      "1", "2", "3",
+      "1", "2", "3"
 
     ],
     RAP: [
-      1, 1, 1, 1, 1, 1,
-      1, 1, 1, 1, 1, 1,
-      1, 1, 1, 1, 1, 1,
-      1, 1, 1, 1, 1, 1
+      0, 1, 1,
+      0, 1, 1,
+      0, 1, 1
 
     ],
-    name: "test3",
-    GRID2: [],
-    D: "",
+    nymberType: 1,
     holst: {
       H: 2,
-      W: 6,
+      W: 3,
       X: 1,
       Y: 0
     },
+    D: "",
     // raport: {H: 2,W: 2,X: 2,Y: 1},
-    nymberType: 2
+    GRID2: [],
+    name: "test3"
   };
   descrip(); //jshint ignore:line
   console.warn("-------------");
