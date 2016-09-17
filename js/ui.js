@@ -97,4 +97,84 @@ $(function () { //$$$$$$$$$$$$$$$$$$$$$$$$$;
 
 
 
+
+
+
+/////////////////////////////
+//нажатие/наведение
+////
+
+$(document).on({ //наведение на "1-й ряд:"...
+  mouseenter: function () {
+    $(this).parent().addClass('illumination-hover');
+    //stuff to do on mouse enter
+    //    console.log("++");
+  },
+  mouseleave: function () {
+    $(this).parent().removeClass('illumination-hover');
+    //    console.log("--");
+    //stuff to do on mouse leave
+  }
+}, "#description b"); //pass the element as an argument to .on
+/**/
+
+/*
+$(document).on({
+  mouseenter: function () {
+    $(this).parent().addClass('illumination-hover');
+    console.error("qwe");
+    console.log($(this).text());
+    //stuff to do on mouse enter
+  },
+  mouseleave: function () {
+    console.log("-");
+    //stuff to do on mouse leave
+  }
+}, "#description b");
+*/
+
+
+
+$("body").on("mouseout", "#description b", function () {}, function () {});
+/*
+$('b').hover( // при наведении на1-йряд: - подсвечивать весь ряд
+  function () {
+    $(this).parent().addClass('illumination-hover');
+  },
+  function () {
+    $(this).parent().removeClass('illumination-hover');
+  }
+);
+*/
+
+
+$(document).on("click", "#description li", function () { /*закладка при клике на элемент*/
+  if ($(this).hasClass("marker")) {
+    $(this).removeClass("marker");
+  } else {
+    $(".marker").removeClass("marker");
+    $(this).addClass("marker");
+  }
+});
+
+
+$(document).on("click", "#description b", function () {
+  var $elm = $(this).parent();
+  if ($elm.hasClass("illumination")) {
+    $elm.removeClass("illumination");
+  } else {
+    $(".illumination").removeClass("illumination");
+    $elm.addClass("illumination");
+  }
+});
+
+
+
+
+
+/*
+#container li.marker i{/* цифра в закладке* /background: orange;}
+#container .illumination li{background: pink;}
+  */
+
 //df

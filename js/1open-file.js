@@ -2,7 +2,6 @@
 /*jslint sloppy: true*/ //JSLinT error - Missing...
 /*jslint indent: 2 */ //2 пробела
 /*jslint white: true */ //отключение проверки пробелов
-//#TODO вытаскивать из файла имя и дату редактирования
 
 //var svgFolder = "//googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/";
 // var svgFolder = "https://googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/";
