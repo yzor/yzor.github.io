@@ -1,9 +1,12 @@
-var SVG;
+if ("hintignore" === 0) {
+  descrip();
+  var SVG, $, document;
+}
 
 
 function descrip() { //генерация описания
   var counter = 1; //устанавливаем значение счётчика на единицу
-  $.each(SVG.LIST.reverse(), function (i) { //перебор списка клеток
+  $.each(SVG.LIST /*.reverse() #FIXME вернуть перебор с конца*/ , function (i) { //перебор списка клеток
     //      console.log(SVG.D);
     var counter2 = counter; //копируем значение счётчика в текущем цикле
     counter++; //увеличиваем значение счётчика
@@ -37,20 +40,57 @@ function descrip() { //генерация описания
 
 
     //РАПОРТ
+    //
+    //поблемы:
+    //1. читать рапорт надо с конца(отключил для тестов глобальный реверс)
+    //2. проблемы с первой звёздочкой
+    // т.к. звёздочка ставится перед символом, и по сути относится к предыдущему символу, то обнуление с выводом происходит на символ раньше
+    //2.v1.0 если звёздочку выводить вместе с предыдущим символом, то как быть с 1 символом в строке, обрабатывать отдельно?
+    //2.v1.1 Cделать отдельный триггер (если текущий не рапорт, а следующий рапорт)
+    //2.v1.2 выводить звёздочку впереди если (текущий символ первый и он рапорт)
+    //2.v2 выводить первую звёздочку отдельно, но триггеры сброса то всёравно нужны!!!
+
+
+
     var beforeStar = "";
     var afterStar = "";
     var zpt = (num != SVG.holst.W) ? "," : ""; //убрать запятую у последнего элемента
-    var doo = SVG.RAP[beforeSymbol]; //#TODO избавится
+    var doo = SVG.RAP[beforeSymbol]; /*jshint ignore:line*/ //#TODO избавится
     var posle = SVG.RAP[afterSymbol]; //#TODO избавится
-    if (SVG.RAP[thisSymbol] == 1 && (num == 1 || doo === 0)) { //первая звёздочка
-      console.error("до UNI");
+    if ( //первая звёздочка перед 1 символом
+      SVG.RAP[thisSymbol] == 1 && //текущий символ в рапорте И...
+      num == 1 //текущий символ 1 в строке
+    ) {
+      SVG.D = SVG.D + "<li>(#</li> "; //#TODO - пробел в конце убрать, но добавить через css
+    }
+    if ( //первая звёздочка в прочих случаях
+      SVG.RAP[thisSymbol] === 0 && //символ не в рапорте И...
+      posle == 1 && //следующий символ в рапорте
+      num != SVG.holst.W //символ не последний в строке
+    ) { //TODO если рапорт 1 символом обработать отдельно
+      console.error("до ЗА1");
       beforeStar = "<li>(@</li> "; //#TODO - пробел в конце убрать, но добавить через css
     }
-    if (SVG.RAP[thisSymbol] == 1 && (num == SVG.holst.W || posle === 0)) { //вторая звёздочка
-      zpt = "";
+    //    if ( //первая звёздочка v1
+    //      SVG.RAP[thisSymbol] == 1 && //Если текущий символ в рапорте И...
+    //      (num == 1 || //если текущий символ 1 в строке ИЛИ...
+    //        doo === 0) //если до этого символа символ не из рапорта
+    //    ) {
+    //      console.error("до UNI");
+    //      beforeStar = "<li>(@</li> "; //#TODO - пробел в конце убрать, но добавить через css
+    //    }
+    if ( //вторая звёздочка
+      SVG.RAP[thisSymbol] == 1 && //если текущий символ в рапорте И...
+      (num == SVG.holst.W || //символ последний в строке ИЛИ..
+        posle === 0) //следующий символ не в рапорте
+    ) {
+      zpt = ""; //если выводим рапорт, то запятая не нужна
       var more = "";
-      if (posle == 0) {
-        more = ", закончить ряд";
+      if ( //выводим "закончить ряд"
+        posle === 0 && //если далее ещё есть символы И...
+        num != SVG.holst.W //символ не последний в строке
+      ) {
+        more = ", закончить ряд"; //#FIXME  сделать проверку чтобы не тырило данные из следующего ряда
       }
       console.error("после UNI");
       afterStar = " <li>@)</li>" + //#TODO - пробел в начале убрать, но добавить через css
@@ -63,21 +103,26 @@ function descrip() { //генерация описания
     if ( //триггеры вывода элементов в описание
       SVG.LIST[thisSymbol] != SVG.LIST[afterSymbol] || //если следующий символ иной
       num == SVG.holst.W //если символ последний в строке
-      //|| afterStar // вывод в конце рапорта работает #FIXME в 1 нумерации -чётных рядах ошибка
-      || beforeStar //#FIXME неправильное срабатывание тригера при 1 звёздочке
+      // вывод в конце рапорта работает #FIXME в 1 нумерации -чётных рядах ошибка
+      || afterStar || //jshint ignore:line
+      //(SVG.RAP[thisSymbol] === 0 && posle == 1) //текущий символ в рапорте А следующий не в рапорте (1*)
+
+
+
+      beforeStar /*jshint ignore:line*/ //#FIXME неправильное срабатывание тригера при 1 звёздочке OLD VERSION
     ) {
 
 
       counter = 1; //обнуление счётчика
       SVG.D = SVG.D +
-        beforeStar + //первая звёздочка если есть
         "<li><i>" + //открываем теги номера и символа
         counter2 + //кол-во элементов подряд
         "</i>&nbsp" + //закрываем тег номера+ неразрывный пробел
         SVG.LIST[thisSymbol] + "</li>" + //вставляем название символа и закрываем тег
         afterStar + //вторая звёздочка если есть
         zpt + //запятая
-        " " // пробел #TODO перенести в запятую мб?
+        " " + // пробел #TODO перенести в запятую мб?
+        beforeStar //первая звёздочка если есть
       ;
     }
     var qwe =
@@ -94,8 +139,9 @@ function descrip() { //генерация описания
     ;
 
     //### TEST STAR ПОСЛЕ 1 ####################################################################
-    console.info(qwe);
-    if (num == SVG.holst.W) console.warn("---------------------------"); //test
+    console.info(qwe); //test параметры символа
+    //test новая строка
+    if (num == SVG.holst.W) console.warn("---------------------------"); //jshint ignore:line
 
     //### TEST STAR ПОСЛЕ 2 ####################################################################
 
@@ -202,13 +248,13 @@ $("body").on("click", "#description li", function () { /*закладка при
 });
 
 
-$("body").on("click", "#description b", function () {
-  $elm = $(this).parent();
-  if ($elm.hasClass("illumination")) {
-    $elm.removeClass("illumination");
+$("body").on("click", "#description b", function () { //FIXME убрать //jshint ignore:line и вставить var
+  $elm = $(this).parent(); //jshint ignore:line
+  if ($elm.hasClass("illumination")) { //jshint ignore:line
+    $elm.removeClass("illumination"); //jshint ignore:line
   } else {
     $(".illumination").removeClass("illumination");
-    $elm.addClass("illumination");
+    $elm.addClass("illumination"); //jshint ignore:line
   }
 });
 
