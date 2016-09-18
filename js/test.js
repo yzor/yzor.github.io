@@ -14,11 +14,17 @@ $(function () { //jshint ignore:line
 // fileUrl('//googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/2.svg');
 function fake2() { //jshint ignore:line
   SVG = {
+    LINE: {}, //отлов дубликатов
+    DOUBLE1: {},
+    DOUBLE2: {},
     LIST: [
-
-  "ё", "ё", "ё", "ё", "ё", "ё",
-  "1", "2", "3", "4", "5", "6",
-  "а", "а", "б", "б", "в", "в"
+  "ё", "ё", "ё",
+  "ё", "ё", "ё",
+  "ё", "ё", "ё",
+  "ю", "ю", "ю",
+  "ю", "ю", "ю",
+  "ё", "ё", "ё",
+  "ё", "ё", "ё"
 //      "", "г", "г", "г", "г", "г",
       //"6", "5", "4", "3", "2", "1"
      //"a", "б", "в",
@@ -27,9 +33,9 @@ function fake2() { //jshint ignore:line
 
     ],
     RAP: [
-      0, 0, 1, 1, 1, 1,
-      0, 0, 1, 1, 1, 1,
-      0, 0, 1, 1, 1, 1
+      1, 1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1, 1
       //1, 0, 0,
       //1, 0, 0,
       //1, 0, 0
@@ -37,11 +43,13 @@ function fake2() { //jshint ignore:line
     nymberType: 2,
     holst: {
       H: 2,
-      W: 6,
+      W: 3,
       X: 1,
       Y: 0
     },
+    D2: "",
     D: "",
+
     // raport: {H: 2,W: 2,X: 2,Y: 1},
     GRID2: [],
     name: "test3"

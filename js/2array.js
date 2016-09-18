@@ -65,6 +65,8 @@ function xmlParser(xml, date, name) { //jshint ignore:line
     RAP: [],
     date: date, //дата
     name: name, //имя файла
+    LINE: {}, //отлов дубликатов
+    L: "", //отлов дубликатов
     TILES: {},
     LIST: [],
     GRID2: [],
