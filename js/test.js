@@ -14,7 +14,7 @@ $(function () { //jshint ignore:line
 // fileUrl('//googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/2.svg');
 function fake2() { //jshint ignore:line
   SVG = {
-    LINE: {}, //отлов дубликатов
+    //    LINE: {}, //отлов дубликатов
     DOUBLE1: {},
     DOUBLE2: {},
     LIST: [
