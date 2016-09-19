@@ -45,12 +45,12 @@ function fake2() { //jshint ignore:line
     RAP: [
       1, 1, 1, 1, 1, 1, 1,
       1, 1, 1, 1, 1, 1, 1,
-      1, 1, 1, 1, 1, 1, 1
+      1, 1, 1, 1, 1, 1, 0
       //1, 0, 0,
       //1, 0, 0,
       //1, 0, 0
     ],
-    nymberType: 2,
+    nymberType: 3,
     holst: {
       H: 2,
       W: 3,
