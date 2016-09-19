@@ -1,4 +1,4 @@
-if ("hintignore" === 0) {
+if ("hintignore" == "OFF") {
   descrip();
   var SVG, $;
 }
@@ -18,6 +18,19 @@ function descrip() { //генерация описания
     var afterSymbol = i + 1; //копируем следующий символ для тех же целей
     var beforeSymbol = i - 1; //копируем следующий символ для тех же целей
     var zpt = (num != SVG.holst.W) ? "," : ""; //убрать запятую у последнего элемента
+
+    if (line == 1) { //кол-во петель в набор
+      if (qwer === undefined) {
+        var qwer = "";
+      }
+      qwer = qwer + "d" + this;
+      if (num == SVG.holst.W) {
+        console.log(qwer + " 1qwe");
+      }
+    }
+
+
+
 
     //действия в начле каждой строки
     if (num == 1) {
