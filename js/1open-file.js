@@ -27,10 +27,29 @@ function numEdit(n) { //jshint ignore:line
 
 
 $(function () {
+
+  $('body').keydown(function (e) { //стрелками на клавиатуре
+    //    console.warn(e.which);
+    if (e.which == 37) {
+      var $tag = $("#number");
+      var $znach = $tag.val() * 1 - 1;
+      $tag.val($znach);
+      fileUrl($znach);
+      console.log("влево");
+    } else if (e.which == 39) {
+      console.log("вправо");
+      var $tag = $("#number");
+      var $znach = $tag.val() * 1 + 1;
+      $tag.val($znach);
+      fileUrl($znach);
+    }
+  });
+
   $("#number").change(function () { //отлов ручного изменения
     console.info("ручное изменение");
     fileUrl($(this).val() * 1);
   });
+
 });
 
 //function numLaunch(n) { //создание ссылки

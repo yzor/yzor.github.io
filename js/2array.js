@@ -60,7 +60,8 @@ function file2(p){
 function xmlParser(xml, date, name) { //jshint ignore:line
   //  console.log(date);
   //  console.log(name);
-  //    console.log(xml);
+  //  console.log(xml);
+  uiShowScheme(xml, name); /*вывод визуальной схемы*/ //jshint ignore:line
   SVG = {
     RAP: [],
     date: date, //дата
@@ -106,7 +107,9 @@ function xmlParser(xml, date, name) { //jshint ignore:line
     PathConvertor2($(this), SVG.LIST);
   });
   $(xml).find("#Рапорт").each(function () { //создание масива рапорта
+    //    PathConvertor2($(this), SVG.RAP, 1);
     PathConvertor2($(this), SVG.RAP, 1);
+    console.info(SVG.RAP);
   });
 
   function calk(p) { //делим результат на 20, если нет данных то подставляем 0
@@ -192,6 +195,8 @@ function PathConvertor2(t, LINK, name) { //t-this, link-ссылка для со
         LINK[i] = t.attr('id'); //отправляем в объект id
       }
       //Tiles[i].push(SVGid);//DEL
+    } else if (name) { //если пиксель прозрачен, но есть name, то возвращаем 0 (убрать?)
+      LINK[i] = 0;
     }
     return (Pixel.data.length / 4 - 1 != i); //закончить перебор на четверти масива
   });
