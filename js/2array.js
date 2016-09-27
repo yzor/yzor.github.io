@@ -145,17 +145,16 @@ function PathConvertor2(t, LINK, name) { //t-this, link-ссылка для со
   var canvas2 = document.getElementById('CANVA2'); //выбираем второй html элемент канваса
   var ctx2 = canvas2.getContext('2d');
   ctx.clearRect(0, 0, SVG.width * 20, SVG.height * 20); //очистка предыдущего слоя
-  //################# #TODO видимо надо пораньше перенести
-  //перенёс, теперь надо
   $("#CANVA").attr({
-    "width": SVG.holst.W * 20,
-    "height": SVG.holst.H * 20
+    "width": SVG.width * 20,
+    "height": SVG.height * 20
   }); //подгоняем размер канваса под свг
-  //###########
-
-
-
-  var p;
+  $("#CANVA2").attr({
+    //    "width": SVG.holst.W * 20,
+    //    "height": SVG.holst.H * 20
+    "width": SVG.holst.W,
+    "height": SVG.holst.H
+  }); //подгоняем размер канваса под свг  var p;
   if (t[0].nodeName == "path") { //если патч
     p = new Path2D(t.attr('d')); //Нарисовать патч
   } else if (t[0].nodeName == "rect") { //если рект
@@ -175,10 +174,6 @@ function PathConvertor2(t, LINK, name) { //t-this, link-ссылка для со
   ctx.fill();
 
 
-  $("#CANVA2").attr({
-    "width": SVG.holst.W * 20,
-    "height": SVG.holst.H * 20
-  }); //подгоняем размер канваса под свг
   ctx2.drawImage(canvas, //sx, sy, sw, sh, dx, dy, dw, dh
     SVG.holst.X * 20, //20,//вырез прямоугольника x
     SVG.holst.Y * 20, //0,//вырез прямоугольника y

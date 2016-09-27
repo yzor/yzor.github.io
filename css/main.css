@@ -35,6 +35,14 @@ font-family: 'Kelly Slab', cursive;
   display: none;
 }
 
+
+/*скрыть поле с канвасом*/
+
+#hide {
+  position: fixed;
+  right: -1000px;
+}
+
 body {
   font-family: Verdana, Geneva, sans-serif;
   margin: 0;
