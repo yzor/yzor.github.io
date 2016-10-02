@@ -196,10 +196,12 @@ function PathConvertor2(t, LINK, name) { //t-this, link-ссылка для со
     //         Tiles[i]=[tileX,tileY];       //вписываем в масив координаты
     if (Pixel.data[(i + 1) * 4 - 1] > 0) { //если пиксель не прозрачен, то записываем класс
       //      console.log(name);
-      if (name) {
-        LINK[i] = name; //если есть name, то ложить в атрибут его, а не id
-      } else {
-        LINK[i] = t.attr('id'); //отправляем в объект id
+      if (name) { //если есть name, то ложить в атрибут его, а не id
+        LINK[i] = name;
+      } else if (t.attr("data-name")) { //если у тега есть атрибут data-name
+        LINK[i] = t.attr('data-name');
+      } else { //в противном случае отправляем в объект id
+        LINK[i] = t.attr('id');
       }
       //Tiles[i].push(SVGid);//DEL
     } else if (name) { //если пиксель прозрачен, но есть name, то возвращаем 0 (убрать?)
