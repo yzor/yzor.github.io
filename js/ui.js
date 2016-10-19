@@ -170,7 +170,7 @@ $(document).on("click", "#description b", function () {
 
 
 function uiShowScheme(xml, name) { //выводить SVG, пока для тестов
-  $("#show_SVG").attr("href", "//yzorrykodelie.ru/узор-спицами-№" + name);
+  $("#show_SVG").attr("href", "http://yzorrykodelie.ru/узор-спицами-№" + name);
   var html = $(xml)["0"].documentElement.outerHTML;
   $("#show_SVG").html(html);
 }
