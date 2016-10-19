@@ -63,6 +63,8 @@ function xmlParser(xml, date, name) { //jshint ignore:line
   //  console.log(xml);
   uiShowScheme(xml, name); /*вывод визуальной схемы*/ //jshint ignore:line
   SVG = {
+
+    noDouble: {}, //защита от повторного выведения описания
     RAP: [],
     date: date, //дата
     name: name, //имя файла
@@ -109,7 +111,7 @@ function xmlParser(xml, date, name) { //jshint ignore:line
   $(xml).find("#Рапорт").each(function () { //создание масива рапорта
     //    PathConvertor2($(this), SVG.RAP, 1);
     PathConvertor2($(this), SVG.RAP, 1);
-    console.info(SVG.RAP);
+    //    console.info(SVG.RAP);
   });
 
   function calk(p) { //делим результат на 20, если нет данных то подставляем 0
