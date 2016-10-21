@@ -42,14 +42,18 @@ function uiNameData() { //jshint ignore:line
 ////////
 function metamorphose() {
   //#FIXME бага когда шторка уже спрятана и вызывается метаморфоз - она прыгает
-  console.log("metamorphose");
+  console.info("metamorphose");
   $("body").addClass("qwe");
   $(this).delay(480).queue(function () {
     $("body").addClass("scheme").removeClass("waiting");
     $("#header").removeClass("header_show header_hide");
+    $(this).queue("fx", []); //очистка очереди
     $(this).dequeue();
   });
 }
+
+
+
 $(function () { //$$$$$$$$$$$$$$$$$$$$$$$$$;
   ////////////////////////
   //АНИМАЦИЯ ШТОРКИ
@@ -60,7 +64,7 @@ $(function () { //$$$$$$$$$$$$$$$$$$$$$$$$$;
     $(this).queue("fx", []); //очистка очереди
     $(this).delay(100).queue(function () { //вытаскивание шторки с задежкой
       $(this).addClass("header_show").removeClass("header_hide");
-      //console.log( $(this).queue("fx").length+" - навёл");
+      console.info($(this).queue("fx").length + " - навёл");
       $(this).dequeue();
     });
   }, function () {
@@ -69,7 +73,7 @@ $(function () { //$$$$$$$$$$$$$$$$$$$$$$$$$;
     $(this).queue("fx", []); //очистка очереди
     $(this).delay(550).queue(function () {
       $(this).addClass("header_hide").removeClass("header_show light");
-      //console.log( $(this).queue("fx").length+" - убрал");
+      console.info($(this).queue("fx").length + " - убрал");
       $(this).dequeue();
     });
   });
@@ -180,5 +184,3 @@ function uiShowScheme(xml, name) { //выводить SVG, пока для те�
 #container li.marker i{/* цифра в закладке* /background: orange;}
 #container .illumination li{background: pink;}
   */
-
-//df

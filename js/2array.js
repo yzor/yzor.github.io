@@ -58,6 +58,7 @@ function file2(p){
 //Парсинг текстового содержимого файла
 //////////
 function xmlParser(xml, date, name) { //jshint ignore:line
+  metamorphose();
   //  console.log(date);
   //  console.log(name);
   //  console.log(xml);
