@@ -50,10 +50,6 @@ function metamorphose() {
   if ($("#header").hasClass("header_show")) {
     $("#header").addClass("light"); //увеличение прозрачночти шторки
   }
-
-
-
-
   if ($("body").hasClass("waiting")) { // только если открыт фулл-экран
     //d    $("#header").mouseleave();
     console.info("metamorphose");
@@ -248,7 +244,8 @@ $('b').hover( // при наведении на1-йряд: - подсвечив�
 */
 
 
-$(document).on("click", "#description li", function () { /*закладка при клике на элемент*/
+//закладка при клике на элемент
+$(document).on("click", "#description li", function () {
   if ($(this).hasClass("marker")) {
     $(this).removeClass("marker");
   } else {
@@ -257,7 +254,7 @@ $(document).on("click", "#description li", function () { /*закладка пр
   }
 });
 
-
+//закладка при клике на номер ряда
 $(document).on("click", "#description b", function () {
   var $elm = $(this).parent();
   if ($elm.hasClass("illumination")) {
@@ -280,3 +277,28 @@ function uiShowScheme(xml, name) { //выводить SVG, пока для те�
 #container li.marker i{/* цифра в закладке* /background: orange;}
 #container .illumination li{background: pink;}
   */
+
+
+
+
+
+//ctrl 17
+//t 84
+
+
+$(function () {
+  $('body').keydown(function (e) {
+    //    console.warn(e.which);
+    //смена темы
+    if(e.which == 84){
+      var n=$("#theme").attr("href");
+      n=n.replace(/\D/g, '');
+      n++;
+      if(n==3){//кол-во схем
+        n=0;
+      }
+      $("#theme").attr("href", "css/theme"+n+".css");
+      console.info("theme"+n+".css");
+    }
+  });
+});

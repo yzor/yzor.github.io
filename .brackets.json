@@ -64,9 +64,23 @@
                 "D:/APP/GitHub/генератор описаний/css/main.css": [],
                 "D:/APP/GitHub/генератор описаний/css/mainOLD.css.map": [],
                 "D:/APP/GitHub/генератор описаний/scss/relahayOLD.scss": [],
-                "D:/APP/GitHub/генератор описаний/scss/mainOLD.scss": []
+                "D:/APP/GitHub/генератор описаний/scss/mainOLD.scss": [],
+                "D:/Project/GitHub/Генератор описаний/css/theme0.css": [],
+                "D:/Project/GitHub/Генератор описаний/scss/theme1.scss": [],
+                "D:/Project/GitHub/Генератор описаний/css/theme3.css": [],
+                "D:/Project/GitHub/Генератор описаний/css/theme3.css.map": [],
+                "D:/Project/GitHub/Генератор описаний/css/theme0.css.map": [],
+                "D:/Project/GitHub/Генератор описаний/css/themeШАБЛОН.css": [],
+                "D:/Project/GitHub/Генератор описаний/scss/ui.scss": [],
+                "D:/Project/GitHub/Генератор описаний/.brackets.json": [],
+                "D:/Project/GitHub/Генератор описаний/scss/mainOLD.scss": [],
+                "D:/Project/GitHub/Генератор описаний/scss/relahayOLD.scss": [],
+                "D:/Project/GitHub/Генератор описаний/scss/themeШАБЛОН.scss": [],
+                "D:/Project/GitHub/Генератор описаний/scss/theme3.scss": [],
+                "D:/Project/GitHub/Генератор описаний/scss/theme2.scss": []
             },
-            "brackets-git.gitPath": "git"
+            "brackets-git.gitPath": "git",
+            "noDistractions": true
         }
     }
 }

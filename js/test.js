@@ -1,7 +1,12 @@
 var SVG;
 $(function () { //jshint ignore:line
   test2();
+  theme();
 });
+
+
+function theme() {
+}
 
 function test2() {
   fileUrl(10);
