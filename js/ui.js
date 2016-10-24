@@ -1,3 +1,9 @@
+if ("hintignore" == "OFF") {
+  var document;
+
+  uiShowScheme();
+}
+
 /*global $, console*/ //JSLinT error - '$' was used....
 /*jslint sloppy: true*/ //JSLinT error - Missing...
 /*jslint indent: 2 */ //2 пробела
@@ -41,42 +47,132 @@ function uiNameData() { //jshint ignore:line
 //МЕТАМОРФОЗ
 ////////
 function metamorphose() {
-  //#FIXME бага когда шторка уже спрятана и вызывается метаморфоз - она прыгает
-  console.info("metamorphose");
-  $("body").addClass("qwe");
-  $(this).delay(480).queue(function () {
-    $("body").addClass("scheme").removeClass("waiting");
-    $("#header").removeClass("header_show header_hide");
-    $(this).queue("fx", []); //очистка очереди
-    $(this).dequeue();
-  });
+  if ($("#header").hasClass("header_show")) {
+    $("#header").addClass("light"); //увеличение прозрачночти шторки
+  }
+
+
+
+
+  if ($("body").hasClass("waiting")) { // только если открыт фулл-экран
+    //d    $("#header").mouseleave();
+    console.info("metamorphose");
+    $("body").addClass("qwe"); //промежуточный вариант
+    $(this).delay(480).queue(function () {
+      $("body").addClass("scheme").removeClass("waiting");
+      $("#header").removeClass("header_show header_hide");
+      $("#header").addClass("header_hide");
+
+      $(this).queue("fx", []); //очистка очереди
+      $("#header").mouseleave();
+      headerHover();
+      $(this).dequeue();
+    });
+  }
+}
+
+function headerHover() {
+
+
+  $(document).on({ //наведение на "1-й ряд:"...
+    mouseenter: function () {
+      //$(this).parent().addClass('illumination-hover');
+      //      console.info("ON навёл");
+      //      if ($("body").hasClass("scheme")) { //не запускать при FULLэкране
+      //      console.error($("body").hasClass("scheme"));
+      //if($("#header").is(":hover")){console.log("1 Наведён и должен");}
+      //else{                        console.log("2 Не наведён но должен");}
+
+      $(this).addClass("header_show").removeClass("header_hide");
+      console.info("add header_show");
+      /*
+      $(this).queue("fx", []); //очистка очереди
+      $(this).delay(10).queue(function () { //100//вытаскивание шторки с задежкой
+        $(this).addClass("header_show").removeClass("header_hide");
+        //        console.info($(this).queue("fx").length + " - навёл");
+        $(this).dequeue();
+      });
+      */
+      //      }
+    },
+    mouseleave: function () {
+      //  $(this).parent().removeClass('illumination-hover');
+      //      console.info("ON убрал");
+      //      if ($("body").hasClass("scheme")) { //не запускать при FULLэкране
+      //if($("#header").is(":hover")){console.log("3 Наведён но не должен");}
+      //else{                        console.log("4 Не наведён и должен");}
+      console.info("убрал");
+      $(this).queue("fx", []); //очистка очереди
+      $(this).delay(260).queue(function () { //550
+        console.info("убрал с задержкой");
+        $(this).addClass("header_hide").removeClass("header_show light");
+        //          console.info($(this).queue("fx").length + " - убрал");
+        $(this).dequeue();
+      });
+      //      }
+    }
+  }, ".scheme #header"); //pass the element as an argument to .on
 }
 
 
 
 $(function () { //$$$$$$$$$$$$$$$$$$$$$$$$$;
+  //#FIXME бага когда после метаморфоза шторка уже спрятана, а двинешь мышкой и происходит скачок
   ////////////////////////
   //АНИМАЦИЯ ШТОРКИ
   ////////
-  $('#header').hover(function () { //при наведении на шторку
-    //if($("#header").is(":hover")){console.log("1 Наведён и должен");}
-    //else{                        console.log("2 Не наведён но должен");}
-    $(this).queue("fx", []); //очистка очереди
-    $(this).delay(100).queue(function () { //вытаскивание шторки с задежкой
-      $(this).addClass("header_show").removeClass("header_hide");
-      console.info($(this).queue("fx").length + " - навёл");
-      $(this).dequeue();
-    });
+  //waiting scheme
+
+
+
+
+
+
+  //  headerHover();
+
+  //////////////////////////////////
+  //   NEW<<<<    >>>>OLD
+  //////////////////////////////////
+
+
+
+  $('#headerOFF').hover(function () { //при наведении на шторку
+    if ($("body").hasClass("scheme")) { //не запускать при FULLэкране
+      console.error($("body").hasClass("scheme"));
+      //if($("#header").is(":hover")){console.log("1 Наведён и должен");}
+      //else{                        console.log("2 Не наведён но должен");}
+      $(this).queue("fx", []); //очистка очереди
+      $(this).delay(100).queue(function () { //вытаскивание шторки с задежкой
+        $(this).addClass("header_show").removeClass("header_hide");
+        console.info($(this).queue("fx").length + " - навёл");
+        $(this).dequeue();
+      });
+    }
   }, function () {
-    //if($("#header").is(":hover")){console.log("3 Наведён но не должен");}
-    //else{                        console.log("4 Не наведён и должен");}
-    $(this).queue("fx", []); //очистка очереди
-    $(this).delay(550).queue(function () {
-      $(this).addClass("header_hide").removeClass("header_show light");
-      console.info($(this).queue("fx").length + " - убрал");
-      $(this).dequeue();
-    });
+    if ($("body").hasClass("scheme")) { //не запускать при FULLэкране
+      //if($("#header").is(":hover")){console.log("3 Наведён но не должен");}
+      //else{                        console.log("4 Не наведён и должен");}
+      $(this).queue("fx", []); //очистка очереди
+      $(this).delay(550).queue(function () {
+        $(this).addClass("header_hide").removeClass("header_show light");
+        console.info($(this).queue("fx").length + " - убрал");
+
+
+
+        if ($("#header").hasClass("header_hide")) {
+          console.warn($(this).queue("fx").length + " - убрал2");
+        }
+        if ($("#header").hasClass("header_show")) {
+          console.warn($(this).queue("fx").length + " - убрал3");
+        }
+
+
+        $(this).dequeue();
+      });
+    }
   });
+
+
   ///////////////////////
   //ТЕСТОВЫЙ ЧЕКБОКС
   ////

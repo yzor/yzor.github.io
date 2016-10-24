@@ -72,7 +72,7 @@ function fileUrl(name) {
     //извлекаем дату
     var date = new Date(request.getResponseHeader("Last-Modified")); //дата редактирования
     $("#number").removeClass("impulseError"); //убрать класс ошибки
-    $("#header").addClass("light"); //увеличение прозрачночти шторки
+
     xmlParser(data, date, name); //jshint ignore:line
   }
 

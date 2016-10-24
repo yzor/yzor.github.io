@@ -1,6 +1,6 @@
 var SVG;
 $(function () { //jshint ignore:line
-  //  test2();
+  test2();
 });
 
 function test2() {

@@ -58,7 +58,6 @@ function file2(p){
 //Парсинг текстового содержимого файла
 //////////
 function xmlParser(xml, date, name) { //jshint ignore:line
-  metamorphose();
   //  console.log(date);
   //  console.log(name);
   //  console.log(xml);
@@ -118,7 +117,7 @@ function xmlParser(xml, date, name) { //jshint ignore:line
   function calk(p) { //делим результат на 20, если нет данных то подставляем 0
     return ($f.attr(p) > 0) ? $f.attr(p) / 20 : 0;
   }
-  console.warn(SVG);
+  //  console.warn(SVG);
   //  console.warn(SVG.LIST);
 
   // console.log(SVG.LIST);

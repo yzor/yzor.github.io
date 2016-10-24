@@ -1,8 +1,9 @@
 if ("hintignore" == "OFF") {
   descrip();
-
-  function PRICE() {};
-  var SVG, $;
+  function RUS() {};//jshint ignore:line
+  function PRICE() {};//jshint ignore:line
+  function metamorphose() {};//jshint ignore:line
+  var SVG, $, deferreds;
 }
 
 
@@ -24,18 +25,12 @@ function descrip() { //генерация описания
       var beforeSymbol = i - 1; //копируем следующий символ для тех же целей
       var zpt = (num != SVG.holst.W) ? "," : ""; //Запятая или убрать её у последнего элемента
       //##### кол-во петель в набор ############
-      function price() {
-        console.log(PRICE("лицевая"));
-        //      console.info(SVG.LIST[i]);//#TODO высчитывать реальную цену символа из списка
-        return 1;
-      }
+
       if (line == 1) { //кол-во петель в набор
         if (SVG.RAP[thisSymbol] == 1) { //символ (в/не в) рапорте
           loopRap = loopRap + PRICE(SVG.LIST[thisSymbol]);
-          console.log("LOPR-" + PRICE(SVG.LIST[thisSymbol]) + "_" + SVG.LIST[thisSymbol]);
         } else {
           loop = loop + PRICE(SVG.LIST[thisSymbol]);
-          console.log("LOOP-" + PRICE(SVG.LIST[thisSymbol]) + "_" + SVG.LIST[thisSymbol]);
         }
         if (num == SVG.holst.W) {
           if (loop === 0) {
@@ -158,6 +153,7 @@ function descrip() { //генерация описания
 
     //  console.log(SVG.LIST);
     $("#container").html(SVG.D); //выводим в HTML
+    metamorphose(); //поднятие шторки если опущена
     //  console.warn(SVG.GRID2);
     //  console.log(SVG.D + "qwe");
     //  console.log(SVG.DOUBLE1);
