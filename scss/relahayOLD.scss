@@ -1,0 +1,208 @@
+/*body{background: gold;}*/
+
+* {
+  /*  transition: all 0s 0s !important;*/
+}
+
+
+/*  DEFAULT -------------------------------------*/
+
+#1container {
+  background: green;
+}
+
+#1container b {
+  /*Начало строки*/
+  background: red;
+}
+
+#container {
+  cursor: default;
+  color: #4e4e4e;
+  font-family: Verdana, Geneva, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+
+#container ul {
+  /*строка*/
+  text-indent: 0px;
+  padding: 0;
+  margin: 0px 0;
+  /*     line-height: 0px; */
+}
+
+#container li {
+  /*один блок строки*/
+  background: #ddd;
+  display: inline;
+  border: 1px solid;
+  padding: 3px 4px 3px 2px;
+  border-radius: 3px;
+  line-height: 26px;
+  margin: 0 0 0 -2px;
+  position: relative;
+}
+
+#container b {
+  /*1-й ряд:*/
+  color: #676767;
+}
+
+#container i {
+  /*цифра в блоке*/
+  font-style: normal;
+  border: 1px solid;
+  padding: 0 5px;
+  margin: 0px -1px 0px 0px;
+  border-radius: 3px;
+}
+
+#container b:hover {
+  /*1-й ряд: при наведении*/
+  color: black;
+}
+
+#container i:hover {
+  /*цифра в блоке при наведении*/
+  background: #999;
+}
+
+#container li:hover {
+  /*один блок строки при наведении*/
+  background: #bbb;
+  transform: scaleX(0.9) !important;
+  /*не работает ибо надо position abs или fix*/
+}
+
+#container li:active {
+  /*один блок строки при нажатии*/
+  background: gold;
+}
+
+#container li.marker {
+  /*закладка*/
+  background: gold;
+}
+
+#container li.marker i {
+  /* цифра в закладке*/
+  background: orange;
+}
+
+#container .illumination-hover li {
+  /*подсветка ряда при наведении на "1-й ряд:"*/
+  background: rgba(255, 215, 0, 0.2);
+}
+
+#container .illumination li {
+  /*подсветка ряда при нажатии на "1-й ряд:"*/
+  background: rgba(255, 215, 0, 0.5);
+}
+
+#container .illumination.illumination-hover li {
+  /*пересечение стилей илюминация и ховер*/
+  color: black;
+}
+
+.illumination-hover0 {
+  z-index: 10 !important;
+  position: relative;
+  position: absolute;
+  position: fixed;
+  position: relative !important;
+}
+
+.illumination-hover0:before {
+  content: '';
+  position: absolute;
+  position: relative;
+  position: absolute;
+  display: block;
+  /* top: -50px; */
+  z-index: -1;
+  width: 100%;
+  padding: 10px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  /* height: 50px; */
+  /* background: gold; */
+  padding: 10px;
+  left: -10px;
+  margin: 0px;
+  border-radius: 4px;
+  border: dotted 1px;
+}
+
+#container .raport {
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  /*  border-radius: 50% ;*/
+  padding: 0;
+  margin: 0;
+  margin-bottom: -4px;
+  overflow: hidden;
+  /*  border: 1px dashed red;*/
+  background: url(/image/raport1.png) no-repeat !important;
+  /*  background-repeat: no-repeat;*/
+  /*  background-image: url(/image/raport2.png) !important;*/
+}
+
+#container .raport.l {
+  margin-left: 4px;
+  margin-right: 0px;
+}
+
+#container .raport.r {
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+/*  DEFAULT END-------------------------------------*/
+
+#c3ontainer {
+  padding-left: 112px;
+}
+
+#3container b {
+  /* background: red; */
+  position: fixed;
+  position: absolute;
+  width: 200px;
+  text-align: right;
+  height: 24px;
+  left: -92px;
+  margin-top: 4px;
+  /* margin-left: -5px; */
+  /* bottom: 10px; */
+}
+
+
+/******STYLE CLEAR***********************/
+
+#description.clear {
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.clear #container b,
+.clear #container li,
+.clear #container ul,
+.clear #container i {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  line-height: 24px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  color: black;
+  color: #676767;
+}
+
+
+/******STYLE CLEAR END***********************/
