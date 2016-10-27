@@ -1,3 +1,4 @@
+//https://css-tricks.com/almanac/properties/b/box-decoration-break/
 #container {
   cursor: default;
   color: #4e4e4e;
@@ -17,7 +18,9 @@
     text-indent: 0px;
     padding: 0;
     margin: 0px 0;
+    margin: 6px 0; //отступы между строк
     /*     line-height: 0px; */
+    line-height: 26px;
     li {
       /*один блок строки*/
       background: #ddd;
@@ -25,7 +28,7 @@
       border: 1px solid;
       padding: 3px 4px 3px 2px;
       border-radius: 3px;
-      line-height: 26px;
+      //            line-height: 26px;
       margin: 0 0 0 -2px;
       position: relative;
       &:hover {
@@ -65,8 +68,9 @@
       background: rgba(255, 215, 0, 0.5);
     }
     &.illumination.illumination-hover li {
+      background: rgba(255, 215, 0, 0.7);
       /*пересечение стилей илюминация и ховер*/
-      color: black;
+      //      color: black;
     }
   }
   .raport {
@@ -97,23 +101,42 @@
     }
   }
   .qwe2 {
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
     //описание
-    border-radius: 5px;
-    background: red;
-    background: gold;
-    font-size: 10px;
-    margin: 10px;
-    padding: 2px;
-    position: absolute;
-    display: block;
-    display: inline;
-    position: fixed;
-    position: relative;
+    border-radius: 4px;
+    //    background: red;
+    //    background: gold;
+    border: dashed 1px;
+    padding: 2px 3px;
+    //    font-size: 10px;
+    //    margin: 10px;
+    //    padding: 2px;
+    //    position: absolute;
+    //    display: block;
+    //    display: inline;
+    //    display: inline-block;
+    //    position: fixed;
+    //    position: relative;
+    //    height: 100px;
   }
   .qwe1 {
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+    margin-left: -5px;
+    padding-left: 5px;
     //описание вместе с символом
-    background: green;
-    padding: 1px
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    padding-right: 3px;
+    //    background: red;
+    &:hover {
+      background: gold;
+      background: #FFE975;
+    }
   }
 }
 

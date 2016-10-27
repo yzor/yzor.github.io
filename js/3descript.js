@@ -1,8 +1,9 @@
 if ("hintignore" == "OFF") {
   descrip();
-  function RUS() {};//jshint ignore:line
-  function PRICE() {};//jshint ignore:line
-  function metamorphose() {};//jshint ignore:line
+
+  function RUS() {}; //jshint ignore:line
+  function PRICE() {}; //jshint ignore:line
+  function metamorphose() {}; //jshint ignore:line
   var SVG, $, deferreds;
 }
 
@@ -91,7 +92,7 @@ function descrip() { //генерация описания
           more = ", закончить ряд";
         }
         afterStar = "<li class='raport l'>*</li>" + //💩
-          " повторять от&nbsp<li class='raport l'>*</li> до&nbsp<li class='raport l'>*</li>" +
+          " повторять&nbspот&nbsp<li class='raport l'>*</li>&nbspдо&nbsp<li class='raport l'>*</li>" +
           more //если это не конец строки то выводим "закончить ряд"
         ;
       } //рапорт END

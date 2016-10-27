@@ -1,17 +1,3 @@
-@charset "UTF-8";
-/* line 1, D:/APP/GitHub/генератор описаний/scss/theme0.scss */
-#description {
-  overflow: hidden; }
-
-/* line 5, D:/APP/GitHub/генератор описаний/scss/theme0.scss */
-#container {
-  font-family: Helvetica, Arial, sans-serif;
-  color: #676767;
-  font-size: 12px;
-  background: white;
-  box-shadow: 0px 0px 34px white, 0px 0px 74px white, 0px 0px 134px white, 0px 0px 194px white; }
-  /* line 11, D:/APP/GitHub/генератор описаний/scss/theme0.scss */
-  #container ul {
-    margin: 14px 0; }
+#description{overflow:hidden}#container{font-family:Helvetica, Arial, sans-serif;color:#676767;font-size:12px;background:white;box-shadow:0px 0px 34px #fff,0px 0px 74px #fff,0px 0px 134px #fff,0px 0px 194px #fff}#container ul{margin:14px 0}
 
 /*# sourceMappingURL=theme0.css.map */
