@@ -139,7 +139,7 @@ function descrip() { //генерация описания
     $.each(SVG.DOUBLE1, function (i) {
       if (SVG.DOUBLE2[this]) {
         if (i == SVG.DOUBLE2[this]) {
-          SVG.D = SVG.D + "<ul><b>" + i + "-й ряд:</b> " + this;
+          SVG.D = SVG.D + "<ul><span class='zakl'></span><b>" + i + "-й ряд:</b> " + this;
         } else {
           SVG.D = SVG.D + "<ul><b>" + i + "-й ряд:</b> вязать как <li>" + SVG.DOUBLE2[this] + "-й ряд</li></ul>";
         }
