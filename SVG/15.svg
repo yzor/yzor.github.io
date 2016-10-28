@@ -1,4 +1,4 @@
-<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="100" viewBox="0 0 180 100">
+<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="320" viewBox="0 0 480 320">
   <defs>
     <style>
       .cls-1 {
@@ -15,67 +15,110 @@
       }
 
       .cls-3 {
+        fill: #001eff;
         filter: url(#filter);
       }
 
-      .cls-4 {
-        fill: #fff600;
+      .cls-10, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill-opacity: 0;
       }
 
-      .cls-4, .cls-8, .cls-9 {
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
         fill-rule: evenodd;
       }
 
-      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
-        mix-blend-mode: multiply;
+      .cls-4 {
+        fill: #ffb300;
+        filter: url(#filter-2);
       }
 
       .cls-5 {
-        fill: #7800ff;
+        fill: #cf0;
+        filter: url(#filter-3);
       }
 
       .cls-6 {
-        fill: #ff3700;
+        fill: red;
+        filter: url(#filter-4);
       }
 
       .cls-7 {
-        fill: #00fffb;
+        fill: #0091ff;
+        filter: url(#filter-5);
       }
 
       .cls-8 {
-        fill: #8ff806;
+        fill: #7800ff;
+        filter: url(#filter-6);
       }
 
       .cls-9 {
-        fill: #ff6dfa;
+        fill: #ffc600;
+        filter: url(#filter-7);
       }
 
       .cls-10 {
         fill: #d24a43;
-        fill-opacity: 0;
         stroke: #d96868;
         opacity: 0.77;
-        filter: url(#filter-2);
+        filter: url(#filter-8);
       }
 
-      .cls-11, .cls-12 {
+      .cls-11 {
         font-size: 13px;
         font-family: Ebrima;
       }
-
-      .cls-12 {
-        text-anchor: end;
-      }
     </style>
-    <filter id="filter" filterUnits="userSpaceOnUse">
-      <feImage preserveAspectRatio="none" x="20" y="0" width="140" height="100" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDE0MCAxMDAiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIG9wYWNpdHk6IDAuNDg7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQpOwogICAgICB9CiAgICA8L3N0eWxlPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSI3MCIgeTE9IjEwMCIgeDI9IjcwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0icmVkIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xNSIgc3RvcC1jb2xvcj0iI2YwZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMzMiIHN0b3AtY29sb3I9ImJsdWUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ5IiBzdG9wLWNvbG9yPSJhcXVhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC42NyIgc3RvcC1jb2xvcj0ibGltZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuODQiIHN0b3AtY29sb3I9IiNmZjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSJyZWQiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMDAiLz4KPC9zdmc+Cg=="/>
-      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
-      <feBlend result="blend" mode="hardMix" in2="SourceGraphic"/>
-      <feImage preserveAspectRatio="none" x="20" y="0" width="140" height="100" result="image-2" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDE0MCAxMDAiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iNzAiIHkxPSIxMDAiIHgyPSI3MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9InJlZCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTUiIHN0b3AtY29sb3I9IiNmMGYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjMzIiBzdG9wLWNvbG9yPSJibHVlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC40OSIgc3RvcC1jb2xvcj0iYXF1YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNjciIHN0b3AtY29sb3I9ImxpbWUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjg0IiBzdG9wLWNvbG9yPSIjZmYwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0icmVkIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTAwIi8+Cjwvc3ZnPgo="/>
-      <feComposite result="composite-2" operator="in" in2="SourceGraphic"/>
-      <feBlend result="blend-2" mode="lighten" in2="blend"/>
+    <filter id="filter" x="120" y="0" width="220" height="220" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
     </filter>
-    <filter id="filter-2" x="39" y="39" width="103" height="43" filterUnits="userSpaceOnUse">
+    <filter id="filter-2" x="120" y="0" width="220" height="180" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-3" x="140" y="20" width="240" height="200" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-4" x="80" y="20" width="240" height="200" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-5" x="60" y="80" width="340" height="220" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-6" x="0" y="0" width="460" height="320" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-7" x="60" y="20" width="340" height="300" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-8" x="59" y="-1" width="403" height="323" filterUnits="userSpaceOnUse">
       <feOffset result="offset" dx="2.121" dy="2.121" in="SourceAlpha"/>
       <feGaussianBlur result="blur"/>
       <feFlood result="flood" flood-color="#d96868"/>
@@ -105,22 +148,23 @@
     </filter>
   </defs>
   <g id="Маска" class="cls-1">
-    <rect id="Холст" class="cls-2" x="20" width="140" height="100"/>
-    <g id="Раскраски" class="cls-3">
-      <path id="слой1" class="cls-4" d="M20,0H60V20H40V40H20V0ZM120,0h40V40H140V20H120V0ZM20,60H40V80H60v20H20V60Zm120,0h20v40H120V80h20V60Z"/>
-      <rect id="слой2" class="cls-5" x="40" y="20" width="40" height="20"/>
-      <rect id="слой3" class="cls-6" x="100" y="60" width="40" height="20"/>
-      <rect id="слой4" class="cls-7" x="80" y="20" width="20" height="60"/>
-      <path id="слой5" class="cls-8" d="M100,20h40V60H100V20ZM40,40H80V80H40V40Z"/>
-      <path id="слой6" class="cls-9" d="M60,0h60V20H60V0ZM20,40H40V60H20V40Zm120,0h20V60H140V40ZM60,80h60v20H60V80Z"/>
+    <rect id="Холст" class="cls-2" width="460" height="320"/>
+    <g id="Раскраски">
+      <path id="_3_вм" data-name="3 вм" class="cls-3" d="M120,0h20V60H120V0ZM320,160h20v60H320V160Z"/>
+      <path id="дв_протяж" data-name="дв протяж" class="cls-4" d="M320,0h20V20H320V0ZM120,160h20v20H120V160Z"/>
+      <path id="_2_вм_лиц_с_накл_влево" data-name="2 вм лиц с накл влево" class="cls-5" d="M340,20h20V40H340V20Zm20,20h20V60H360V40ZM140,180h20v20H140V180Zm20,20h20v20H160V200Z"/>
+      <path id="_2_вм_лиц" data-name="2 вм лиц" class="cls-6" d="M300,20h20V40H300V20ZM280,40h20V60H280V40ZM100,180h20v20H100V180ZM80,200h20v20H80V200Z"/>
+      <path id="накид" class="cls-7" d="M60,80H80v20H60V80Zm120,0h20v20H180V80Zm120,0h20v60H300V80Zm40,0h20v60H340V80ZM80,100h20v20H80V100Zm80,0h20v20H160V100Zm-60,20h20v20H100V120Zm40,0h20v20H140V120ZM100,240h20v60H100V240Zm40,0h20v60H140V240Zm120,0h20v20H260V240Zm120,0h20v20H380V240ZM280,260h20v20H280V260Zm80,0h20v20H360V260Zm-60,20h20v20H300V280Zm40,0h20v20H340V280Z"/>
+      <path id="изнаночная" class="cls-8" d="M0,0H60V320H0V0ZM200,0h60V320H200V0ZM400,0h60V320H400V0Z"/>
+      <path id="лицевая" class="cls-9" d="M100,20h20V60h20V20h20V40h20V60h20V80H180v20H160v20H140v40H120V120H100V100H80V80H60V60H80V40h20V20Zm220,0h20V40h20V60h40v40H380v20H360V80H340v80H320V80H300v40H280V100H260V60h40V40h20V20ZM120,180h20v20h20v20h40v40H180v20H160V240H140v80H120V240H100v40H80V260H60V220h40V200h20V180Zm180,0h20v40h20V180h20v20h20v20h20v20H380v20H360v20H340v40H320V280H300V260H280V240H260V220h20V200h20V180Z"/>
     </g>
   </g>
-  <g style="fill: #d24a43; filter: url(#filter-2)">
-    <rect id="Рапорт" class="cls-10" x="40" y="40" width="100" height="40" style="stroke: inherit; filter: none; fill: inherit"/>
+  <g style="fill: #d24a43; filter: url(#filter-8)">
+    <rect id="Рапорт" class="cls-10" x="60" width="400" height="320" style="stroke: inherit; filter: none; fill: inherit"/>
   </g>
   <use xlink:href="#Рапорт" style="stroke: #d96868; filter: none; fill: none"/>
   <g id="Нумерция">
-    <text id="Справа1_3_5" class="cls-11" x="163.008" y="-1865">99<tspan x="163.008" dy="15.6">97</tspan><tspan x="163.008" dy="15.6">95</tspan><tspan x="163.008" dy="15.6">93</tspan><tspan x="163.008" dy="15.6">91</tspan><tspan x="163.008" dy="15.6">89</tspan><tspan x="163.008" dy="15.6">87</tspan><tspan x="163.008" dy="15.6">85</tspan><tspan x="163.008" dy="15.6">83</tspan><tspan x="163.008" dy="15.6">81</tspan><tspan x="163.008" dy="15.6">79</tspan><tspan x="163.008" dy="15.6">77</tspan><tspan x="163.008" dy="15.6">75</tspan><tspan x="163.008" dy="15.6">73</tspan><tspan x="163.008" dy="15.6">71</tspan><tspan x="163.008" dy="15.6">69</tspan><tspan x="163.008" dy="15.6">67</tspan><tspan x="163.008" dy="15.6">65</tspan><tspan x="163.008" dy="15.6">63</tspan><tspan x="163.008" dy="15.6">61</tspan><tspan x="163.008" dy="15.6">59</tspan><tspan x="163.008" dy="15.6">57</tspan><tspan x="163.008" dy="15.6">55</tspan><tspan x="163.008" dy="15.6">53</tspan><tspan x="163.008" dy="15.6">51</tspan><tspan x="163.008" dy="15.6">49</tspan><tspan x="163.008" dy="15.6">47</tspan><tspan x="163.008" dy="15.6">45</tspan><tspan x="163.008" dy="15.6">43</tspan><tspan x="163.008" dy="15.6">41</tspan><tspan x="163.008" dy="15.6">39</tspan><tspan x="163.008" dy="15.6">37</tspan><tspan x="163.008" dy="15.6">35</tspan><tspan x="163.008" dy="15.6">33</tspan><tspan x="163.008" dy="15.6">31</tspan><tspan x="163.008" dy="15.6">29</tspan><tspan x="163.008" dy="15.6">27</tspan><tspan x="163.008" dy="15.6">25</tspan><tspan x="163.008" dy="15.6">23</tspan><tspan x="163.008" dy="15.6">21</tspan><tspan x="163.008" dy="15.6">19</tspan><tspan x="163.008" dy="15.6">17</tspan><tspan x="163.008" dy="15.6">15</tspan><tspan x="163.008" dy="15.6">13</tspan><tspan x="163.008" dy="15.6">11</tspan><tspan x="163.008" dy="15.6">9</tspan><tspan x="163.008" dy="15.6">7</tspan><tspan x="163.008" dy="15.6">5</tspan><tspan x="163.008" dy="15.6">3</tspan><tspan x="163.008" dy="15.6">1</tspan></text>
-    <text id="Слева2_4_6" class="cls-12" x="16.992" y="-1845"><tspan x="16.992">98</tspan><tspan x="16.992" dy="15.6">96</tspan><tspan x="16.992" dy="15.6">94</tspan><tspan x="16.992" dy="15.6">92</tspan><tspan x="16.992" dy="15.6">90</tspan><tspan x="16.992" dy="15.6">88</tspan><tspan x="16.992" dy="15.6">86</tspan><tspan x="16.992" dy="15.6">84</tspan><tspan x="16.992" dy="15.6">82</tspan><tspan x="16.992" dy="15.6">80</tspan><tspan x="16.992" dy="15.6">78</tspan><tspan x="16.992" dy="15.6">76</tspan><tspan x="16.992" dy="15.6">74</tspan><tspan x="16.992" dy="15.6">72</tspan><tspan x="16.992" dy="15.6">70</tspan><tspan x="16.992" dy="15.6">68</tspan><tspan x="16.992" dy="15.6">66</tspan><tspan x="16.992" dy="15.6">64</tspan><tspan x="16.992" dy="15.6">62</tspan><tspan x="16.992" dy="15.6">60</tspan><tspan x="16.992" dy="15.6">58</tspan><tspan x="16.992" dy="15.6">56</tspan><tspan x="16.992" dy="15.6">54</tspan><tspan x="16.992" dy="15.6">52</tspan><tspan x="16.992" dy="15.6">50</tspan><tspan x="16.992" dy="15.6">48</tspan><tspan x="16.992" dy="15.6">46</tspan><tspan x="16.992" dy="15.6">44</tspan><tspan x="16.992" dy="15.6">42</tspan><tspan x="16.992" dy="15.6">40</tspan><tspan x="16.992" dy="15.6">38</tspan><tspan x="16.992" dy="15.6">36</tspan><tspan x="16.992" dy="15.6">34</tspan><tspan x="16.992" dy="15.6">32</tspan><tspan x="16.992" dy="15.6">30</tspan><tspan x="16.992" dy="15.6">28</tspan><tspan x="16.992" dy="15.6">26</tspan><tspan x="16.992" dy="15.6">24</tspan><tspan x="16.992" dy="15.6">22</tspan><tspan x="16.992" dy="15.6">20</tspan><tspan x="16.992" dy="15.6">18</tspan><tspan x="16.992" dy="15.6">16</tspan><tspan x="16.992" dy="15.6">14</tspan><tspan x="16.992" dy="15.6">12</tspan><tspan x="16.992" dy="15.6">10</tspan><tspan x="16.992" dy="15.6">8</tspan><tspan x="16.992" dy="15.6">6</tspan><tspan x="16.992" dy="15.6">4</tspan><tspan x="16.992" dy="15.6">2</tspan></text>
+    <text id="Справа135" class="cls-11" x="463" y="-665.005">99<tspan x="463" dy="19.994">97</tspan><tspan x="463" dy="19.994">95</tspan><tspan x="463" dy="19.994">93</tspan><tspan x="463" dy="19.994">91</tspan><tspan x="463" dy="19.994">89</tspan><tspan x="463" dy="19.994">87</tspan><tspan x="463" dy="19.994">85</tspan><tspan x="463" dy="19.994">83</tspan><tspan x="463" dy="19.994">81</tspan><tspan x="463" dy="19.994">79</tspan><tspan x="463" dy="19.994">77</tspan><tspan x="463" dy="19.994">75</tspan><tspan x="463" dy="19.994">73</tspan><tspan x="463" dy="19.994">71</tspan><tspan x="463" dy="19.994">69</tspan><tspan x="463" dy="19.994">67</tspan><tspan x="463" dy="19.994">65</tspan><tspan x="463" dy="19.994">63</tspan><tspan x="463" dy="19.994">61</tspan><tspan x="463" dy="19.994">59</tspan><tspan x="463" dy="19.994">57</tspan><tspan x="463" dy="19.994">55</tspan><tspan x="463" dy="19.994">53</tspan><tspan x="463" dy="19.994">51</tspan><tspan x="463" dy="19.994">49</tspan><tspan x="463" dy="19.994">47</tspan><tspan x="463" dy="19.994">45</tspan><tspan x="463" dy="19.994">43</tspan><tspan x="463" dy="19.994">41</tspan><tspan x="463" dy="19.994">39</tspan><tspan x="463" dy="19.994">37</tspan><tspan x="463" dy="19.994">35</tspan><tspan x="463" dy="19.994">33</tspan><tspan x="463" dy="19.994">31</tspan><tspan x="463" dy="19.994">29</tspan><tspan x="463" dy="19.994">27</tspan><tspan x="463" dy="19.994">25</tspan><tspan x="463" dy="19.994">23</tspan><tspan x="463" dy="19.994">21</tspan><tspan x="463" dy="19.994">19</tspan><tspan x="463" dy="19.994">17</tspan><tspan x="463" dy="19.994">15</tspan><tspan x="463" dy="19.994">13</tspan><tspan x="463" dy="19.994">11</tspan><tspan x="463" dy="19.994">9</tspan><tspan x="463" dy="19.994">7</tspan><tspan x="463" dy="19.994">5</tspan><tspan x="463" dy="19.994">3</tspan><tspan x="463" dy="19.994">1</tspan></text>
   </g>
+  <image id="Превью" width="480" height="320" xlink:href="data:img/png;base64,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"/>
 </svg>

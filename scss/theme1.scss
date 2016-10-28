@@ -123,16 +123,31 @@
   }
   .qwe1 {
     -webkit-box-decoration-break: clone;
-    -o-box-decoration-break: clone;
+    //    -o-box-decoration-break: clone;
     box-decoration-break: clone;
+    //      text-transform: uppercase;
     margin-left: -5px;
     padding-left: 5px;
     //описание вместе с символом
     padding-top: 7px;
     padding-bottom: 7px;
-    border-radius: 5px;
+    border-radius: 4px;
     padding-right: 3px;
-    //    background: red;
+    background: #8bdd73;
+    box-shadow: 0px 0px 0px 16px red;
+    &:after {
+      content: "qwe";
+      background: gold;
+      display: inline-block;
+      display: inline;
+      position: absolute;
+      position: fixed;
+      position: relative;
+      left: 0;
+      z-index: 99999;
+      height: 100px;
+      //      width: 100%;
+    }
     &:hover {
       background: gold;
       background: #FFE975;

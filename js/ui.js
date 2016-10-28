@@ -290,15 +290,15 @@ $(function () {
   $('body').keydown(function (e) {
     //    console.warn(e.which);
     //смена темы
-    if(e.which == 84){
-      var n=$("#theme").attr("href");
-      n=n.replace(/\D/g, '');
+    if (e.which == 84) {
+      var n = $("#theme").attr("href");
+      n = n.replace(/\D/g, '');
       n++;
-      if(n==3){//кол-во схем
-        n=0;
+      if (n == 3) { //кол-во схем
+        n = 0;
       }
-      $("#theme").attr("href", "css/theme"+n+".css");
-      console.info("theme"+n+".css");
+      $("#theme").attr("href", "css/theme" + n + ".css");
+      console.info("theme" + n + ".css");
     }
   });
 });

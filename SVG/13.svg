@@ -1,11 +1,11 @@
-<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="580" height="320" viewBox="0 0 580 320">
   <defs>
     <style>
       .cls-1 {
         stroke: #000;
       }
 
-      .cls-1, .cls-10 {
+      .cls-1, .cls-7 {
         stroke-linejoin: round;
         stroke-width: 1px;
       }
@@ -15,101 +15,69 @@
       }
 
       .cls-3 {
+        fill: blue;
         filter: url(#filter);
       }
 
-      .cls-4 {
-        fill: #8ff806;
-        filter: url(#filter-2);
-      }
-
-      .cls-10, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
         fill-opacity: 0;
       }
 
-      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
-        mix-blend-mode: multiply;
-      }
-
-      .cls-5 {
-        fill: #00fffb;
-        filter: url(#filter-3);
-      }
-
-      .cls-5, .cls-6, .cls-8, .cls-9 {
+      .cls-3, .cls-4, .cls-5, .cls-6 {
         fill-rule: evenodd;
       }
 
+      .cls-4 {
+        fill: #df0;
+        filter: url(#filter-2);
+      }
+
+      .cls-5 {
+        fill: #7800ff;
+      }
+
+      .cls-5, .cls-6 {
+        filter: url(#filter-3);
+      }
+
       .cls-6 {
-        fill: #ff3700;
-        filter: url(#filter-4);
+        fill: #ffc600;
       }
 
       .cls-7 {
-        fill: #ff6dfa;
+        fill: #d24a43;
+        stroke: #d96868;
+        opacity: 0.77;
         filter: url(#filter-5);
       }
 
       .cls-8 {
-        fill: #7800ff;
-      }
-
-      .cls-8, .cls-9 {
-        filter: url(#filter-6);
-      }
-
-      .cls-9 {
-        fill: #fff600;
-      }
-
-      .cls-10 {
-        fill: #d24a43;
-        stroke: #d96868;
-        opacity: 0.77;
-        filter: url(#filter-8);
+        font-size: 13px;
+        font-family: Ebrima;
       }
     </style>
-    <filter id="filter" filterUnits="userSpaceOnUse">
-      <feFlood result="flood" flood-color="#fff" flood-opacity="0"/>
-      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
-      <feBlend result="blend" in2="SourceGraphic"/>
-    </filter>
-    <filter id="filter-2" x="0" y="60" width="60" height="20" filterUnits="userSpaceOnUse">
+    <filter id="filter" x="60" y="0" width="440" height="320" filterUnits="userSpaceOnUse">
       <feOffset result="offset" in="SourceAlpha"/>
       <feGaussianBlur result="blur"/>
       <feFlood result="flood" flood-color="#fff"/>
       <feComposite result="composite" operator="in" in2="blur"/>
       <feBlend result="blend" in="SourceGraphic"/>
     </filter>
-    <filter id="filter-3" x="0" y="20" width="100" height="40" filterUnits="userSpaceOnUse">
+    <filter id="filter-2" x="20" y="0" width="520" height="320" filterUnits="userSpaceOnUse">
       <feOffset result="offset" in="SourceAlpha"/>
       <feGaussianBlur result="blur"/>
       <feFlood result="flood" flood-color="#fff"/>
       <feComposite result="composite" operator="in" in2="blur"/>
       <feBlend result="blend" in="SourceGraphic"/>
     </filter>
-    <filter id="filter-4" x="40" y="20" width="60" height="80" filterUnits="userSpaceOnUse">
+    <filter id="filter-3" x="0" y="0" width="560" height="320" filterUnits="userSpaceOnUse">
       <feOffset result="offset" in="SourceAlpha"/>
       <feGaussianBlur result="blur"/>
       <feFlood result="flood" flood-color="#fff"/>
       <feComposite result="composite" operator="in" in2="blur"/>
       <feBlend result="blend" in="SourceGraphic"/>
     </filter>
-    <filter id="filter-5" x="40" y="40" width="60" height="20" filterUnits="userSpaceOnUse">
-      <feOffset result="offset" in="SourceAlpha"/>
-      <feGaussianBlur result="blur"/>
-      <feFlood result="flood" flood-color="#fff"/>
-      <feComposite result="composite" operator="in" in2="blur"/>
-      <feBlend result="blend" in="SourceGraphic"/>
-    </filter>
-    <filter id="filter-6" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse">
-      <feOffset result="offset" in="SourceAlpha"/>
-      <feGaussianBlur result="blur"/>
-      <feFlood result="flood" flood-color="#fff"/>
-      <feComposite result="composite" operator="in" in2="blur"/>
-      <feBlend result="blend" in="SourceGraphic"/>
-    </filter>
-    <filter id="filter-8" x="19" y="19" width="63" height="63" filterUnits="userSpaceOnUse">
+    <filter id="filter-5" x="-1" y="-1" width="563" height="323" filterUnits="userSpaceOnUse">
       <feOffset result="offset" dx="2.121" dy="2.121" in="SourceAlpha"/>
       <feGaussianBlur result="blur"/>
       <feFlood result="flood" flood-color="#d96868"/>
@@ -138,19 +106,21 @@
       <feBlend result="blend-5" mode="darken" in2="blend-4"/>
     </filter>
   </defs>
-  <g id="Раскраски0" class="cls-1">
-    <rect id="Холст" class="cls-2" width="100" height="100"/>
-    <g id="Раскраски" class="cls-3">
-      <rect id="шесть" data-name="дв протяж" class="cls-4" y="60" width="60" height="20"/>
-      <path id="пять" data-name="накид скинуть со спицы" class="cls-5" d="M80,20h20V40H80V20ZM0,40H40V60H0V40Z"/>
-      <path id="четыре" data-name="1 нак провяз и добав 1 накид" class="cls-6" d="M40,20H80V40H40V20ZM80,80h20v20H80V80Z"/>
-      <rect id="три" class="cls-7" x="40" y="40" width="60" height="20"/>
-      <path id="два" class="cls-8" d="M0,0H60V20H0V0ZM60,60h40V80H60V60ZM0,80H20v20H0V80Z"/>
-      <path id="адин" class="cls-9" d="M60,0h40V20H60V0ZM0,20H20V40H0V20ZM20,80H80v20H20V80Z"/>
+  <g id="Маска" class="cls-1">
+    <rect id="Холст" class="cls-2" width="560" height="320"/>
+    <g id="Раскраски">
+      <path id="_3_вм_лиц" data-name="3 вм лиц" class="cls-3" d="M200,0h20V40H200V0ZM60,40H80V80H60V40ZM480,80h20v40H480V80ZM340,120h20v40H340V120ZM200,160h20v40H200V160ZM60,200H80v40H60V200Zm420,40h20v40H480V240ZM340,280h20v40H340V280Z"/>
+      <path id="накид" class="cls-4" d="M300,0h20V20H300V0Zm80,0h20V20H380V0ZM320,20h20V40H320V20Zm40,0h20V40H360V20ZM160,40h20V60H160V40Zm80,0h20V60H240V40ZM180,60h20V80H180V60Zm40,0h20V80H220V60ZM20,80H40v20H20V80Zm80,0h20v20H100V80ZM40,100H60v20H40V100Zm40,0h20v20H80V100Zm360,20h20v20H440V120Zm80,0h20v20H520V120Zm-60,20h20v20H460V140Zm40,0h20v20H500V140ZM300,160h20v20H300V160Zm80,0h20v20H380V160Zm-60,20h20v20H320V180Zm40,0h20v20H360V180ZM160,200h20v20H160V200Zm80,0h20v20H240V200Zm-60,20h20v20H180V220Zm40,0h20v20H220V220ZM20,240H40v20H20V240Zm80,0h20v20H100V240ZM40,260H60v20H40V260Zm40,0h20v20H80V260Zm360,20h20v20H440V280Zm80,0h20v20H520V280Zm-60,20h20v20H460V300Zm40,0h20v20H500V300Z"/>
+      <path id="изнаночная" class="cls-5" d="M140,0h20V80H140v40H120V40h20V0ZM260,0h40V40H280V80H260V0ZM400,0h20V40H400V0ZM0,40H20v80H0V40ZM420,80h20v80H420v40H400V120h20V80Zm120,0h20v80H540V80ZM280,120h20v80H280v40H260V160h20V120ZM140,160h20v80H140v40H120V200h20V160ZM0,200H20v80H0V200Zm420,40h20v80H400V280h20V240Zm120,0h20v80H540V240ZM280,280h20v40H280V280Z"/>
+      <path id="лицевая" class="cls-6" d="M0,0H20V40H0V0ZM60,0H80V40H60V0Zm60,0h20V40H120V0ZM320,0h60V20H360V120H340V20H320V0ZM420,0h20V80H420v40H400V40h20V0Zm60,0h20V80H480V0Zm60,0h20V80H540V0ZM180,20h20V40h20V20h20V60H220V160H200V60H180V20ZM280,40h20v80H280v40H260V80h20V40ZM40,60H60V80H80V60h20v40H80V200H60V100H40V60ZM140,80h20v80H140v40H120V120h20V80Zm320,20h20v20h20V100h20v40H500V240H480V140H460V100ZM0,120H20v80H0V120Zm320,20h20v20h20V140h20v40H360V280H340V180H320V140Zm100,20h20v80H420v40H400V200h20V160Zm120,0h20v80H540V160ZM180,180h20v20h20V180h20v40H220V320H200V220H180V180Zm100,20h20v80H280v40H260V240h20V200ZM40,220H60v20H80V220h20v40H80v60H60V260H40V220Zm100,20h20v80H120V280h20V240Zm320,20h20v20h20V260h20v40H500v20H480V300H460V260ZM0,280H20v40H0V280Zm320,20h20v20H320V300Zm40,0h20v20H360V300Z"/>
     </g>
   </g>
-  <g style="fill: #d24a43; filter: url(#filter-8)">
-    <rect id="Рапорт" class="cls-10" x="20" y="20" width="60" height="60" style="stroke: inherit; filter: none; fill: inherit"/>
+  <g style="fill: #d24a43; filter: url(#filter-5)">
+    <rect id="Рапорт" class="cls-7" width="560" height="320" style="stroke: inherit; filter: none; fill: inherit"/>
   </g>
   <use xlink:href="#Рапорт" style="stroke: #d96868; filter: none; fill: none"/>
+  <g id="Нумерция">
+    <text id="Справа135" class="cls-8" x="563" y="-665.005">99<tspan x="563" dy="19.994">97</tspan><tspan x="563" dy="19.994">95</tspan><tspan x="563" dy="19.994">93</tspan><tspan x="563" dy="19.994">91</tspan><tspan x="563" dy="19.994">89</tspan><tspan x="563" dy="19.994">87</tspan><tspan x="563" dy="19.994">85</tspan><tspan x="563" dy="19.994">83</tspan><tspan x="563" dy="19.994">81</tspan><tspan x="563" dy="19.994">79</tspan><tspan x="563" dy="19.994">77</tspan><tspan x="563" dy="19.994">75</tspan><tspan x="563" dy="19.994">73</tspan><tspan x="563" dy="19.994">71</tspan><tspan x="563" dy="19.994">69</tspan><tspan x="563" dy="19.994">67</tspan><tspan x="563" dy="19.994">65</tspan><tspan x="563" dy="19.994">63</tspan><tspan x="563" dy="19.994">61</tspan><tspan x="563" dy="19.994">59</tspan><tspan x="563" dy="19.994">57</tspan><tspan x="563" dy="19.994">55</tspan><tspan x="563" dy="19.994">53</tspan><tspan x="563" dy="19.994">51</tspan><tspan x="563" dy="19.994">49</tspan><tspan x="563" dy="19.994">47</tspan><tspan x="563" dy="19.994">45</tspan><tspan x="563" dy="19.994">43</tspan><tspan x="563" dy="19.994">41</tspan><tspan x="563" dy="19.994">39</tspan><tspan x="563" dy="19.994">37</tspan><tspan x="563" dy="19.994">35</tspan><tspan x="563" dy="19.994">33</tspan><tspan x="563" dy="19.994">31</tspan><tspan x="563" dy="19.994">29</tspan><tspan x="563" dy="19.994">27</tspan><tspan x="563" dy="19.994">25</tspan><tspan x="563" dy="19.994">23</tspan><tspan x="563" dy="19.994">21</tspan><tspan x="563" dy="19.994">19</tspan><tspan x="563" dy="19.994">17</tspan><tspan x="563" dy="19.994">15</tspan><tspan x="563" dy="19.994">13</tspan><tspan x="563" dy="19.994">11</tspan><tspan x="563" dy="19.994">9</tspan><tspan x="563" dy="19.994">7</tspan><tspan x="563" dy="19.994">5</tspan><tspan x="563" dy="19.994">3</tspan><tspan x="563" dy="19.994">1</tspan></text>
+  </g>
+  <image id="Превью" width="580" height="320" xlink:href="data:img/png;base64,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"/>
 </svg>
