@@ -5,6 +5,7 @@
             "sass.enabled": true,
             "sass.options": {
                 "outputDir": "../css/",
+                "sourceComments": false,
                 "outputStyle": "compressed"
             },
             "bracketsEditorBookmarks.bookmarks": {
@@ -76,16 +77,11 @@
                 "D:/Project/GitHub/Генератор описаний/scss/themeШАБЛОН.scss": [],
                 "D:/Project/GitHub/Генератор описаний/scss/theme3.scss": [],
                 "D:/Project/GitHub/Генератор описаний/scss/theme2.scss": [],
-                "D:/Project/GitHub/Генератор описаний/js/ui.js": [],
-                "D:/Project/GitHub/Генератор описаний/scss/theme0.scss": [],
-                "D:/Project/GitHub/Генератор описаний/index.html": []
+                "D:/APP/GitHub/генератор описаний/.brackets.json": []
             },
             "brackets-git.gitPath": "git",
             "noDistractions": true,
-            "livedev.multibrowser": false,
-            "me.drewh.jsbeautify.on_save": false,
-            "steelbisondev.fixmyjs.on_save": false,
-            "linting.collapsed": false
+            "livedev.multibrowser": false
         }
     }
 }
