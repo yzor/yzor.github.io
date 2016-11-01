@@ -162,7 +162,7 @@ function RUS(n, w) {
       BD[w].d && //если есть описание И...
       SVG.noDouble[w] === undefined //если элемент выводится первый раз
     ) {
-      RUnum = "<span class='qwe1'>" + RUnum + " <span class='qwe2'>" /*+"(="*/ + BD[w].d + /*")"+*/ "</span></span>";
+      RUnum = "<span class='note-box'>" + RUnum + " <span class='note'>" /*+"(="*/ + BD[w].d + /*")"+*/ "</span></span>";
     }
   } else { //если слова нет в списке
     console.error('символа "' + w + '" нету в списке');
