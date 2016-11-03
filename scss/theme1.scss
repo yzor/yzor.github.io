@@ -146,7 +146,7 @@
     display: inline;
     //    line-height: 26px;
     padding: 2px 5px 0px 5px;
-    margin: 1px 1px 1px -5px;
+    margin: 1px -9px 1px -5px;
     .note {
       //описание
       transition: all 0.7s 0.2s;
@@ -154,11 +154,10 @@
       //      background: orange;
       border: none;
       border: solid red 1px;
-      border: dashed 1px #9B9B9B;
+      border: dashed 1px #C3C3C3;
       -webkit-box-decoration-break: clone;
       display: inline;
       display: inline-block;
-
       //        position: relative;
       //      font-size: 17px;
       //        line-height: 26px;
@@ -172,8 +171,8 @@
       transition: all 1.6s 0.2s;
     }
     &:hover {
-      .note{
-        border:1px dashed #4e4e4e;
+      .note {
+        border: 1px dashed #4e4e4e;
       }
       .note,
       li {

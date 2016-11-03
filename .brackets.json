@@ -81,7 +81,8 @@
             },
             "brackets-git.gitPath": "git",
             "noDistractions": true,
-            "livedev.multibrowser": false
+            "livedev.multibrowser": false,
+            "hirse.outline.enabled": true
         }
     }
 }

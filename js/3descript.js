@@ -97,7 +97,15 @@ function descrip() { //генерация описания
         ;
       } //рапорт END
       //ВЫВОД
+      //      console.warn(SVG.LIST[thisSymbol]);
+      //      if (
+      //        SVG.LIST[thisSymbol] && //если символ есть, не "undefined" И
+      //        (
+      //          1
+      //        )
+      //      ) console.log(SVG.LIST[thisSymbol] + " qwe");
       if ( //триггеры вывода элементов в описание
+
         SVG.LIST[thisSymbol] != SVG.LIST[afterSymbol] || //если следующий символ иной
         num == SVG.holst.W || //если символ последний в строке
         afterStar || // вывод первой звёздочки
@@ -113,8 +121,9 @@ function descrip() { //генерация описания
           SVG.LIST[thisSymbol] + "</li>" + //вставляем название символа и закрываем тег
           */
           afterStar + //вторая звёздочка если есть
-          zpt + //запятая
-          " " + // пробел, перенести в запятую мб?
+          ((SVG.LIST[thisSymbol]) ? zpt : "") + //запятая
+          ((SVG.LIST[thisSymbol]) ? " " : "") + //пробел, перенести в запятую мб?
+          //          " " + // пробел, перенести в запятую мб?
           beforeStar //первая звёздочка если есть
         ;
       }
