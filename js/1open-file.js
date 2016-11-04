@@ -5,7 +5,7 @@
 
 //var svgFolder = "//googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/";
 // var svgFolder = "https://googledrive.com/host/0B0zTgDj4fTXrYzZIdXE4cjhWbFE/";
-var svgFolder = "/SVG/";
+var svgFolder = "SVG/";
 
 
 

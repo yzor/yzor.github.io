@@ -18,10 +18,31 @@ console.clear();
 function uiNameData() { //jshint ignore:line
   //вывод имени
   var name = SVG.name;
-  if (name * 1) {
-    name = "№" + name;
+  if (!isNaN(parseFloat(name)) && name >= 1) {
+    name = '<a href="http://yzorrykodelie.ru/узор-спицами-№' + name +
+      '" target="_blank">Сейчас выбрана схема №' + name + '</a>';
+    //    name = "№" + name;
+  } else if (!isNaN(parseFloat(name)) && isFinite(name)) {
+    name = "Сейчас выбрана схема №" + name + "";
+  } else {
+    name = "Сейчас выбрана схема " + name + "";
   }
-  $("#futer_header>span").text(name); //вывод
+  $("#uzor-url").html(name); //вывод
+
+
+
+  //
+
+
+  //Сейчас выбрана схема <span>№_</span>
+
+
+
+
+
+
+  //  $("#futer_header>span").text(name); //вывод
+
 
   //вывод даты
   var txt;
@@ -68,6 +89,8 @@ function metamorphose() {
 }
 
 function headerHover() {
+
+
 
 
   $(document).on({ //наведение на "1-й ряд:"...
@@ -281,11 +304,9 @@ function uiShowScheme(xml, name) { //выводить SVG, пока для те�
 
 
 
-
+//Смена темы
 //ctrl 17
 //t 84
-
-
 $(function () {
   $('body').keydown(function (e) {
     //    console.warn(e.which);
@@ -294,7 +315,7 @@ $(function () {
       var n = $("#theme").attr("href");
       n = n.replace(/\D/g, '');
       n++;
-      if (n == 3) { //кол-во схем
+      if (n == 2) { //кол-во схем
         n = 0;
       }
       $("#theme").attr("href", "css/theme" + n + ".css");
