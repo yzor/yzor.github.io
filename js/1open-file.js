@@ -74,7 +74,7 @@ function fileUrl(name) {
     $("#number").removeClass("impulseError"); //убрать класс ошибки
 
     xmlParser(data, date, name); //jshint ignore:line
-    console.warn(name);
+    Ya("numURL", name); //jshint ignore:line
   }
 
   function ajaxFalse() {
@@ -143,9 +143,10 @@ function fileOpen(file) { //получение текста из файла
     var contents = $.parseXML(event.target.result);
     //отправляем свг на разбор
     xmlParser(contents, date, name); //jshint ignore:line
-    console.warn(name);
+    Ya("numSVG", name); //jshint ignore:line
     // fileSelect(url2);
     // fileSelect(contents);
+
   };
   reader.onerror = function (event) {
     console.error("Файл не может быть прочитан! код " + event.target.error.code);
