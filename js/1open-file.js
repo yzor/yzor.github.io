@@ -74,6 +74,7 @@ function fileUrl(name) {
     $("#number").removeClass("impulseError"); //убрать класс ошибки
 
     xmlParser(data, date, name); //jshint ignore:line
+    console.warn(name);
   }
 
   function ajaxFalse() {
@@ -142,7 +143,7 @@ function fileOpen(file) { //получение текста из файла
     var contents = $.parseXML(event.target.result);
     //отправляем свг на разбор
     xmlParser(contents, date, name); //jshint ignore:line
-
+    console.warn(name);
     // fileSelect(url2);
     // fileSelect(contents);
   };

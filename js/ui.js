@@ -323,3 +323,45 @@ $(function () {
     }
   });
 });
+
+
+
+
+
+//  Ya("numSVG",qwe);
+//  Ya("numURL",qwe);
+function Ya(type, param, param2) { /*Ya метрика*/ //jshint ignore:line
+  if (typeof yaCounter40821989 !== "undefined") {
+    if (type == 'numURL' || type == 'numSVG') {
+      var num10 = param - (param % 10); //округление до десятков....
+      var num20 = param - (param % 20);
+      var num50 = param - (param % 50);
+      var num100 = param - (param % 100);
+      console.log(type + "-" + param + ":" + num10 + ":" + num20 + ":" + num50 + ":" + num100);
+      // yaCounter40821989.reachGoal('NUMBER', {
+      //   "NUMBER": qwe
+      // });
+      if (type == 'numURL') {
+        yaCounter40821989.reachGoal('NUMBER', { //jshint ignore:line
+          BRACKETSopenURL: {
+            NUM: param,
+            NUM10: num10,
+            NUM20: num20,
+            NUM50: num50,
+            NUM100: num100
+          }
+        });
+      } else if (type == 'numSVG') {
+        yaCounter40821989.reachGoal('NUMBER', { //jshint ignore:line
+          BRACKETSopenSVG: {
+            NUM: param,
+            NUM10: num10,
+            NUM20: num20,
+            NUM50: num50,
+            NUM100: num100
+          }
+        });
+      }
+    }
+  }
+}

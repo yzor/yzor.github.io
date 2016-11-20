@@ -14,10 +14,6 @@
         fill: #fff;
       }
 
-      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
-        fill-rule: evenodd;
-      }
-
       .cls-3 {
         fill: #00fffb;
       }
@@ -27,6 +23,7 @@
       }
 
       .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill-rule: evenodd;
         mix-blend-mode: multiply;
       }
 
@@ -111,20 +108,20 @@
     </filter>
   </defs>
   <g id="Маска" class="cls-1">
-    <path id="Холст" class="cls-2" d="M-10-10H270V190H-10V-10Z"/>
+    <rect id="Холст" class="cls-2" width="280" height="200"/>
     <g id="Раскраски">
-      <path id="_2_вм_изн" data-name="2 вм изн" class="cls-3" d="M210-10h20V10H210V-10ZM190,10h20V30H190V10ZM170,30h20V50H170V30ZM150,50h20V70H150V50ZM130,70h20V90H130V70ZM30,90H50v20H30V90Zm20,20H70v20H50V110Zm20,20H90v20H70V130Zm20,20h20v20H90V150Zm20,20h20v20H110V170Z"/>
-      <path id="накид" class="cls-4" d="M110-10h20V10H110V-10ZM90,10h20V30H90V10ZM70,30H90V50H70V30ZM50,50H70V70H50V50ZM30,70H50V90H30V70ZM130,90h20v20H130V90Zm20,20h20v20H150V110Zm20,20h20v20H170V130Zm20,20h20v20H190V150Zm20,20h20v20H210V170Z"/>
-      <path id="изнаночная" class="cls-5" d="M-10-10H10V190H-10V-10Zm140,0h80V10H190V30H170V50H150V70H130v40h20v20h20v20h20v20h20v20H130V170H110V150H90V130H70V110H50V70H70V50H90V30h20V10h20V-10Zm120,0h20V190H250V-10Z"/>
-      <path id="лицевая" class="cls-6" d="M10-10H110V10H90V30H70V50H50V70H30v40H50v20H70v20H90v20h20v20H10V-10Zm220,0h20V190H230V170H210V150H190V130H170V110H150V70h20V50h20V30h20V10h20V-10Z"/>
+      <path id="_2_вм_изн" data-name="2 вм изн" class="cls-3" d="M220,0h20V20H220V0ZM200,20h20V40H200V20ZM180,40h20V60H180V40ZM160,60h20V80H160V60ZM140,80h20v20H140V80ZM40,100H60v20H40V100Zm20,20H80v20H60V120Zm20,20h20v20H80V140Zm20,20h20v20H100V160Zm20,20h20v20H120V180Z"/>
+      <path id="накид" class="cls-4" d="M120,0h20V20H120V0ZM100,20h20V40H100V20ZM80,40h20V60H80V40ZM60,60H80V80H60V60ZM40,80H60v20H40V80Zm100,20h20v20H140V100Zm20,20h20v20H160V120Zm20,20h20v20H180V140Zm20,20h20v20H200V160Zm20,20h20v20H220V180Z"/>
+      <path id="изнаночная" class="cls-5" d="M0,0H20V200H0V0ZM140,0h80V20H200V40H180V60H160V80H140v40h20v20h20v20h20v20h20v20H140V180H120V160H100V140H80V120H60V80H80V60h20V40h20V20h20V0ZM260,0h20V200H260V0Z"/>
+      <path id="лицевая" class="cls-6" d="M20,0H120V20H100V40H80V60H60V80H40v40H60v20H80v20h20v20h20v20H20V0ZM240,0h20V200H240V180H220V160H200V140H180V120H160V80h20V60h20V40h20V20h20V0Z"/>
     </g>
   </g>
   <g style="fill: #d24a43; filter: url(#filter-5)">
-    <path id="Рапорт" class="cls-7" d="M-10-10H270V190H-10V-10Z" style="stroke: inherit; filter: none; fill: inherit"/>
+    <rect id="Рапорт" class="cls-7" width="280" height="200" style="stroke: inherit; filter: none; fill: inherit"/>
   </g>
   <use xlink:href="#Рапорт" style="stroke: #d96868; filter: none; fill: none"/>
   <g id="Нумерция">
     <text id="Справа135" class="cls-8" x="283" y="-785.004">99<tspan x="283" dy="15.6">97</tspan><tspan x="283" dy="15.6">95</tspan><tspan x="283" dy="15.6">93</tspan><tspan x="283" dy="15.6">91</tspan><tspan x="283" dy="15.6">89</tspan><tspan x="283" dy="15.6">87</tspan><tspan x="283" dy="15.6">85</tspan><tspan x="283" dy="15.6">83</tspan><tspan x="283" dy="15.6">81</tspan><tspan x="283" dy="15.6">79</tspan><tspan x="283" dy="15.6">77</tspan><tspan x="283" dy="15.6">75</tspan><tspan x="283" dy="15.6">73</tspan><tspan x="283" dy="15.6">71</tspan><tspan x="283" dy="15.6">69</tspan><tspan x="283" dy="15.6">67</tspan><tspan x="283" dy="15.6">65</tspan><tspan x="283" dy="15.6">63</tspan><tspan x="283" dy="15.6">61</tspan><tspan x="283" dy="15.6">59</tspan><tspan x="283" dy="15.6">57</tspan><tspan x="283" dy="15.6">55</tspan><tspan x="283" dy="15.6">53</tspan><tspan x="283" dy="15.6">51</tspan><tspan x="283" dy="15.6">49</tspan><tspan x="283" dy="15.6">47</tspan><tspan x="283" dy="15.6">45</tspan><tspan x="283" dy="15.6">43</tspan><tspan x="283" dy="15.6">41</tspan><tspan x="283" dy="15.6">39</tspan><tspan x="283" dy="15.6">37</tspan><tspan x="283" dy="15.6">35</tspan><tspan x="283" dy="15.6">33</tspan><tspan x="283" dy="15.6">31</tspan><tspan x="283" dy="15.6">29</tspan><tspan x="283" dy="15.6">27</tspan><tspan x="283" dy="15.6">25</tspan><tspan x="283" dy="15.6">23</tspan><tspan x="283" dy="15.6">21</tspan><tspan x="283" dy="15.6">19</tspan><tspan x="283" dy="15.6">17</tspan><tspan x="283" dy="15.6">15</tspan><tspan x="283" dy="15.6">13</tspan><tspan x="283" dy="15.6">11</tspan><tspan x="283" dy="15.6">9</tspan><tspan x="283" dy="15.6">7</tspan><tspan x="283" dy="15.6">5</tspan><tspan x="283" dy="15.6">3</tspan><tspan x="283" dy="15.6">1</tspan></text>
   </g>
-  <image id="Превью" width="300" height="200" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADIAgMAAAAvsTTGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACVBMVEUfHx//uwAAAABHxDkJAAAAAWJLR0QCZgt8ZAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+ALDhQhOYUqYUcAAASKSURBVGje7dvNjvI6DAbgINE9R2ruBxbsQYrv/1a+pu1Qh9rOa5ezaxfV/KDMi5M8CYFJ6SfXQNP1m6bWtuZ7podyKylPX80P2d2e6+OICmuL6g/F2z1dSLuG9XFtW3quREnLVQZfrulBr6zEejlzjZlKVnLdea7XlL+TawpVBiVX4rnuZcydXLdaYjlXufBcpZS8jI6XeqttSb+o5dq+vbK2buqttiX9ItM9b9/Wtv6eo16vZRiJ5WrqVSh165XnYSTUq8zhtnpN/d0bX3VMaKOrzfXqjq86VsVc90xtP16687HOIblc/vlY57aUa0xtvba29FzVHLFcqe1HnuvYrc117Frbuvz3g+v2+1x6PyLUo/2IUI+OL4R6MBdEPZhrRKjfvC/JcAKifvOeiuEXRD33iwzvCaL+z/vqVzpI/Z/39Db6EaKeufow+hGintXraY0vhHqW62mNL4R6lmuw5iNCPTofEepRJxDqT++P5BL7EaYe6EeYemB8wdT3c+HU93ONMPV8fy97j1PPvM9yLpx65kRWvCec+s/+PineE079x3tlH41Tz1xV1kec+v7+vsDUb7nKTc6FU8/299rrR5h6YD7C1ANOwNSf3h/J9d2PPurtfvRRb48vH/VmLif1Zq7RRz33fpfLSf3mfRl3uZzU2/t7clJv7e/JSf3He6Fe5KLe9N5Jvel98VHPvN/nclJve++j3p6PPuptJ3zUn94fycX6MUC92o8B6tXxFaBeyxWhXss1Bqhn3j94rgj1bH9/4bki1DO/3o33FKH+4/278Z4i1MvnORHqmffvpl4B6tt6sfEVoF7LFaFeyxWhXp2PAepVJwLUn94fycX6kWbWSRr3mZz9SNp8XBYC1/gibT4uC4Ez10vMtS4Ezlx3Mde4LARmrmnKfuWSe3VdCMxcw/CVa2Z9n2tdCMxceSDuvc46KQsB835rq8M6KQsB8357jusTT0q9qO/Xffje5yS5XhnYT3zlWlgXxteyENje5y9Xs7xurwuBmSt9jfukzcdlIXDtc5JSr3Uh8MzHdZBJBZsXgtP7X+fa+jGMvn4u50ffyOVG38jlRt/I5UZ/no+DmMuNfmsO/yt+9Oe2Mu3Oc2LoT3vyTLvznBj6dX8v1cuP/vLaSjzHdKNf23pLuQLot23xcxM/+rWth5QrgL56jhlAX5uPEfRP74O5vvoxgn7nfXcX+r1cHvR7uTzo93J50G/3mPs/5UG/tvXUc7nQ/7SVBMLd6F+HOll35/ch9K+7fXQUfX199KMv7e+j6Ne2rmouH/rzfiJruXzo259T8KFvzkcn+qf3wVxSPzrRRz5Xi6IP5QLRh3KB6EO5QPTF85wg+vN5TrZzoehr+/sY+vL+Pob+tVsvFH3bex/6tvc+9D9naXouGH3bex/6wOeQYfT78xFH//Q+mEvtRxx99P8oCEAfz9VHH8/VRx/P1Ue/PVOwcvXRX96vBXIB6C/v81nee9C/srZuB9HXznP86H+eY6deCPptW3ouBH00F4I+mgtBH/0/QwR9cD5C6P8v3v/mmtv6B4iJkZwZo/wAAAAAAElFTkSuQmCC"/>
+  <image id="Превью" width="300" height="200" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADIAgMAAAAvsTTGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACVBMVEUfHx//uwAAAABHxDkJAAAAAWJLR0QCZgt8ZAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+ALDxMOHGHB/I0AAASKSURBVGje7dvNjvI6DAbgINE9R2ruBxbsQYrv/1a+pu1Qh9rOa5ezaxfV/KDMi5M8CYFJ6SfXQNP1m6bWtuZ7podyKylPX80P2d2e6+OICmuL6g/F2z1dSLuG9XFtW3quREnLVQZfrulBr6zEejlzjZlKVnLdea7XlL+TawpVBiVX4rnuZcydXLdaYjlXufBcpZS8jI6XeqttSb+o5dq+vbK2buqttiX9ItM9b9/Wtv6eo16vZRiJ5WrqVSh165XnYSTUq8zhtnpN/d0bX3VMaKOrzfXqjq86VsVc90xtP16687HOIblc/vlY57aUa0xtvba29FzVHLFcqe1HnuvYrc117Frbuvz3g+v2+1x6PyLUo/2IUI+OL4R6MBdEPZhrRKjfvC/JcAKifvOeiuEXRD33iwzvCaL+z/vqVzpI/Z/39Db6EaKeufow+hGintXraY0vhHqW62mNL4R6lmuw5iNCPTofEepRJxDqT++P5BL7EaYe6EeYemB8wdT3c+HU93ONMPV8fy97j1PPvM9yLpx65kRWvCec+s/+PineE079x3tlH41Tz1xV1kec+v7+vsDUb7nKTc6FU8/299rrR5h6YD7C1ANOwNSf3h/J9d2PPurtfvRRb48vH/VmLif1Zq7RRz33fpfLSf3mfRl3uZzU2/t7clJv7e/JSf3He6Fe5KLe9N5Jvel98VHPvN/nclJve++j3p6PPuptJ3zUn94fycX6MUC92o8B6tXxFaBeyxWhXss1Bqhn3j94rgj1bH9/4bki1DO/3o33FKH+4/278Z4i1MvnORHqmffvpl4B6tt6sfEVoF7LFaFeyxWhXp2PAepVJwLUn94fycX6kWbWSRr3mZz9SNp8XBYC1/gibT4uC4Ez10vMtS4Ezlx3Mde4LARmrmnKfuWSe3VdCMxcw/CVa2Z9n2tdCMxceSDuvc46KQsB835rq8M6KQsB8357jusTT0q9qO/Xffje5yS5XhnYT3zlWlgXxteyENje5y9Xs7xurwuBmSt9jfukzcdlIXDtc5JSr3Uh8MzHdZBJBZsXgtP7X+fa+jGMvn4u50ffyOVG38jlRt/I5UZ/no+DmMuNfmsO/yt+9Oe2Mu3Oc2LoT3vyTLvznBj6dX8v1cuP/vLaSjzHdKNf23pLuQLot23xcxM/+rWth5QrgL56jhlAX5uPEfRP74O5vvoxgn7nfXcX+r1cHvR7uTzo93J50G/3mPs/5UG/tvXUc7nQ/7SVBMLd6F+HOll35/ch9K+7fXQUfX199KMv7e+j6Ne2rmouH/rzfiJruXzo259T8KFvzkcn+qf3wVxSPzrRRz5Xi6IP5QLRh3KB6EO5QPTF85wg+vN5TrZzoehr+/sY+vL+Pob+tVsvFH3bex/6tvc+9D9naXouGH3bex/6wOeQYfT78xFH//Q+mEvtRxx99P8oCEAfz9VHH8/VRx/P1Ue/PVOwcvXRX96vBXIB6C/v81nee9C/srZuB9HXznP86H+eY6deCPptW3ouBH00F4I+mgtBH/0/QwR9cD5C6P8v3v/mmtv6B4iJkZwZo/wAAAAAAElFTkSuQmCC"/>
 </svg>

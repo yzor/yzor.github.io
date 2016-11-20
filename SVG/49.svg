@@ -1,0 +1,195 @@
+<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="200" viewBox="0 0 600 200">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #00fffb;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill-opacity: 0;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill-rule: evenodd;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3, .cls-4, .cls-6 {
+        filter: url(#filter-2);
+      }
+
+      .cls-4 {
+        fill: #ff3700;
+      }
+
+      .cls-5 {
+        fill: #7800ff;
+        filter: url(#filter-4);
+      }
+
+      .cls-6 {
+        fill: #fff600;
+      }
+
+      .cls-7 {
+        fill: #d24a43;
+        filter: url(#filter-6);
+      }
+
+      .cls-8 {
+        font-size: 13px;
+        font-family: Ebrima;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="1" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feOffset result="offset-2" dx="0.707" dy="0.707" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood result="flood-2"/>
+      <feComposite result="composite-2" operator="in" in2="blur-2"/>
+      <feBlend result="blend" in2="composite"/>
+      <feOffset result="offset-3" dy="1" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood result="flood-3"/>
+      <feComposite result="composite-3" operator="in" in2="blur-3"/>
+      <feBlend result="blend-2" in2="blend"/>
+      <feBlend result="blend-3" in="SourceGraphic"/>
+      <feGaussianBlur result="blur-4" in="SourceAlpha"/>
+      <feFlood result="flood-4"/>
+      <feComposite result="composite-4" operator="out" in2="blur-4"/>
+      <feOffset result="offset-4" dx="1"/>
+      <feComposite result="composite-5" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-4" in2="blend-3"/>
+      <feGaussianBlur result="blur-5" in="SourceAlpha"/>
+      <feFlood result="flood-5"/>
+      <feComposite result="composite-6" operator="out" in2="blur-5"/>
+      <feOffset result="offset-5" dx="0.707" dy="0.707"/>
+      <feComposite result="composite-7" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-5" in2="blend-4"/>
+      <feGaussianBlur result="blur-6" in="SourceAlpha"/>
+      <feFlood result="flood-6"/>
+      <feComposite result="composite-8" operator="out" in2="blur-6"/>
+      <feOffset result="offset-6" dy="1"/>
+      <feComposite result="composite-9" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-6" in2="blend-5"/>
+    </filter>
+    <filter id="filter-2" x="20" y="0" width="540" height="200" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-4" x="0" y="0" width="580" height="200" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-6" x="159" y="-1" width="283" height="203" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="2.121" dy="2.121" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#d96868"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feOffset result="offset-2" dx="1.923" dy="-0.551" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood result="flood-2" flood-color="#d96868"/>
+      <feComposite result="composite-2" operator="in" in2="blur-2"/>
+      <feBlend result="blend" mode="darken" in2="composite"/>
+      <feOffset result="offset-3" dx="-0.781" dy="1.841" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood result="flood-3" flood-color="#d96868"/>
+      <feComposite result="composite-3" operator="in" in2="blur-3"/>
+      <feBlend result="blend-2" mode="darken" in2="blend"/>
+      <feOffset result="offset-4" dx="-0.707" dy="-0.707" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-4"/>
+      <feFlood result="flood-4" flood-color="#d96868"/>
+      <feComposite result="composite-4" operator="in" in2="blur-4"/>
+      <feBlend result="blend-3" mode="darken" in2="blend-2"/>
+      <feOffset result="offset-5" dx="1" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-5"/>
+      <feFlood result="flood-5" flood-color="#d96868"/>
+      <feComposite result="composite-5" operator="in" in2="blur-5"/>
+      <feBlend result="blend-4" in2="blend-3"/>
+      <feOffset result="offset-6" dx="0.707" dy="0.707" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-6"/>
+      <feFlood result="flood-6" flood-color="#d96868"/>
+      <feComposite result="composite-6" operator="in" in2="blur-6"/>
+      <feBlend result="blend-5" in2="blend-4"/>
+      <feOffset result="offset-7" dy="1" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-7"/>
+      <feFlood result="flood-7" flood-color="#d96868"/>
+      <feComposite result="composite-7" operator="in" in2="blur-7"/>
+      <feBlend result="blend-6" in2="blend-5"/>
+      <feBlend result="blend-7" in="SourceGraphic"/>
+      <feGaussianBlur result="blur-8" in="SourceAlpha"/>
+      <feFlood result="flood-8" flood-color="#d96868"/>
+      <feComposite result="composite-8" operator="out" in2="blur-8"/>
+      <feOffset result="offset-8" dx="2.121" dy="2.121"/>
+      <feComposite result="composite-9" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-8" mode="darken" in2="blend-7"/>
+      <feGaussianBlur result="blur-9" in="SourceAlpha"/>
+      <feFlood result="flood-9" flood-color="#d96868"/>
+      <feComposite result="composite-10" operator="out" in2="blur-9"/>
+      <feOffset result="offset-9" dx="1.854" dy="-0.749"/>
+      <feComposite result="composite-11" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-9" mode="darken" in2="blend-8"/>
+      <feGaussianBlur result="blur-10" in="SourceAlpha"/>
+      <feFlood result="flood-10" flood-color="#d96868"/>
+      <feComposite result="composite-12" operator="out" in2="blur-10"/>
+      <feOffset result="offset-10" dx="-0.707" dy="-0.707"/>
+      <feComposite result="composite-13" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-10" mode="darken" in2="blend-9"/>
+      <feGaussianBlur result="blur-11" in="SourceAlpha"/>
+      <feFlood result="flood-11" flood-color="#d96868"/>
+      <feComposite result="composite-14" operator="out" in2="blur-11"/>
+      <feOffset result="offset-11" dx="-0.684" dy="1.879"/>
+      <feComposite result="composite-15" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-11" mode="darken" in2="blend-10"/>
+      <feGaussianBlur result="blur-12" in="SourceAlpha"/>
+      <feFlood result="flood-12" flood-color="#d96868"/>
+      <feComposite result="composite-16" operator="out" in2="blur-12"/>
+      <feOffset result="offset-12" dx="1"/>
+      <feComposite result="composite-17" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-12" in2="blend-11"/>
+      <feGaussianBlur result="blur-13" in="SourceAlpha"/>
+      <feFlood result="flood-13" flood-color="#d96868"/>
+      <feComposite result="composite-18" operator="out" in2="blur-13"/>
+      <feOffset result="offset-13" dx="0.707" dy="0.707"/>
+      <feComposite result="composite-19" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-13" in2="blend-12"/>
+      <feGaussianBlur result="blur-14" in="SourceAlpha"/>
+      <feFlood result="flood-14" flood-color="#d96868"/>
+      <feComposite result="composite-20" operator="out" in2="blur-14"/>
+      <feOffset result="offset-14" dy="1"/>
+      <feComposite result="composite-21" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-14" in2="blend-13"/>
+    </filter>
+  </defs>
+  <g id="Маска" class="cls-1">
+    <rect id="Холст" class="cls-2" width="580" height="200"/>
+    <g id="Раскраски">
+      <path id="_2_вм_изн" data-name="2 вм изн" class="cls-3" d="M120,0h20V20H120V0Zm40,0h20V20H160V0ZM400,0h20V20H400V0Zm40,0h20V20H440V0ZM100,20h20V40H100V20Zm80,0h20V40H180V20Zm200,0h20V40H380V20Zm80,0h20V40H460V20ZM80,40h20V60H80V40Zm120,0h20V60H200V40Zm160,0h20V60H360V40Zm120,0h20V60H480V40ZM60,60H80V80H60V60Zm160,0h20V80H220V60Zm120,0h20V80H340V60Zm160,0h20V80H500V60ZM40,80H60v20H40V80Zm200,0h20v20H240V80Zm80,0h20v20H320V80Zm200,0h20v20H520V80ZM20,100H40v20H20V100Zm240,0h20v20H260V100Zm40,0h20v20H300V100Zm240,0h20v20H540V100ZM40,120H60v20H40V120Zm200,0h20v20H240V120Zm80,0h20v20H320V120Zm200,0h20v20H520V120ZM60,140H80v20H60V140Zm160,0h20v20H220V140Zm120,0h20v20H340V140Zm160,0h20v20H500V140ZM80,160h20v20H80V160Zm120,0h20v20H200V160Zm160,0h20v20H360V160Zm120,0h20v20H480V160ZM100,180h20v20H100V180Zm80,0h20v20H180V180Zm200,0h20v20H380V180Zm80,0h20v20H460V180Z"/>
+      <path id="накид" class="cls-4" d="M20,0H40V100H20V0ZM260,0h20V100H260V0Zm40,0h20V100H300V0ZM540,0h20V100H540V0ZM120,100h20V200H120V100Zm40,0h20V200H160V100Zm240,0h20V200H400V100Zm40,0h20V200H440V100Z"/>
+      <path id="изнаночная" class="cls-5" d="M0,0H20V200H0V0ZM140,0h20V200H140V0ZM280,0h20V200H280V0ZM420,0h20V200H420V0ZM560,0h20V200H560V0Z"/>
+      <path id="лицевая" class="cls-6" d="M40,0h80V20H100V40H80V60H60V80H40V0ZM180,0h80V80H240V60H220V40H200V20H180V0ZM320,0h80V20H380V40H360V60H340V80H320V0ZM460,0h80V80H520V60H500V40H480V20H460V0ZM120,20h20v80H120v80H100V160H80V140H60V120H40V100H60V80H80V60h20V40h20V20Zm40,0h20V40h20V60h20V80h20v20h20v20H240v20H220v20H200v20H180V100H160V20Zm240,0h20v80H400v80H380V160H360V140H340V120H320V100h20V80h20V60h20V40h20V20Zm40,0h20V40h20V60h20V80h20v20h20v20H520v20H500v20H480v20H460V100H440V20ZM20,120H40v20H60v20H80v20h20v20H20V120Zm240,0h20v80H200V180h20V160h20V140h20V120Zm40,0h20v20h20v20h20v20h20v20H300V120Zm240,0h20v80H480V180h20V160h20V140h20V120Z"/>
+    </g>
+  </g>
+  <rect id="Рапорт" class="cls-7" x="160" width="280" height="200"/>
+  <g id="Нумерция">
+    <text id="Справа135" class="cls-8" x="583" y="-785.004">99<tspan x="583" dy="15.6">97</tspan><tspan x="583" dy="15.6">95</tspan><tspan x="583" dy="15.6">93</tspan><tspan x="583" dy="15.6">91</tspan><tspan x="583" dy="15.6">89</tspan><tspan x="583" dy="15.6">87</tspan><tspan x="583" dy="15.6">85</tspan><tspan x="583" dy="15.6">83</tspan><tspan x="583" dy="15.6">81</tspan><tspan x="583" dy="15.6">79</tspan><tspan x="583" dy="15.6">77</tspan><tspan x="583" dy="15.6">75</tspan><tspan x="583" dy="15.6">73</tspan><tspan x="583" dy="15.6">71</tspan><tspan x="583" dy="15.6">69</tspan><tspan x="583" dy="15.6">67</tspan><tspan x="583" dy="15.6">65</tspan><tspan x="583" dy="15.6">63</tspan><tspan x="583" dy="15.6">61</tspan><tspan x="583" dy="15.6">59</tspan><tspan x="583" dy="15.6">57</tspan><tspan x="583" dy="15.6">55</tspan><tspan x="583" dy="15.6">53</tspan><tspan x="583" dy="15.6">51</tspan><tspan x="583" dy="15.6">49</tspan><tspan x="583" dy="15.6">47</tspan><tspan x="583" dy="15.6">45</tspan><tspan x="583" dy="15.6">43</tspan><tspan x="583" dy="15.6">41</tspan><tspan x="583" dy="15.6">39</tspan><tspan x="583" dy="15.6">37</tspan><tspan x="583" dy="15.6">35</tspan><tspan x="583" dy="15.6">33</tspan><tspan x="583" dy="15.6">31</tspan><tspan x="583" dy="15.6">29</tspan><tspan x="583" dy="15.6">27</tspan><tspan x="583" dy="15.6">25</tspan><tspan x="583" dy="15.6">23</tspan><tspan x="583" dy="15.6">21</tspan><tspan x="583" dy="15.6">19</tspan><tspan x="583" dy="15.6">17</tspan><tspan x="583" dy="15.6">15</tspan><tspan x="583" dy="15.6">13</tspan><tspan x="583" dy="15.6">11</tspan><tspan x="583" dy="15.6">9</tspan><tspan x="583" dy="15.6">7</tspan><tspan x="583" dy="15.6">5</tspan><tspan x="583" dy="15.6">3</tspan><tspan x="583" dy="15.6">1</tspan></text>
+  </g>
+  <image id="Превью" width="600" height="200" xlink:href="data:img/png;base64,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"/>
+</svg>
