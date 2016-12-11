@@ -163,6 +163,7 @@ function descrip() { //генерация описания
 
     //  console.log(SVG.LIST);
     $("#container").html(SVG.D); //выводим в HTML
+    console.info(SVG.D);
     metamorphose(); //поднятие шторки если опущена
     //  console.warn(SVG.GRID2);
     //  console.log(SVG.D + "qwe");
