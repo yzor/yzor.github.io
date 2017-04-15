@@ -1,0 +1,269 @@
+//https://css-tricks.com/almanac/properties/b/box-decoration-break/
+#description {
+  cursor: default;
+  color: #4e4e4e;
+  font-family: Verdana, Geneva, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: left;
+  b {
+    //10-й ряд:
+    color: #676767;
+    &:hover {
+      //наведение на фразу 10-й ряд:
+      color: black;
+    }
+  }
+  ul,
+  p {
+    //параграф/ряд
+    //color: rgba(0, 0, 0, 0);
+    &::selection {
+      //    color: red;
+      background: none;
+//      background: red !important;
+    }
+    //строка
+    text-indent: 0px;
+    padding: 0;
+    margin: 0px 0;
+    margin: 7px 0; //отступы между строк
+    /*     line-height: 0px; */
+    /*
+       line-height: 26px;
+      /**/
+    &:hover .zakl {
+      width: 13px;
+      //      transform: translate(-11px, 0);
+      transition: all 0.3s 0.5s;
+      opacity: 1;
+    }
+    .zakl {
+      display: block;
+      //      background: green;
+      position: fixed;
+      position: absolute;
+      width: 4px;
+      margin-top: 4px;
+      height: 20px;
+      overflow: hidden;
+      //      left: -30px;
+      right: 100%;
+      z-index: 0;
+      background-image: url(../image/lenta.png);
+      transition: all 0.4s 0.6s;
+      opacity: 0;
+      &:hover {
+        width: 30px;
+        //        transform: translate(-21px, 0);
+        transition: all 0.17s 0.0s;
+      }
+    }
+    li,
+    .box {
+      color: #4e4e4e;
+      /*один блок строки*/
+      background: #ddd;
+      border: 1px solid;
+      padding: 3px 4px 3px 2px;
+      border-radius: 3px;
+      //            line-height: 26px;
+      margin: 0 0 0 -2px;
+      position: relative;
+      //      line-height: 17px;
+      height: 16px;
+      display: inline-block;
+      margin: 1px -3px;
+      &:hover {
+        background: #bbb;
+      }
+      &:active {
+        z-index: 999;
+        transform: scale(1.1);
+        background: gold;
+      }
+      &.marker {
+        /*закладка*/
+        background: gold;
+        i {
+          /* цифра в закладке*/
+          background: orange;
+        }
+      }
+      i {
+        //цифра в блоке
+        font-style: normal;
+        border: 1px solid;
+        padding: 0 5px;
+        margin: 0px -1px 0px 0px;
+        border-radius: 3px;
+        &:hover {
+          background: #999;
+        }
+      }
+    }
+    &.illumination-hover li {
+      /*подсветка ряда при наведении на "1-й ряд:"*/
+      background: rgba(255, 215, 0, 0.2);
+    }
+    &.illumination li {
+      /*подсветка ряда при нажатии на "1-й ряд:"*/
+      background: rgba(255, 215, 0, 0.5);
+    }
+    &.illumination.illumination-hover li {
+      background: rgba(255, 215, 0, 0.7);
+      /*пересечение стилей илюминация и ховер*/
+      //      color: black;
+    }
+  }
+  .raport {
+    //рапорт
+    font-size: 0;
+    color: rgba(0, 0, 0, 0);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    /*  border-radius: 50% ;*/
+    padding: 0;
+    margin: 0;
+    margin-bottom: -4px;
+    overflow: hidden;
+    /*  border: 1px dashed red;*/
+    background: url(../image/raport1.png) no-repeat !important;
+    /*  background-repeat: no-repeat;*/
+    /*  background-image: url(../image/raport2.png) !important;*/
+    &.l {
+      //отступы слева
+      margin-left: 4px;
+      margin-right: 0px;
+    }
+    &.r {
+      //отступы справа
+      margin-left: 0px;
+      margin-right: 5px;
+    }
+  }
+  .note-box {
+    //box описания
+    //    outline: solid red 1px;
+    line-height: 16px;
+    display: inline;
+    //    line-height: 26px;
+    padding: 2px 5px 0px 5px;
+    margin: 1px -9px 1px -5px;
+    .note {
+      //описание
+      transition: all 0.7s 0.2s;
+      border-radius: 4px;
+      //      background: orange;
+      border: none;
+      border: solid red 1px;
+      border: dashed 1px #C3C3C3;
+      -webkit-box-decoration-break: clone;
+      display: inline;
+      display: inline-block;
+      //        position: relative;
+      //      font-size: 17px;
+      //        line-height: 26px;
+      //        height: 111px;
+      padding: 3px 5px 3px 5px;
+      margin: 1px 1px 1px 1px;
+      top: 0px;
+      position: relative;
+    }
+    li {
+      transition: all 1.6s 0.2s;
+    }
+    &:hover {
+      .note {
+        border: 1px dashed #4e4e4e;
+      }
+      .note,
+      li {
+        background: orange;
+        background: gold;
+        background-clip: border-box;
+        transition: all 0.3s 0.0s;
+        box-shadow: inset 70px 20px 134px -41px orange, inset -50px 40px 30px -40px gold, inset -70px 0px 74px -41px orange, inset 0px 0px 0px 400px gold;
+      }
+      li {
+        //        background: gold;
+      }
+      //      background: gold;
+      //      background: #FFE975;
+    }
+  }
+}
+
+::selection {
+  //    color: red;
+  background: none;
+  //      background: gold;
+  //      background: blue;
+  color: black;
+  text-shadow: /*
+        0px 0px 5px red,
+        0px 0px 5px red,
+        0px 0px 5px red,
+        0px 0px 5px red,
+        0px 0px 5px red,
+        /*
+        0px 0px   0px red,
+        1px 0px   0px red,
+        0px 1px   0px red,
+        1px 1px   0px red,
+        1px -1px  0px red,
+       -1px 0px   0px red,
+        0px -1px  0px red,
+        -1px -1px 0px red,
+        /**/
+  2px 1px 5px orange, 2px -1px 5px gold, -2px 1px 5px gold, -2px -1px 5px gold, 2px 1px 5px gold, 2px 1px 5px gold, 2px 1px 5px gold, 5px 0px 5px gold, 0px 5px 5px gold, -5px 0px 5px gold, 0px -5px 5px gold, 3px 0px 4px orange, -3px 0px 4px orange
+  /*
+        0px 0px 0px red,
+        0px 0px 0px red,
+        0px 0px 0px red,
+        0px 0px 0px red
+        */
+  ;
+}
+
+.note-box i {
+  //отметить для тестов  символы с описаниями
+  //  background: orange;
+}
+
+//////////////////////////////////////////////////////////////////
+.illumination-hover0 {
+  z-index: 10 !important;
+  position: relative;
+  position: absolute;
+  position: fixed;
+  position: relative !important;
+}
+
+.illumination-hover0:before {
+  content: '';
+  position: absolute;
+  position: relative;
+  position: absolute;
+  display: block;
+  /* top: -50px; */
+  z-index: -1;
+  width: 100%;
+  padding: 10px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  /* height: 50px; */
+  /* background: gold; */
+  padding: 10px;
+  left: -10px;
+  margin: 0px;
+  border-radius: 4px;
+  border: dotted 1px;
+}
+
+#container {
+  ul {
+    li {}
+  }
+}
