@@ -100,6 +100,12 @@ DATABASE2 = {
 
 
 
+function RUS3(w) { //выдаём 3 склонение
+  if (BD[w]) {
+    w = BD[w].w[1];
+  }
+  return w;
+}
 
 $.when.apply($, deferreds).done(function () { //дождатся окончания ajax
   //все запросы к RUS Обвернуть в данную конструкцию

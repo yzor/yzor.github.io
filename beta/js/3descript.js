@@ -129,7 +129,7 @@ function description(QWE) { //генерация описания
           sameAll++;
           if (sameAll == QWE.PIX[i].length) {
             // console.warn("Все одинаковые",QWE.PIX[i]);
-            D += "<p><b>" + rowN(i) + "-й ряд:</b> все " + QWE.PIX[i][0] + "</p>";
+            D += "<p><b>" + rowN(i) + "-й ряд:</b> <span class='box'><i>все</i> " +   RUS3(QWE.PIX[i][0]) + "</span></p>";
             return; //не продолжать вычисления если все одинаковые
           }
         }

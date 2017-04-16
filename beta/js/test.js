@@ -16,7 +16,7 @@ var Url15 = "https://psd.ru/pen/_.psd";
 
 
 
-var Url16 = "https://psd.ru/40.psd";
+var Url16 = "https://psd.ru/2.psd";
 
  Psd(Url16);
 
