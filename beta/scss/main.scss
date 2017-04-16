@@ -1,17 +1,39 @@
-
 body {
-  font-size: 14px;
   //  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
   font-family: Helvetica, Arial, sans-serif;
   color: #676767;
   font-size: 12px;
   margin: 0;
-//  background: gold url(../image/favicon.png) fixed;
   background: #222;
-  height: 100%;
+  background: gold url(../image/favicon.png) fixed;
   width: 100%;
-  position: absolute;
+//  position: absolute;
+  height: 100%;
+  min-height: 100vh;
+
+
+  /*
+
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background: #191919;
+  color: #ffcb3b;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  flex-direction: column;
+  align-items: baseline;
+
+  */
 }
+//body,html{
+//  background: red !important;
+//  height: 400px !important;
+//  width: 400px !important;
+//}
+
+
 
 #description {//блок описания
   background: white;

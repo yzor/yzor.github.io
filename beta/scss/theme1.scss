@@ -10,18 +10,16 @@
     //10-й ряд:
     color: #676767;
     &:hover {
-      //наведение на фразу 10-й ряд:
       color: black;
+      //      background: red;
     }
   }
   ul,
   p {
-    //параграф/ряд
-    //color: rgba(0, 0, 0, 0);
+    //    color:rgba(0, 0, 0, 0);
     &::selection {
       //    color: red;
       background: none;
-//      background: red !important;
     }
     //строка
     text-indent: 0px;
@@ -102,23 +100,23 @@
         }
       }
     }
-    &.illumination-hover li {
+    &.illumination-hover .box {
       /*подсветка ряда при наведении на "1-й ряд:"*/
       background: rgba(255, 215, 0, 0.2);
     }
-    &.illumination li {
+    &.illumination .box {
       /*подсветка ряда при нажатии на "1-й ряд:"*/
       background: rgba(255, 215, 0, 0.5);
     }
-    &.illumination.illumination-hover li {
+    &.illumination.illumination-hover .box {
       background: rgba(255, 215, 0, 0.7);
       /*пересечение стилей илюминация и ховер*/
       //      color: black;
     }
   }
-  .raport {
+  .star {
     //рапорт
-    font-size: 0;
+    //    font-size: 0;
     color: rgba(0, 0, 0, 0);
     width: 16px;
     height: 16px;
@@ -126,7 +124,7 @@
     /*  border-radius: 50% ;*/
     padding: 0;
     margin: 0;
-    margin-bottom: -4px;
+    margin-bottom: -3px;
     overflow: hidden;
     /*  border: 1px dashed red;*/
     background: url(../image/raport1.png) no-repeat !important;
@@ -134,13 +132,13 @@
     /*  background-image: url(../image/raport2.png) !important;*/
     &.l {
       //отступы слева
-      margin-left: 4px;
-      margin-right: 0px;
+      margin-left: 5px;
+      margin-right: 1px;
     }
     &.r {
       //отступы справа
-      margin-left: 0px;
-      margin-right: 5px;
+      margin-left: 1px;
+      margin-right: 6px;
     }
   }
   .note-box {
@@ -171,7 +169,8 @@
       top: 0px;
       position: relative;
     }
-    li {
+    li,
+    .box {
       transition: all 1.6s 0.2s;
     }
     &:hover {
@@ -179,14 +178,16 @@
         border: 1px dashed #4e4e4e;
       }
       .note,
-      li {
+      li,
+      .box {
         background: orange;
         background: gold;
         background-clip: border-box;
         transition: all 0.3s 0.0s;
         box-shadow: inset 70px 20px 134px -41px orange, inset -50px 40px 30px -40px gold, inset -70px 0px 74px -41px orange, inset 0px 0px 0px 400px gold;
       }
-      li {
+      li,
+      .box {
         //        background: gold;
       }
       //      background: gold;

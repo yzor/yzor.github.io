@@ -1,11 +1,5 @@
-
-function Psd(url) {
-  var PSD = require('psd');
-  PSD.fromURL(url).then(function (psd) {
-    ParsePsd(psd);
-  });
-}
-
+/* jshint -W117 */
+/* jshint -W098 */
 function ParsePsd(psd) {
   var PSD = {};
 

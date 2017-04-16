@@ -1,3 +1,5 @@
+/* jshint -W117 */
+/* jshint -W098 */
 var Url0 = "https://max-3.github.io/test/js.psd";
 var Url1 = "https://psd.ru/js.psd";
 var Url2 = "https://psd.ru/js2.psd";
@@ -11,9 +13,12 @@ var Url13 = "https://psd.ru/pen/mask-min.psd";
 var Url8 = "https://psd.ru/pen/mask0.psd";
 var Url9 = "https://psd.ru/pen/mask1.psd";
 var Url15 = "https://psd.ru/pen/_.psd";
-var Url16 = "https://psd.ru/pen/41.psd";
 
- Psd(Url6);
+
+
+var Url16 = "https://psd.ru/40.psd";
+
+ Psd(Url16);
 
 //33 схема большая 2тип нумерации небольшой рапорт
 //9 второй тип нумерации
