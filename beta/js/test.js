@@ -18,7 +18,8 @@ var Url15 = "https://psd.ru/pen/_.psd";
 
 var Url16 = "https://psd.ru/8.psd";
 
-Psd(Url16);
+//Url6 = "psd/14.psd" ;
+Psd(Url6);
 
 //33 схема большая 2тип нумерации небольшой рапорт
 //9 второй тип нумерации
