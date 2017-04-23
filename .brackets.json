@@ -9,7 +9,11 @@
                 "outputStyle": "compressed"
             },
             "brackets-git.gitPath": "git",
-            "livedev.multibrowser": true
+            "livedev.multibrowser": true,
+            "autoSavePrefs.timePrefs": 400,
+            "autoSavePrefs.checkedPrefs": true,
+            "linting.collapsed": false,
+            "fonts.fontSize": "12px"
         }
     }
 }
