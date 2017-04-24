@@ -44,23 +44,21 @@ $(document).on({ //наведение на номер ряда"1-й ряд:"...
 }, "#description b"); //pass the element as an argument to .on
 
 
-//выделение рапорта в одном ряду
+//выделение рапорта в текущем редуприкликена звезду
 $(document).on("click", ".star, .star2", function () {
   $(this).closest("p").find(".rapo").toggleClass("mark");
 });
 
 
-
+//двойной клик на звезду - выделяем всерапорты
 $(document).on("dblclick", ".star, .star2", function () {
-//  $(this).closest("p").find(".rapo").toggleClass("mark");
-//  alert("lkj");
-    $(".rapo").toggleClass("mark");
-
+  //$(".rapo").toggleClass("mark");
+  if ($(this).closest("p").find(".rapo").hasClass("mark")) {
+    $(".rapo").removeClass("mark");
+  } else {
+    $(".rapo").addClass("mark");
+  }
 });
-//$( ".star" ).dblclick(function() {
-//  alert( "Handler for .dblclick() called." );
-//});
-
 
 
 //
