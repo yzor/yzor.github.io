@@ -32,6 +32,17 @@ body {
   }
 }
 
+.box {
+//	background: gold !important;
+ .showRapo>& {background: red !important;}
+}
+@mixin box-mode2() {
+    .box{
+        background: green !important;
+    }
+
+}
+
 @mixin box-mode($boxBg, $boxBorder, $boxColor) {
   /*один блок строки*/
   //  border: 1px dotted;
@@ -141,6 +152,8 @@ body {
     @include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
   }
 }
+
+
 
 #description {
   cursor: default;
@@ -272,7 +285,9 @@ body {
     .box {
       /*один блок строки*/
       @include box-mode($colorL, $colorA, $color);
+
     }
+      @include box-mode2();
   }
   *:not(.box)>i {
     //пробел между боксами
@@ -284,9 +299,7 @@ body {
       //      background: blue //            background: none;
     }
   }
- .rapo.mark .box {
-    background: green !important;
-  }
+
   .star {
     //рапорт
     background: url(../image/raport3_1.png) no-repeat;
