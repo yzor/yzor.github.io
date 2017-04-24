@@ -169,13 +169,13 @@ function description(QWE) { //генерация описания
             } //вывод перед 1 звёздочкой
             if (isRap(i, v[I]) && !isRap(i, v[I - 1])) { /*console.warn("*1");*/
               //              LINE += "(1*)";
-              LINE += '<span class="star r">*</span>';
+              LINE += '<span class="star r">*</span><span class="rapo">';
 
             } //Первая звёздочка
             if (isRap(i, v[I]) && !isRap(i, v[I + 1])) {
 
               spase = "<span class='star l'>*</span>" + //💩
-                ", повторять&nbspот&nbsp<span class='star2 l'>*</span>&nbspдо&nbsp<span class='star2 l'>*</span>";
+                "</span>, повторять&nbspот&nbsp<span class='star2 b'>*</span>&nbspдо&nbsp<span class='star2 a'>*</span>";
 
               // spase = '<span class="star l">*</span> повторять от <span class="star r">*</span> до <span class="star r">*</span>';
               BbIBOD = true;
