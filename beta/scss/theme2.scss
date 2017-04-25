@@ -10,9 +10,6 @@
 $color: #3c3c3c;
 $colorL: #c3c3c3;
 $colorA: tomato;
-body {
-  //  background: $color;
-}
 
 @mixin box-coloring($boxBg, $boxBorder, $boxColor) {
   // @include box-coloring(red, green, blue);
@@ -32,15 +29,38 @@ body {
   }
 }
 
+
+
+
+
+.mark{}
+.mark-rap{}
+.mark-row{}
+
+
+
+
+
+
+
+
+
+
+
 .box {
-//	background: gold !important;
- .showRapo>& {background: red !important;}
+  //	background: gold !important;
+  .showRapo>& {
+    background: red !important;
+  }
+}
+#description {
+  .box {
+    background: green !important;
+    -webkit-user-select: none;
+  }
+
 }
 @mixin box-mode2() {
-    .box{
-        background: green !important;
-    }
-
 }
 
 @mixin box-mode($boxBg, $boxBorder, $boxColor) {
@@ -152,8 +172,6 @@ body {
     @include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
   }
 }
-
-
 
 #description {
   cursor: default;
@@ -285,9 +303,8 @@ body {
     .box {
       /*один блок строки*/
       @include box-mode($colorL, $colorA, $color);
-
     }
-      @include box-mode2();
+    @include box-mode2();
   }
   *:not(.box)>i {
     //пробел между боксами
@@ -299,7 +316,6 @@ body {
       //      background: blue //            background: none;
     }
   }
-
   .star {
     //рапорт
     background: url(../image/raport3_1.png) no-repeat;
