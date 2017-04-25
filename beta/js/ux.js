@@ -11,22 +11,22 @@
 
 //закладка при клике на элемент
 $(document).on("click", "#description .box", function () {
-  if ($(this).hasClass("marker")) {
-    $(this).removeClass("marker");
+  if ($(this).hasClass("mark")) {
+    $(this).removeClass("mark");
   } else {
-    $(".marker").removeClass("marker");
-    $(this).addClass("marker");
+    $(".mark").removeClass("mark");
+    $(this).addClass("mark");
   }
 });
 
 //закладка при клике на номер ряда
 $(document).on("click", "#description b", function () {
   var $elm = $(this).parent();
-  if ($elm.hasClass("illumination")) {
-    $elm.removeClass("illumination");
+  if ($elm.hasClass("mark-row")) {
+    $elm.removeClass("mark-row");
   } else {
-    $(".illumination").removeClass("illumination");
-    $elm.addClass("illumination");
+    $(".mark-row").removeClass("mark-row");
+    $elm.addClass("mark-row");
   }
 });
 

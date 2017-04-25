@@ -1,11 +1,22 @@
-body{
+@mixin box-coloring() {
+    background: green;
+    .qwe4>& {
+        background: blue;
+    }
+}
 
+.qwe {
+    background: gold;
+    .qwe2 {
+        @include box-coloring();
+        background: red;
+        .qwe3 & {
+            @include box-coloring();
+            background: pink;
+        }
+    }
+    /*
+            color: red;
 
-
-  background:red;
-  background: gold;
-
-
-
-
+*/
 }
