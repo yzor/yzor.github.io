@@ -46,17 +46,17 @@ $(document).on({ //наведение на номер ряда"1-й ряд:"...
 
 //выделение рапорта в текущем редуприкликена звезду
 $(document).on("click", ".star, .star2", function () {
-  $(this).closest("p").find(".rapo").toggleClass("showRapo");
+  $(this).closest("p").find(".rapo").toggleClass("mark-rap");
 });
 
 
 //двойной клик на звезду - выделяем всерапорты
 $(document).on("dblclick", ".star, .star2", function () {
   //$(".rapo").toggleClass("mark");
-  if ($(this).closest("p").find(".rapo").hasClass("showRapo")) {
-    $(".rapo").removeClass("showRapo");
+  if ($(this).closest("p").find(".rapo").hasClass("mark-rap")) {
+    $(".rapo").removeClass("mark-rap");
   } else {
-    $(".rapo").addClass("showRapo");
+    $(".rapo").addClass("mark-rap");
   }
 });
 

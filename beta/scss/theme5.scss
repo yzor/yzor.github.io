@@ -1,19 +1,108 @@
+@mixin box() {
+  background: red;
+  .i {
+    background: gold;
+    @at-root .child { color:blue;}
+  }
+}
+
+
+.qwe{
+      @include box
+}
+
+
+/*@mixin box2 {
+  #DD {
+    @content;
+  }
+}
+@include box2 {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+/*
+
+df
+*/
+
+/*
+
+@mixin box() {
+  background: red;
+  .i {
+    background: gold;
+  }
+}
+
+#DDD {
+  .box {
+    @include box();
+    &.act {
+      @include box
+    }
+     @at-root .rap .box,.rap9 .box9,  {
+      @include box
+    }
+    &:hover {
+      @include box
+    }
+  }
+}
+
+
+/*.box01 %box .box02 {
+  //  color: red;
+  .box1 {
+    //    color: gold;
+    .box2 &{
+      color: gold;
+    }
+  }
+}
+
+#PAPA1 {
+  #PAPA2 {
+    #PAPA3 {
+      @extend %box;
+    }
+  }
+}
+
+$D:des;
+
+.test %test{
+  color:orange;
+}
 @mixin box-coloring() {
   background: green;
-  .qwe4>& {
+  .qwe4 & {
+    @extend %test;
     background: blue;
   }
 }
 
-.qwe {
+#DD {
   .qwe2 {
-    @at-root .child &{
-      background: red;
-    }
+    background: red;
+    @include box-coloring();
   }
-  background: orange;
+  background: gold;
 }
 
+
+/*            "sass.options": {
+                "outputDir": "../css/",
+                "sourceComments": false,
+                "outputStyle": "compressed"
+            },*/
+
+
+/*
+
+
+*/
 
 
 /*
@@ -23,21 +112,9 @@
 }
 
 
-#context a%extreme {
-  color: blue;
-  font-weight: bold;
-  font-size: 2em;
-}
 Тем не менее, шаблонные селекторы могут быть расширены, также как классы или идентификаторы. Расширенные селекторы будут сгенерированы, а базовый шаблонный селектор - нет. Например:
 
-.notice {
-  @extend %extreme;
-}
 */
-
-
-
-
 
 
 /*

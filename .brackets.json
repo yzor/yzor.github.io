@@ -5,12 +5,11 @@
             "sass.enabled": true,
             "sass.options": {
                 "outputDir": "../css/",
-                "sourceComments": false,
-                "outputStyle": "compressed"
+                "sourceComments": false
             },
             "brackets-git.gitPath": "git",
             "livedev.multibrowser": true,
-            "autoSavePrefs.timePrefs": 100,
+            "autoSavePrefs.timePrefs": 200,
             "autoSavePrefs.checkedPrefs": true,
             "linting.collapsed": false,
             "fonts.fontSize": "13px",
@@ -43,7 +42,9 @@
             "brackets-git.gitTimeout": 200,
             "brackets-git.terminalCommand": null,
             "brackets-git.terminalCommandArgs": null,
-            "brackets-git.debugMode": false
+            "brackets-git.debugMode": false,
+            "useTabChar": false,
+            "spaceUnits": 2
         }
     }
 }
