@@ -1,22 +1,54 @@
 @mixin box-coloring() {
-    background: green;
-    .qwe4>& {
-        background: blue;
-    }
+  background: green;
+  .qwe4>& {
+    background: blue;
+  }
 }
 
 .qwe {
-    background: gold;
+  .qwe2 {
+    @at-root .child &{
+      background: red;
+    }
+  }
+  background: orange;
+}
+
+
+
+/*
+.parent {
+  ...
+  @at-root .child { ... }
+}
+
+
+#context a%extreme {
+  color: blue;
+  font-weight: bold;
+  font-size: 2em;
+}
+Тем не менее, шаблонные селекторы могут быть расширены, также как классы или идентификаторы. Расширенные селекторы будут сгенерированы, а базовый шаблонный селектор - нет. Например:
+
+.notice {
+  @extend %extreme;
+}
+*/
+
+
+
+
+
+
+/*
     .qwe2 {
         @include box-coloring();
         background: red;
-        .qwe3 & {
+        .qwe3 {
             @include box-coloring();
             background: pink;
         }
-    }
-    /*
             color: red;
-
 */
-}
+
+//}
