@@ -2,16 +2,10 @@
 #fix {
   color: cyan; }
 
-.test {
-  background: red !important; }
-
-.mark-row #description .box {
-  background: blue !important; }
-
-#description .mark-rap .box, #description .mark-row .box {
+.mark-rap .box, .mark-row .box {
   background: gold !important; }
 
-#description .mark-row .mark-rap .box {
+.mark-row .mark-rap .box {
   background: red !important; }
 
 #description .box.mark {
@@ -221,12 +215,9 @@
         #description ul .box:active i,
         #description p .box:active i {
           border-color: #ff8e7a; }
-    .mark-row #description ul, .mark-row
-    #description p {
-      background: blue !important; }
-    #description .mark-rap .box, #description .mark-row .box {
+    .mark-rap .box, .mark-row .box {
       background: gold !important; }
-    #description .mark-row .mark-rap .box {
+    .mark-row .mark-rap .box {
       background: red !important; }
     #description ul.mark,
     #description p.mark {
@@ -336,5 +327,8 @@
 .one.blog5 .post-meta,
 .one.blog5 .post-content {
   width: 100%; }
+
+.test {
+  background: red !important; }
 
 /*# sourceMappingURL=theme2.css.map */

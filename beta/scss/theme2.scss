@@ -3,15 +3,10 @@
   color: cyan;
 }
 
-.test {
-  background: red !important;
-}
-
 $color: #3c3c3c;
 $colorL: #c3c3c3;
 $colorA: tomato;
-@mixin box-coloring($boxBg, $boxBorder, $boxColor) {
-  // @include box-coloring(red, green, blue);
+@mixin box-coloring($boxBg, $boxBorder, $boxColor) { //фон/бордюр/буквы
   @if $boxColor!=0 {
     color: $boxColor;
   }
@@ -27,33 +22,26 @@ $colorA: tomato;
     }
   }
 }
+
 @mixin box-mode2() {
-      .mark-row & {
-      background: blue !important;
-    }
-    @at-root #description .mark-rap .box, #description .mark-row .box, {
-      background: gold !important;
-    }
-    @at-root #description .mark-row .mark-rap .box {
-      background: red !important;
-    }
-    &.mark {
-      background: green !important;
-    }
+  @at-root /*#description*/ .mark-rap .box,// рапорт
+  /*#description*/ .mark-row .box,// ряд
+  {
+    background: gold !important;
+  }
+  @at-root /*#description*/ .mark-row .mark-rap .box { // ряд и рапорт одновременно
+    background: red !important;
+  }
+  &.mark/*,.mark-rap .box.mark, .mark-row .box.mark*/{//закладка
+    background: green !important;
+  }
 }
 
 #description {
   .box {
-//     @include box-mode2;
     @include box-mode2(); //фон/бордюр/буквы
-
-  }
-  .box {
-    //        background: green !important;
-    //        -webkit-user-select: none;
   }
 }
-
 
 @mixin box-mode($boxBg, $boxBorder, $boxColor) {
   /*один блок строки*/
@@ -489,4 +477,12 @@ $colorA: tomato;
   width: 100%;
 }
 
+//        -webkit-user-select: none;
 //https://css-tricks.com/almanac/properties/b/box-decoration-break/
+
+
+
+
+.test {
+  background: red !important;
+}
