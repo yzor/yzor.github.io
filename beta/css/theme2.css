@@ -2,17 +2,9 @@
 #fix {
   color: cyan; }
 
-.mark-rap .box, .mark-row .box {
-  background: gold !important; }
-
-.mark-row .mark-rap .box {
-  background: red !important; }
-
-#description .box.mark {
-  background: green !important; }
-
 #description {
   cursor: default;
+  overflow: hidden;
   color: #4e4e4e;
   font-family: Verdana, Geneva, sans-serif;
   font-family: Helvetica, Arial, sans-serif;
@@ -76,13 +68,14 @@
       opacity: 1; }
     #description ul .zakl,
     #description p .zakl {
+      overflow: hidden;
+      background: green;
       display: block;
       position: fixed;
       position: absolute;
       width: 4px;
       margin-top: 4px;
       height: 20px;
-      overflow: hidden;
       right: 100%;
       z-index: 0;
       background-image: url(../image/lenta.png);
@@ -117,15 +110,7 @@
       line-height: 17px;
       height: 16px;
       display: inline-block;
-      margin: 2px 2px 2px 1px;
-      color: #3c3c3c;
-      border-color: #c3c3c3;
-      color: #3c3c3c;
-      background: #ff9b89;
-      border-color: tomato;
-      color: #3c3c3c;
-      background: #ffe0db;
-      border-color: #ffe0db; }
+      margin: 2px 2px 2px 1px; }
       #description ul .box:after,
       #description p .box:after {
         content: " ";
@@ -169,59 +154,15 @@
       #description p .box::selection {
         background: #c3c3c3;
         color: black; }
-      #description ul .box i,
-      #description p .box i {
-        border-color: #c3c3c3; }
-      #description ul .box i,
-      #description p .box i {
-        border-color: tomato; }
-      #description ul .box i,
-      #description p .box i {
-        border-color: #ffe0db; }
-      #description ul .box:hover,
-      #description p .box:hover {
-        border-color: tomato; }
-        #description ul .box:hover::selection,
-        #description p .box:hover::selection {
-          background: tomato;
-          color: white; }
-        #description ul .box:hover i,
-        #description p .box:hover i {
-          border-color: tomato; }
-      #description ul .box.marker,
-      #description p .box.marker {
-        color: white;
+      #description ul .box:hover::selection,
+      #description p .box:hover::selection {
         background: tomato;
-        border-color: #ff816b; }
-        #description ul .box.marker i,
-        #description p .box.marker i {
-          border-color: #ff816b; }
-        #description ul .box.marker::selection,
-        #description p .box.marker::selection {
-          background: tomato;
-          background: rgba(0, 0, 0, 0.2);
-          color: white; }
-      #description ul .box:active,
-      #description p .box:active {
-        color: white;
-        background: #ff816b;
-        border-color: #ff816b;
-        color: white;
-        background: #ff7961;
-        border-color: #ff8e7a; }
-        #description ul .box:active i,
-        #description p .box:active i {
-          border-color: #ff816b; }
-        #description ul .box:active i,
-        #description p .box:active i {
-          border-color: #ff8e7a; }
-    .mark-rap .box, .mark-row .box {
-      background: gold !important; }
-    .mark-row .mark-rap .box {
-      background: red !important; }
-    #description ul.mark,
-    #description p.mark {
-      background: green !important; }
+        color: white; }
+      #description ul .box.marker::selection,
+      #description p .box.marker::selection {
+        background: tomato;
+        background: rgba(0, 0, 0, 0.2);
+        color: white; }
   #description *:not(.box) > i {
     opacity: 0;
     display: inline-block;
@@ -330,5 +271,19 @@
 
 .test {
   background: red !important; }
+
+#description .mark-rap .box {
+  background: gold; }
+
+#description .mark-row .box {
+  background: gold; }
+
+#description .mark-row .mark-rap .box {
+  background: orange; }
+
+#description .box {
+  background: gray; }
+  #description .box.mark {
+    background: red; }
 
 /*# sourceMappingURL=theme2.css.map */

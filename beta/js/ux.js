@@ -32,12 +32,12 @@ $(document).on("click", "#description b", function () {
 
 $(document).on({ //наведение на номер ряда"1-й ряд:"...
   mouseenter: function () {
-    $(this).parent().addClass('illumination-hover');
+    $(this).parent().addClass('hover-rap');
     //stuff to do on mouse enter
     //    console.log("++");
   },
   mouseleave: function () {
-    $(this).parent().removeClass('illumination-hover');
+    $(this).parent().removeClass('hover-rap');
     //    console.log("--");
     //stuff to do on mouse leave
   }
@@ -94,3 +94,7 @@ $(document).on({ //Наведение на вторичные звёздочки
     $(".star").removeClass("act");
   }
 }, ".star2");
+
+
+
+//при наведении на рапорт запускать такую безбашеную хрень как мелькание всех петель по очереди
