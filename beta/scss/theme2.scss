@@ -81,20 +81,21 @@
         @extend %box4;
       }
     }
+    //при наведении на номер ряда
     .hover-rap {
       .box {
-        @extend .box:hover; // BEUTIFY:ignore
+        @extend %hov; //.box:hover;
       }
       &.mark-row .box {
-        @extend //
-        .box:hover;  // beautify:ignore
+        @extend %hov; //.box:hover;
       }
     }
   }
 
   %box0 {
     background: #d0d0d0;
-    &:hover {
+    &:hover,
+    &%hov {
       background: lighten(#d0d0d0, 10%);
     }
     &:active {
@@ -104,7 +105,8 @@
 
   %box1 {
     background: gold;
-    &:hover {
+    &:hover,
+    &%hov {
       background: lighten(gold, 10%);
     }
     &:active {
@@ -114,7 +116,8 @@
 
   %box2 {
     background: orange;
-    &:hover {
+    &:hover,
+    &%hov {
       background: lighten(orange, 10%);
     }
     &:active {
@@ -124,7 +127,8 @@
 
   %box3 {
     background: tomato;
-    &:hover {
+    &:hover,
+    &%hov {
       background: lighten(tomato, 10%);
     }
     &:active {
@@ -134,7 +138,8 @@
 
   %box4 {
     background: blue;
-    &:hover {
+    &:hover,
+    &%hov {
       background: lighten(blue, 10%);
     }
     &:active {
