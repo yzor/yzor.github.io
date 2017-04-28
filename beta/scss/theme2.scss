@@ -6,6 +6,7 @@
   $color: #3c3c3c;
   $colorL: #c3c3c3;
   $colorA: tomato;
+  //раскрашивание бокса
   @mixin box-coloring($boxBg, $boxBorder, $boxColor) {
     //фон/бордюр/буквы
     @if $boxColor!=0 {
@@ -24,50 +25,23 @@
     }
   }
 
-  @mixin box-mode2() {
-    @at-root .mark-rap .box, // выделение рапорта
-    .mark-row .box // выделение ряда
-    {
-      background: gold !important;
-    }
-    @at-root .mark-row .mark-rap .box // ряд и рапорт одновременно
-    {
-      background: red !important;
-    }
-    &.mark/*,.mark-rap .box.mark, .mark-row .box.mark*/ //закладка
-    {
-      background: green !important;
-    }
-    @at-root .hover-rap //подсветка при наведении на номер ряда
-    {
-      .box {
-        background: blue !important;
-      }
-      @at-root #description .hover-rap .mark-rap .box {
-        background: gray !important;
-      }
-      @at-root #description .hover-rap .box.mark {
-        background: black !important;
-      }
-      background: tomato !important;
-    }
-  }
-
   @mixin box-mode3() {
+    //выделение рапорта
     .mark-rap .box {
       @extend %box1;
       &.mark {
         @extend %box4;
       }
     }
+    //выделение ряда
     .mark-row {
-      //sdf
       .box {
         @extend %box1;
         &.mark {
           @extend %box4;
         }
       }
+      //одновременное выделение рапорта и ряда
       .mark-rap .box {
         @extend %box2;
         &.mark {
@@ -75,8 +49,10 @@
         }
       }
     }
+    //обычный стиль бокса
     .box {
       @extend %box0;
+      //закладка
       &.mark {
         @extend %box4;
       }
@@ -93,13 +69,15 @@
   }
 
   %box0 {
-    background: #d0d0d0;
+    //    background: #d0d0d0;
+    @include box-coloring(pink, red, blue);
     &:hover,
     &%hov {
-      background: lighten(#d0d0d0, 10%);
+      //      background: lighten(#d0d0d0, 10%);
+      @include box-coloring(red, blue, gold);
     }
     &:active {
-      background: darken(#d0d0d0, 10%);
+      //      background: darken(#d0d0d0, 10%);
     }
   }
 
@@ -137,13 +115,16 @@
   }
 
   %box4 {
-    background: blue;
+    //    background: blue;
+    @include box-coloring(pink, black, blue);
     &:hover,
     &%hov {
-      background: lighten(blue, 10%);
+      //      background: lighten(blue, 10%);
+      @include box-coloring(pink, red, blue);
     }
     &:active {
-      background: darken(blue, 10%);
+      //      background: darken(blue, 10%);
+      @include box-coloring(pink, red, blue);
     }
   }
 
@@ -154,6 +135,43 @@
     }
   }
   /*
+//   @include box-coloring(none, red, black);
+    &::selection {
+      background: $colorL;
+      color: black;
+    }
+    // @include box-coloring(0, $colorL, $color); //фон/бордюр/буквы
+    //@include box-coloring(lighten($colorA, 13), $colorA, $color);
+    // @include box-coloring(lighten($colorA, 29), lighten($colorA, 29), $color);
+    &:hover {
+      &::selection {
+        background: $colorA;
+        color: white;
+      }
+      // @include box-coloring(0, $colorA, 0);
+    }
+    &.marker {
+      //@include box-coloring($colorA, lighten($colorA, 7), white);
+      &:hover {
+        // @include box-coloring(0, 0, 0);
+      }
+      &:active {
+        // @include box-coloring(0, 0, 0);
+      }
+      &::selection {
+        background: $colorA;
+        background: rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+    }
+    &:active {
+      // @include box-coloring(lighten($colorA, 7), lighten($colorA, 7), white);
+      // @include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
+    }
+*/
+  /*
+
+
 
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
@@ -246,7 +264,7 @@
       }
     }
     //   @include box-coloring(none, red, black);
-    &::selection {
+    &::selection0 {
       background: $colorL;
       color: black;
     }
@@ -254,13 +272,13 @@
     //@include box-coloring(lighten($colorA, 13), $colorA, $color);
     // @include box-coloring(lighten($colorA, 29), lighten($colorA, 29), $color);
     &:hover {
-      &::selection {
+      &::selection0 {
         background: $colorA;
         color: white;
       }
       // @include box-coloring(0, $colorA, 0);
     }
-    &.marker {
+    &.marker0 {
       //@include box-coloring($colorA, lighten($colorA, 7), white);
       &:hover {
         // @include box-coloring(0, 0, 0);
@@ -606,6 +624,35 @@
   .one.blog5 .post-meta,
   .one.blog5 .post-content {
     width: 100%;
+  }
+
+  @mixin box-mode2() {
+    @at-root .mark-rap .box, // выделение рапорта
+    .mark-row .box // выделение ряда
+    {
+      background: gold !important;
+    }
+    @at-root .mark-row .mark-rap .box // ряд и рапорт одновременно
+    {
+      background: red !important;
+    }
+    &.mark/*,.mark-rap .box.mark, .mark-row .box.mark*/ //закладка
+    {
+      background: green !important;
+    }
+    @at-root .hover-rap //подсветка при наведении на номер ряда
+    {
+      .box {
+        background: blue !important;
+      }
+      @at-root #description .hover-rap .mark-rap .box {
+        background: gray !important;
+      }
+      @at-root #description .hover-rap .box.mark {
+        background: black !important;
+      }
+      background: tomato !important;
+    }
   }
 
   //        -webkit-user-select: none;

@@ -3,11 +3,17 @@
   color: cyan; }
 
 #description .box {
-  background: #d0d0d0; }
+  color: blue;
+  background: pink;
+  border-color: red; }
+  #description .box i {
+    border-color: red; }
   #description .box:hover, #description .hover-rap .box, #description .hover-rap.mark-row .box {
-    background: #eaeaea; }
-  #description .box:active {
-    background: #b7b7b7; }
+    color: gold;
+    background: red;
+    border-color: blue; }
+    #description .box:hover i, #description .hover-rap .box i, #description .hover-rap.mark-row .box i {
+      border-color: blue; }
 
 #description .mark-rap .box, #description .mark-row .box {
   background: gold; }
@@ -24,13 +30,62 @@
     background: #cc8400; }
 
 #description .mark-rap .box.mark, #description .mark-row .box.mark, #description .mark-row .mark-rap .box.mark, #description .box.mark {
-  background: blue; }
+  color: blue;
+  background: pink;
+  border-color: black; }
+  #description .mark-rap .box.mark i, #description .mark-row .box.mark i, #description .mark-row .mark-rap .box.mark i, #description .box.mark i {
+    border-color: black; }
   #description .mark-row .mark-rap .box.mark:hover, #description .box.mark:hover, #description .mark-row .mark-rap .hover-rap .box.mark, #description .hover-rap .mark-row .mark-rap .box.mark, #description .hover-rap.mark-row .mark-rap .box.mark, #description .hover-rap .box.mark {
-    background: #3333ff; }
+    color: blue;
+    background: pink;
+    border-color: red; }
+    #description .mark-row .mark-rap .box.mark:hover i, #description .box.mark:hover i, #description .mark-row .mark-rap .hover-rap .box.mark i, #description .hover-rap .mark-row .mark-rap .box.mark i, #description .hover-rap.mark-row .mark-rap .box.mark i, #description .hover-rap .box.mark i {
+      border-color: red; }
   #description .mark-row .mark-rap .box.mark:active, #description .box.mark:active {
-    background: #0000cc; }
+    color: blue;
+    background: pink;
+    border-color: red; }
+    #description .mark-row .mark-rap .box.mark:active i, #description .box.mark:active i {
+      border-color: red; }
 
 /*
+//   @include box-coloring(none, red, black);
+    &::selection {
+      background: $colorL;
+      color: black;
+    }
+    // @include box-coloring(0, $colorL, $color); //фон/бордюр/буквы
+    //@include box-coloring(lighten($colorA, 13), $colorA, $color);
+    // @include box-coloring(lighten($colorA, 29), lighten($colorA, 29), $color);
+    &:hover {
+      &::selection {
+        background: $colorA;
+        color: white;
+      }
+      // @include box-coloring(0, $colorA, 0);
+    }
+    &.marker {
+      //@include box-coloring($colorA, lighten($colorA, 7), white);
+      &:hover {
+        // @include box-coloring(0, 0, 0);
+      }
+      &:active {
+        // @include box-coloring(0, 0, 0);
+      }
+      &::selection {
+        background: $colorA;
+        background: rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+    }
+    &:active {
+      // @include box-coloring(lighten($colorA, 7), lighten($colorA, 7), white);
+      // @include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
+    }
+*/
+/*
+
+
 
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
@@ -183,16 +238,16 @@
         #description p .box.marker0 i,
         #description p .box.active0 i {
           border-color: #ff7a63 !important; }
-      #description ul .box::selection,
-      #description p .box::selection {
+      #description ul .box::selection0,
+      #description p .box::selection0 {
         background: #c3c3c3;
         color: black; }
-      #description ul .box:hover::selection,
-      #description p .box:hover::selection {
+      #description ul .box:hover::selection0,
+      #description p .box:hover::selection0 {
         background: tomato;
         color: white; }
-      #description ul .box.marker::selection,
-      #description p .box.marker::selection {
+      #description ul .box.marker0::selection,
+      #description p .box.marker0::selection {
         background: tomato;
         background: rgba(0, 0, 0, 0.2);
         color: white; }
