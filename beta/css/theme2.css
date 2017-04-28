@@ -2,6 +2,45 @@
 #fix {
   color: cyan; }
 
+#description .mark-row .mark-rap .box {
+  background: orange; }
+  #description .mark-row .mark-rap .box i {
+    background: #ffb733; }
+  #description .mark-row .mark-rap .box:hover {
+    background: #ffb733; }
+  #description .mark-row .mark-rap .box:active {
+    background: #cc8400; }
+
+#description .mark-rap .box, #description .mark-row .box {
+  background: gold; }
+  #description .mark-rap .box i, #description .mark-row .box i {
+    background: #ffdf33; }
+  #description .mark-rap .box:hover, #description .mark-row .box:hover {
+    background: #ffdf33; }
+  #description .mark-rap .box:active, #description .mark-row .box:active {
+    background: #ccac00; }
+
+#description .box {
+  background: #d0d0d0; }
+  #description .box i {
+    background: #eaeaea; }
+  #description .box:hover {
+    background: #eaeaea; }
+  #description .box:active {
+    background: #b7b7b7; }
+
+#description .mark-rap .box.mark, #description .mark-row .box.mark, #description .mark-row .mark-rap .box.mark, #description .box.mark {
+  background: blue; }
+  #description .mark-row .mark-rap .box.mark:hover, #description .box.mark:hover {
+    background: #3333ff; }
+  #description .mark-row .mark-rap .box.mark:active, #description .box.mark:active {
+    background: #0000cc; }
+
+/*
+
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+*/
 #description {
   cursor: default;
   overflow: hidden;
@@ -271,19 +310,5 @@
 
 .test {
   background: red !important; }
-
-#description .mark-rap .box {
-  background: gold; }
-
-#description .mark-row .box {
-  background: gold; }
-
-#description .mark-row .mark-rap .box {
-  background: orange; }
-
-#description .box {
-  background: gray; }
-  #description .box.mark {
-    background: red; }
 
 /*# sourceMappingURL=theme2.css.map */

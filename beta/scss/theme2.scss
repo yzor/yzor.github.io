@@ -55,25 +55,114 @@
 
   @mixin box-mode3() {
     .mark-rap .box {
-      background: gold;
+      @extend %box1;
+      &.mark {
+        @extend %box4;
+        //        background: blue !important;
+      }
     }
     .mark-row {
       .box {
-        background: gold;
+        @extend %box1;
+        &.mark {
+          @extend %box4;
+          //          background: blue;
+          //          background: blue;
+        }
       }
       .mark-rap .box {
-        background: orange;
+        @extend %box2;
+        &.mark {
+          @extend %box4;
+        }
       }
     }
     .box {
-      background: gray;
+      @extend %box0;
+      //      background: gray;
+      //      @at-root #description .mark-rap .box.mark,#description .mark-row .box.mark,
       &.mark {
-        background: red;
+        //        background: green;
+        @extend %box4;
       }
     }
     .hover-rap .mark-rap .box .hover-rap //подсветка рапорта при наведении на номер ряда
     {}
   }
+
+  %box3 {
+    background: tomato;
+    //    i {
+    //      background: lighten(tomato, 10%);
+    //    }
+    &:hover {
+      background: lighten(tomato, 10%);
+    }
+    &:active {
+      background: darken(tomato, 10%);
+    }
+  }
+
+
+  %box2 {
+    background: orange;
+    i {
+      background: lighten(orange, 10%);
+    }
+    &:hover {
+      background: lighten(orange, 10%);
+    }
+    &:active {
+      background: darken(orange, 10%);
+    }
+  }
+
+  %box1 {
+    background: gold;
+    i {
+      background: lighten(gold, 10%);
+    }
+    &:hover {
+      background: lighten(gold, 10%);
+    }
+    &:active {
+      background: darken(gold, 10%);
+    }
+  }
+
+  %box0 {
+    background: #d0d0d0;
+    i {
+      background: lighten(#d0d0d0, 10%);
+    }
+    &:hover {
+      background: lighten(#d0d0d0, 10%);
+    }
+    &:active {
+      background: darken(#d0d0d0, 10%);
+    }
+  }
+  %box4 {
+    background: blue;
+    &:hover {
+      background: lighten(blue, 10%);
+    }
+    &:active {
+      background: darken(blue, 10%);
+    }
+  }
+
+  #description {
+    @include box-mode3();
+    .box {
+      //      @include box-mode2(); //фон/бордюр/буквы
+    }
+  }
+  /*
+
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+*/
 
   @at-root .hover-rap {
     //    background: red;
@@ -528,11 +617,4 @@
   //https://css-tricks.com/almanac/properties/b/box-decoration-break/
   .test {
     background: red !important;
-  }
-
-  #description {
-    @include box-mode3();
-    .box {
-      //      @include box-mode2(); //фон/бордюр/буквы
-    }
   }

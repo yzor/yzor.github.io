@@ -1,3 +1,120 @@
-.qwe{background:red}.qwe .i{background:gold}.child{color:blue}
+@charset "UTF-8";
+.qwe {
+  background: red; }
+  .qwe i {
+    background: gold; }
+    .qwe1 {
+      background: blue; }
+      .qwe1 snap {
+        background: tomato; }
+
+/*@mixin box2 {
+  #DD {
+    @content;
+  }
+}
+@include box2 {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+/*
+
+df
+*/
+/*
+
+@mixin box() {
+  background: red;
+  .i {
+    background: gold;
+  }
+}
+
+#DDD {
+  .box {
+    @include box();
+    &.act {
+      @include box
+    }
+     @at-root .rap .box,.rap9 .box9,  {
+      @include box
+    }
+    &:hover {
+      @include box
+    }
+  }
+}
+
+
+/*.box01 %box .box02 {
+  //  color: red;
+  .box1 {
+    //    color: gold;
+    .box2 &{
+      color: gold;
+    }
+  }
+}
+
+#PAPA1 {
+  #PAPA2 {
+    #PAPA3 {
+      @extend %box;
+    }
+  }
+}
+
+$D:des;
+
+.test %test{
+  color:orange;
+}
+@mixin box-coloring() {
+  background: green;
+  .qwe4 & {
+    @extend %test;
+    background: blue;
+  }
+}
+
+#DD {
+  .qwe2 {
+    background: red;
+    @include box-coloring();
+  }
+  background: gold;
+}
+
+
+/*            "sass.options": {
+                "outputDir": "../css/",
+                "sourceComments": false,
+                "outputStyle": "compressed"
+            },*/
+/*
+
+
+*/
+/*
+.parent {
+  ...
+  @at-root .child { ... }
+}
+
+
+Тем не менее, шаблонные селекторы могут быть расширены, также как классы или идентификаторы. Расширенные селекторы будут сгенерированы, а базовый шаблонный селектор - нет. Например:
+
+*/
+/*
+    .qwe2 {
+        @include box-coloring();
+        background: red;
+        .qwe3 {
+            @include box-coloring();
+            background: pink;
+        }
+            color: red;
+*/
 
 /*# sourceMappingURL=theme5.css.map */

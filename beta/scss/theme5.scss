@@ -1,8 +1,14 @@
 @mixin box() {
   background: red;
-  .i {
+  i {
     background: gold;
-    @at-root .child { color:blue;}
+     @at-root  .qwe1{
+      background: blue;
+       snap{
+         background: tomato;
+       }
+    }
+//    @at-root .child { color:blue;}
   }
 }
 
