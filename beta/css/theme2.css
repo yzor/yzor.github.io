@@ -2,36 +2,30 @@
 #fix {
   color: cyan; }
 
-#description .mark-row .mark-rap .box {
-  background: orange; }
-  #description .mark-row .mark-rap .box i {
-    background: #ffb733; }
-  #description .mark-row .mark-rap .box:hover {
-    background: #ffb733; }
-  #description .mark-row .mark-rap .box:active {
-    background: #cc8400; }
-
-#description .mark-rap .box, #description .mark-row .box {
-  background: gold; }
-  #description .mark-rap .box i, #description .mark-row .box i {
-    background: #ffdf33; }
-  #description .mark-rap .box:hover, #description .mark-row .box:hover {
-    background: #ffdf33; }
-  #description .mark-rap .box:active, #description .mark-row .box:active {
-    background: #ccac00; }
-
 #description .box {
   background: #d0d0d0; }
-  #description .box i {
-    background: #eaeaea; }
-  #description .box:hover {
+  #description .box:hover, #description .hover-rap .box, #description .hover-rap.mark-row .box {
     background: #eaeaea; }
   #description .box:active {
     background: #b7b7b7; }
 
+#description .mark-rap .box, #description .mark-row .box {
+  background: gold; }
+  #description .mark-rap .box:hover, #description .mark-rap .hover-rap .box, #description .hover-rap .mark-rap .box, #description .mark-row .box:hover, #description .mark-row .hover-rap .box, #description .hover-rap .mark-row .box, #description .hover-rap.mark-row .box {
+    background: #ffdf33; }
+  #description .mark-rap .box:active, #description .mark-row .box:active {
+    background: #ccac00; }
+
+#description .mark-row .mark-rap .box {
+  background: orange; }
+  #description .mark-row .mark-rap .box:hover, #description .mark-row .mark-rap .hover-rap .box, #description .hover-rap .mark-row .mark-rap .box, #description .hover-rap.mark-row .mark-rap .box {
+    background: #ffb733; }
+  #description .mark-row .mark-rap .box:active {
+    background: #cc8400; }
+
 #description .mark-rap .box.mark, #description .mark-row .box.mark, #description .mark-row .mark-rap .box.mark, #description .box.mark {
   background: blue; }
-  #description .mark-row .mark-rap .box.mark:hover, #description .box.mark:hover {
+  #description .mark-row .mark-rap .box.mark:hover, #description .mark-row .mark-rap .hover-rap .mark.box, #description .hover-rap .mark-row .mark-rap .mark.box, #description .hover-rap.mark-row .mark-rap .mark.box, #description .box.mark:hover, #description .hover-rap .mark.box {
     background: #3333ff; }
   #description .mark-row .mark-rap .box.mark:active, #description .box.mark:active {
     background: #0000cc; }
@@ -168,11 +162,11 @@
       #description p .box ::selection {
         background: none;
         color: black; }
-      #description ul .box:hover,
-      #description p .box:hover {
+      #description ul .box:hover, #description ul .hover-rap .box, #description .hover-rap ul .box, #description ul .hover-rap.mark-row .box, #description .hover-rap.mark-row ul .box,
+      #description p .box:hover, #description p .hover-rap .box, #description .hover-rap p .box, #description p .hover-rap.mark-row .box, #description .hover-rap.mark-row p .box {
         border-color: tomato; }
-        #description ul .box:hover i,
-        #description p .box:hover i {
+        #description ul .box:hover i, #description ul .hover-rap .box i, #description .hover-rap ul .box i, #description ul .hover-rap.mark-row .box i, #description .hover-rap.mark-row ul .box i,
+        #description p .box:hover i, #description p .hover-rap .box i, #description .hover-rap p .box i, #description p .hover-rap.mark-row .box i, #description .hover-rap.mark-row p .box i {
           border-color: tomato; }
       #description ul .box::selection,
       #description p .box::selection {
@@ -193,8 +187,8 @@
       #description p .box::selection {
         background: #c3c3c3;
         color: black; }
-      #description ul .box:hover::selection,
-      #description p .box:hover::selection {
+      #description ul .box:hover::selection, #description ul .hover-rap .box::selection, #description .hover-rap ul .box::selection, #description ul .hover-rap.mark-row .box::selection, #description .hover-rap.mark-row ul .box::selection,
+      #description p .box:hover::selection, #description p .hover-rap .box::selection, #description .hover-rap p .box::selection, #description p .hover-rap.mark-row .box::selection, #description .hover-rap.mark-row p .box::selection {
         background: tomato;
         color: white; }
       #description ul .box.marker::selection,

@@ -58,16 +58,14 @@
       @extend %box1;
       &.mark {
         @extend %box4;
-        //        background: blue !important;
       }
     }
     .mark-row {
+      //sdf
       .box {
         @extend %box1;
         &.mark {
           @extend %box4;
-          //          background: blue;
-          //          background: blue;
         }
       }
       .mark-rap .box {
@@ -79,49 +77,33 @@
     }
     .box {
       @extend %box0;
-      //      background: gray;
-      //      @at-root #description .mark-rap .box.mark,#description .mark-row .box.mark,
       &.mark {
-        //        background: green;
         @extend %box4;
       }
     }
-    .hover-rap .mark-rap .box .hover-rap //подсветка рапорта при наведении на номер ряда
-    {}
-  }
-
-  %box3 {
-    background: tomato;
-    //    i {
-    //      background: lighten(tomato, 10%);
-    //    }
-    &:hover {
-      background: lighten(tomato, 10%);
-    }
-    &:active {
-      background: darken(tomato, 10%);
+    .hover-rap {
+      .box {
+        @extend .box:hover; // BEUTIFY:ignore
+      }
+      &.mark-row .box {
+        @extend //
+        .box:hover;  // beautify:ignore
+      }
     }
   }
 
-
-  %box2 {
-    background: orange;
-    i {
-      background: lighten(orange, 10%);
-    }
+  %box0 {
+    background: #d0d0d0;
     &:hover {
-      background: lighten(orange, 10%);
+      background: lighten(#d0d0d0, 10%);
     }
     &:active {
-      background: darken(orange, 10%);
+      background: darken(#d0d0d0, 10%);
     }
   }
 
   %box1 {
     background: gold;
-    i {
-      background: lighten(gold, 10%);
-    }
     &:hover {
       background: lighten(gold, 10%);
     }
@@ -130,18 +112,26 @@
     }
   }
 
-  %box0 {
-    background: #d0d0d0;
-    i {
-      background: lighten(#d0d0d0, 10%);
-    }
+  %box2 {
+    background: orange;
     &:hover {
-      background: lighten(#d0d0d0, 10%);
+      background: lighten(orange, 10%);
     }
     &:active {
-      background: darken(#d0d0d0, 10%);
+      background: darken(orange, 10%);
     }
   }
+
+  %box3 {
+    background: tomato;
+    &:hover {
+      background: lighten(tomato, 10%);
+    }
+    &:active {
+      background: darken(tomato, 10%);
+    }
+  }
+
   %box4 {
     background: blue;
     &:hover {
@@ -281,7 +271,7 @@
     }
     &:active {
       // @include box-coloring(lighten($colorA, 7), lighten($colorA, 7), white);
-      //@include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
+      // @include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
     }
   }
 
