@@ -9,7 +9,7 @@
             },
             "brackets-git.gitPath": "git",
             "livedev.multibrowser": true,
-            "autoSavePrefs.timePrefs": 200,
+            "autoSavePrefs.timePrefs": 100,
             "autoSavePrefs.checkedPrefs": true,
             "linting.collapsed": false,
             "fonts.fontSize": "13px",

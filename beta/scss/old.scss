@@ -1,0 +1,75 @@
+  @at-root .hover-rap {
+    //    background: red;
+    //  border: 2px dashed gold;
+    //  border-radius: 7px;
+    //  margin: -10px !important;
+    //  z-index: 999;
+    //  position: relative;
+    //    position: absolute;
+    //  box-shadow: 1px  1px  1px  10px red;
+  }
+
+  @mixin box-mode2() {
+    @at-root .mark-rap .box, // выделение рапорта
+    .mark-row .box // выделение ряда
+    {
+      background: gold !important;
+    }
+    @at-root .mark-row .mark-rap .box // ряд и рапорт одновременно
+    {
+      background: red !important;
+    }
+    &.mark/*,.mark-rap .box.mark, .mark-row .box.mark*/ //закладка
+    {
+      background: green !important;
+    }
+    @at-root .hover-rap //подсветка при наведении на номер ряда
+    {
+      .box {
+        background: blue !important;
+      }
+      @at-root #description .hover-rap .mark-rap .box {
+        background: gray !important;
+      }
+      @at-root #description .hover-rap .box.mark {
+        background: black !important;
+      }
+      background: tomato !important;
+    }
+  }
+
+
+  //////////////////////////////////////////////////////////////////
+  .illumination-hover0 {
+    z-index: 10 !important;
+    position: relative;
+    position: absolute;
+    position: fixed;
+    position: relative !important;
+  }
+
+  .illumination-hover0:before {
+    content: '';
+    position: absolute;
+    position: relative;
+    position: absolute;
+    display: block;
+    /* top: -50px; */
+    z-index: -1;
+    width: 100%;
+    padding: 10px;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    /* height: 50px; */
+    /* background: gold; */
+    padding: 10px;
+    left: -10px;
+    margin: 0px;
+    border-radius: 4px;
+    border: dotted 1px;
+  }
+
+    &::selection0 {
+      background: $colorL;
+      color: black;
+    }
