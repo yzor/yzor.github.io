@@ -169,7 +169,8 @@ function description(QWE) { //генерация описания
             } //вывод перед 1 звёздочкой
             if (isRap(i, v[I]) && !isRap(i, v[I - 1])) { /*console.warn("*1");*/
               //              LINE += "(1*)";
-              LINE += '<span class="star r">*</span><span class="rapo">';
+//              LINE += '<span class="star r">*</span><span class="rapo">';
+              LINE += '<span class="rapo"><span class="star r">*</span>';
 
             } //Первая звёздочка
             if (isRap(i, v[I]) && !isRap(i, v[I + 1])) {

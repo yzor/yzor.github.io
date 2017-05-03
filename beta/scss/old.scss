@@ -69,7 +69,112 @@
     border: dotted 1px;
   }
 
-    &::selection0 {
-      background: $colorL;
-      color: black;
+//    &::selection0 {
+//      background: $colorL;
+//      color: black;
+//    }
+
+
+ ::selection0 {
+  //    color: red;
+  background: none;
+  //      background: gold;
+  //      background: blue;
+  color: black;
+  text-shadow: /*
+        0px 0px 5px red,
+        0px 0px 5px red,
+        0px 0px 5px red,
+        0px 0px 5px red,
+        0px 0px 5px red,
+        /*
+        0px 0px   0px red,
+        1px 0px   0px red,
+        0px 1px   0px red,
+        1px 1px   0px red,
+        1px -1px  0px red,
+       -1px 0px   0px red,
+        0px -1px  0px red,
+        -1px -1px 0px red,
+        /**/
+  2px 1px 5p5x orange, 2px -1px 5px gold, -2px 1px 5px gold, -2px -1px 5px gold, 2px 1px 5px gold, 2px 1px 5px gold, 2px 1px 5px gold, 5px 0px 5px gold, 0px 5px 5px gold, -5px 0px 5px gold, 0px -5px 5px gold, 3px 0px 4px orange, -3px 0px 4px orange
+  /*
+        0px 0px 0px red,
+        0px 0px 0px red,
+        0px 0px 0px red,
+        0px 0px 0px red
+        */
+  ;
+}
+
+
+
+
+
+    .note00f {
+      //описание
+      transition: all 0.7s 0.2s;
+      border-radius: 4px;
+      //      background: orange;
+      border: none;
+      border: solid red 1px;
+      border: dashed 1px #C3C3C3;
+      -webkit-box-decoration-break: clone;
+      display: inline;
+      display: inline-block;
+      //        position: relative;
+      //      font-size: 17px;
+      //        line-height: 26px;
+      //        height: 111px;
+      padding: 3px 5px 3px 5px;
+      margin: 1px 1px 1px 1px;
+      top: 0px;
+      position: relative;
+    }
+    .box00f {
+      transition: all 1.6s 0.2s;
+    }
+    off /*&*/:hover {
+      .note {
+        border: 1px dashed #4e4e4e;
+      }
+      .note,
+      .box {
+        background: orange;
+        background: gold;
+        background-clip: border-box;
+        transition: all 0.3s 0.0s;
+        box-shadow: inset 70px 20px 134px -41px orange, inset -50px 40px 30px -40px gold, inset -70px 0px 74px -41px orange, inset 0px 0px 0px 400px gold;
+      }
+    }
+
+
+
+
+    /*&*/:hover .zakl {
+      width: 13px;
+      //      transform: translate(-11px, 0);
+      transition: all 0.3s 0.5s;
+      opacity: 1;
+    }
+    .zakl {
+      overflow: hidden;
+      background: green;
+      display: block;
+      position: fixed;
+      position: absolute;
+      width: 4px;
+      margin-top: 4px;
+      height: 20px;
+      //      left: -30px;
+      right: 100%;
+      z-index: 0;
+      background-image: url(../image/lenta.png);
+      transition: all 0.4s 0.6s;
+      opacity: 0;
+      &:hover {
+        width: 30px;
+        //        transform: translate(-21px, 0);
+        transition: all 0.17s 0.0s;
+      }
     }

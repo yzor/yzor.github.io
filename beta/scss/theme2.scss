@@ -58,7 +58,7 @@ $colorA: tomato;
     }
   }
   //при наведении на номер ряда
-  .hover-rap {
+  .hover-row {
     .box {
       @extend %hov; //.box:hover;
     }
@@ -94,16 +94,18 @@ $colorA: tomato;
   }
   //цифра в блоке
   i {
+    //    transition: all 0.2s 0s;
     font-style: normal; //убираем курсив
     border-right: 1px solid; //линия отделяющая счётчик
     padding: 0 5px 0 2px;
+    &::selection {
+      background: none;
+      //color: white;
+    }
   }
 }
 
 #description {
-  //  position:static;
-  //  position: fixed;
-  //  position: absolute;
   cursor: default;
   overflow: hidden;
   color: #4e4e4e;
@@ -116,58 +118,14 @@ $colorA: tomato;
     background: $colorL;
     color: black;
   }
-  b {
-    //10-й ряд:
-    font-size: 14px;
-    background: tomato;
-    color: white;
-    padding: 5px 8px;
-    margin-top: -30px;
-    margin-left: -40px;
-    position: absolute;
-    cursor: pointer;
-    transition: all 70ms;
-    &::selection {
-      background: none;
-      color: white;
-    }
-    &:hover {
-      //      transform:translateY(-10px);
-      //      color: black;
-      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.71);
-      margin-left: -42px;
-      //    position: absolute;
-      margin-top: -31px;
-      //      background: red;
-    }
-    &:after {
-      content: "";
-      width: 40px;
-      height: 10px;
-      box-shadow: 0 0 12px 6px black;
-      display: block;
-      position: absolute;
-      left: 9px;
-      top: 12px;
-      z-index: -1;
-    }
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0px;
-      top: 26.7px;
-      width: 0px;
-      height: 0px;
-      border-bottom: 24px solid rgba(0, 0, 0, 0);
-      border-right: 20px solid #fb5b3e;
-      //      border-right: 10px solid red;
-      z-index: -2;
-    }
+  &.no-select ::selection {
+    background: none;
   }
+  //10-й ряд:
   p {
-    //ряд
     cursor: default;
+    padding-top: 26px; //отступ для строки номера ряда
+    margin: 9px 0; //отступы между строк
     //    line-height: 17px;
     //  line-height: 20px;
     //  height: 20px;
@@ -183,43 +141,83 @@ $colorA: tomato;
     //  text-align: left;
     //  text-align: center;
     //  height: 20px;
-    padding-top: 26px;
-    margin: 9px 0; //отступы между строк
     /*     line-height: 0px; */
     /*
        line-height: 26px;
       /**/
-    &:hover .zakl {
-      width: 13px;
-      //      transform: translate(-11px, 0);
-      transition: all 0.3s 0.5s;
-      opacity: 1;
+  }
+  b {
+    font-size: 14px;
+    background: tomato;
+    color: white;
+    padding: 5px 8px;
+    margin-top: -30px;
+    margin-left: -40px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 141ms 170ms;
+    box-shadow: 0px 0.1px 0px black;
+    &::selection {
+      background: none;
+      color: white;
     }
-    .zakl {
-      overflow: hidden;
-      background: green;
-      display: block;
-      position: fixed;
-      position: absolute;
-      width: 4px;
-      margin-top: 4px;
-      height: 20px;
-      //      left: -30px;
-      right: 100%;
-      z-index: 0;
-      background-image: url(../image/lenta.png);
-      transition: all 0.4s 0.6s;
-      opacity: 0;
-      &:hover {
-        width: 30px;
-        //        transform: translate(-21px, 0);
-        transition: all 0.17s 0.0s;
+    &:hover {
+      transition: all 141ms;
+      margin-top: -32px;
+      box-shadow: 1px 7px 5px -5px rgba(0, 0, 0, 0.81);
+      &:before {
+        border-bottom: 17px solid rgba(0, 0, 0, 0);
+        border-right: 15px solid #fb5b3e;
+        transition: all 141ms;
       }
     }
+    &:after {
+      //      content: !important;
+      //      position: fixed;
+      //      z-index: -9999999 !important;
+      ///////////
+      content: "";
+      width: 40px;
+      height: 10px;
+      box-shadow: 0 0 12px 6px black;
+      display: block;
+      position: absolute;
+      left: 9px;
+      top: 12px;
+      z-index: -1;
+    }
+    &:before {
+      transition: all 141ms 170ms;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0px;
+      top: 26.7px;
+      width: 0px;
+      height: 0px;
+      border-bottom: 14px solid rgba(0, 0, 0, 0);
+      border-right: 15px solid #fb5b3e;
+      z-index: -2;
+      //      border-right: 10px solid red;
+      /////////////////////////////////////////
+      //      border-color: darkmagenta;
+      //      position: fixed !important;
+      //      position: relative !important;
+      //      position: absolute !important;
+      //      top: 20px !important;
+      //      bottom: 320px !important;
+      //      z-index: -99999 !important;
+      //      background: blue !important;
+    }
+    //ряд
   }
   .box {
     /*один блок строки*/
     @include box-mode($colorL, $colorA, $color);
+    &:hover {
+      transition: all 0.2s 0s;
+      //      background: red !important;
+    }
   }
   @include box-mode3();
   *:not(.box)>i {
@@ -233,14 +231,43 @@ $colorA: tomato;
     }
   }
   .star {
+    border-radius: 50%;
     //рапорт
     background: url(../image/raport3_1.png) no-repeat;
     transition: all 400ms;
     transform: rotate(0deg);
     &:hover,
     &.act {
-      transform: rotate(360deg);
+      //      transform: rotate(72deg);
+      //      transform: rotate(144deg);
+      //      transform: rotate(288deg);
+      //      transform: rotate(216deg);
+      //      transform: rotate(432deg);
+      //      transform: rotate(360deg);
+      transform: rotate(504deg);
     }
+    &.act0:active {
+      //      background: red;
+      transform: rotate(576deg);
+      transition: all 0ms;
+    }
+  }
+  .mark-rap .star {
+    transform: rotate(72deg);
+    &.act {
+      transform: rotate(576deg);
+      //    background-color: gold;
+      //          transform: rotate(0deg) !important;
+      //    transform: rotate(-360deg);
+      //          transform: rotate(72deg);
+      //    background: red  !important;
+      //      background: blue url(../image/raport3_1.png) no-repeat;
+    }
+  }
+  .hover-row .star {
+    //  background: red !important;
+    transform: rotate(-144deg);
+    //          transition: all 0.5s;
   }
   .star2 {
     opacity: 0.6;
@@ -275,96 +302,48 @@ $colorA: tomato;
     }
     background-size: cover;
   }
+  //box описания
   .note-box {
-    //box описания
-    //    outline: solid red 1px;
-    line-height: 16px;
-    display: inline;
-    //    line-height: 26px;
-    padding: 2px 5px 0px 5px;
-    margin: 1px -9px 1px -5px;
-    .note {
-      //описание
-      transition: all 0.7s 0.2s;
-      border-radius: 4px;
-      //      background: orange;
-      border: none;
-      border: solid red 1px;
-      border: dashed 1px #C3C3C3;
-      -webkit-box-decoration-break: clone;
-      display: inline;
-      display: inline-block;
-      //        position: relative;
-      //      font-size: 17px;
-      //        line-height: 26px;
-      //        height: 111px;
-      padding: 3px 5px 3px 5px;
-      margin: 1px 1px 1px 1px;
-      top: 0px;
-      position: relative;
-    }
-    li,
     .box {
-      transition: all 1.6s 0.2s;
+      transition: box-shadow 1.6s 0.9s;
+      //box-shadow: inset 0px 0px 0px 0px rgba(255, 215, 0, 0.39);
     }
     &:hover {
+      .box {
+        //@extend %hov;
+        //@extend .box.mark;
+        transition: box-shadow 0s 0s;
+        box-shadow: inset 0px 0px 0px 20px rgba(255, 215, 0, 0.34);
+      }
       .note {
-        border: 1px dashed #4e4e4e;
+        background: rgba(255, 215, 0, 0.34);
+        transition: all 0s;
       }
-      .note,
-      li,
-      .box {
-        background: orange;
-        background: gold;
-        background-clip: border-box;
-        transition: all 0.3s 0.0s;
-        box-shadow: inset 70px 20px 134px -41px orange, inset -50px 40px 30px -40px gold, inset -70px 0px 74px -41px orange, inset 0px 0px 0px 400px gold;
+    }
+    .note {
+      //@extend .box;
+      transition: all 1.6s 0.9s;
+      border: dashed 1px #c6c6c6;
+      display: inline-block;
+      border-radius: 4px;
+      padding: 3px 5px 0px 5px;
+      margin: 1px 2px 1px 1px;
+      //
+      &:after {
+        //костыль
+        content: " "; //alt+255
+        width: 0;
+        display: inline-block;
+        height: 30px;
+        height: 100%;
+        padding: 3px 0 2px 0;
+        margin-top: -3px;
       }
-      li,
-      .box {
-        //        background: gold;
-      }
-      //      background: gold;
-      //      background: #FFE975;
     }
   }
 }
 
- ::selection0 {
-  //    color: red;
-  background: none;
-  //      background: gold;
-  //      background: blue;
-  color: black;
-  text-shadow: /*
-        0px 0px 5px red,
-        0px 0px 5px red,
-        0px 0px 5px red,
-        0px 0px 5px red,
-        0px 0px 5px red,
-        /*
-        0px 0px   0px red,
-        1px 0px   0px red,
-        0px 1px   0px red,
-        1px 1px   0px red,
-        1px -1px  0px red,
-       -1px 0px   0px red,
-        0px -1px  0px red,
-        -1px -1px 0px red,
-        /**/
-  2px 1px 5p5x orange, 2px -1px 5px gold, -2px 1px 5px gold, -2px -1px 5px gold, 2px 1px 5px gold, 2px 1px 5px gold, 2px 1px 5px gold, 5px 0px 5px gold, 0px 5px 5px gold, -5px 0px 5px gold, 0px -5px 5px gold, 3px 0px 4px orange, -3px 0px 4px orange
-  /*
-        0px 0px 0px red,
-        0px 0px 0px red,
-        0px 0px 0px red,
-        0px 0px 0px red
-        */
-  ;
-}
-
 //если 480 ширина то отступ меньше
-@media only screen and (max-width: 767px) and (min-width: 480px) {}
-
 //bingbangFIX
 .one.blog5 .post-title,
 .one.blog5 .post-meta,
@@ -372,12 +351,23 @@ $colorA: tomato;
   width: 100%;
 }
 
-//        -webkit-user-select: none;
-//https://css-tricks.com/almanac/properties/b/box-decoration-break/
-.test {
-  background: red !important;
+.one.blog5 .post-title {
+  //  background: red;
 }
 
+.one.blog5 .post-meta {
+  //  background: green;
+}
+
+.one.blog5 .post-content {
+  //  background: blue;
+}
+
+//        -webkit-user-select: none;
+//https://css-tricks.com/almanac/properties/b/box-decoration-break/
+//.test {
+//  background: red !important;
+//}
 
 /*
   */
@@ -391,7 +381,7 @@ $colorA: tomato;
   //    @include box-coloring(lighten($colorA, 5), lighten($colorA, 10), white);
   &:hover,
   &%hov {
-    @include box-coloring(lighten($colorL, 15 ), lighten($colorL, 7), 0);
+    @include box-coloring(lighten($colorL, 15), lighten($colorL, 7), 0);
   }
   &:active {
     @include box-coloring(0, $colorA, 0);
@@ -400,27 +390,26 @@ $colorA: tomato;
 
 //рапорт или ряд
 %box1 {
-  @include box-coloring(lighten($colorA, 22 ), lighten($colorA,17 ), $color);
+  @include box-coloring(lighten($colorA, 22), lighten($colorA, 17), $color);
   &:hover,
   &%hov {
-    @include box-coloring(lighten($colorA, 25), lighten($colorA, 18), lighten($color, 10 ));
+    @include box-coloring(lighten($colorA, 25), lighten($colorA, 18), lighten($color, 10));
   }
   &:active {
-    @include box-coloring(lighten($colorA, 16), lighten($colorA, 9), lighten($color, 8 ));
+    @include box-coloring(lighten($colorA, 16), lighten($colorA, 9), lighten($color, 8));
   }
 }
 
 //пересечение ряда и рапорта
 %box2 {
-    @include box-coloring(lighten($colorA, 11), lighten($colorA, 9), lighten($color, 0 ));
-    @include box-coloring(lighten($colorA, 11), lighten($colorA, 9), lighten($color, 5 ));
-
+  @include box-coloring(lighten($colorA, 11), lighten($colorA, 9), lighten($color, 0));
+  @include box-coloring(lighten($colorA, 11), lighten($colorA, 9), lighten($color, 5));
   &:hover,
   &%hov {
-    @include box-coloring(lighten($colorA, 15), lighten($colorA, 18), lighten($color, 10 ));
+    @include box-coloring(lighten($colorA, 15), lighten($colorA, 18), lighten($color, 10));
   }
   &:active {
-    @include box-coloring(lighten($colorA, 7), lighten($colorA, 3), lighten($color, 8 ));
+    @include box-coloring(lighten($colorA, 7), lighten($colorA, 3), lighten($color, 8));
   }
 }
 
@@ -429,10 +418,29 @@ $colorA: tomato;
   @include box-coloring(darken($colorA, 3), lighten($colorA, 2), white);
   &:hover,
   &%hov {
-    @include box-coloring(lighten($colorA, 2),     lighten($colorA, 7 ),          white);
+    @include box-coloring(lighten($colorA, 2), lighten($colorA, 7), white);
   }
   &:active {
-//    @extend .box;
+    //    @extend .box;
     @include box-coloring(darken($colorA, 5), $colorA, white);
+  }
+  &::selection,
+  & i::selection {
+    //      background: darken(gold, 0);
+    //      background: lighten($colorA, 16);
+    //      background: darken($colorA, 1);
+    background: none;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  #description b {
+    //    background: gold ;
+    margin-left: -18px;
+    transition: margin-left 0s;
+    padding-left: 8px;
   }
 }

@@ -1,7 +1,5 @@
 //https://css-tricks.com/almanac/properties/b/box-decoration-break/
-body{
-  background: red !important;
-}
+
 #description {
   cursor: default;
   color: #4e4e4e;
@@ -83,7 +81,7 @@ body{
         transform: scale(1.1);
         background: gold;
       }
-      &.marker {
+      &.mark {
         /*закладка*/
         background: gold;
         i {
@@ -103,21 +101,23 @@ body{
         }
       }
     }
-    &.illumination-hover .box {
+
+    &.hover-row .box{
       /*подсветка ряда при наведении на "1-й ряд:"*/
       background: rgba(255, 215, 0, 0.2);
     }
-    &.illumination .box {
+
+    &.mark-row .box{
       /*подсветка ряда при нажатии на "1-й ряд:"*/
       background: rgba(255, 215, 0, 0.5);
     }
-    &.illumination.illumination-hover .box {
-      background: rgba(255, 215, 0, 0.7);
+    &.mark-row.hover-row .box {
+      background: rgba(255, 215, 0, 0.69);
       /*пересечение стилей илюминация и ховер*/
       //      color: black;
     }
   }
-  .star {
+  .star,.star2 {
     //рапорт
     //    font-size: 0;
     color: rgba(0, 0, 0, 0);

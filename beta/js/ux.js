@@ -35,12 +35,12 @@ $(document).on("click", "#description b", function () {
 
 $(document).on({ //наведение на номер ряда"1-й ряд:"...
   mouseenter: function () {
-    $(this).parent().addClass('hover-rap');
+    $(this).parent().addClass('hover-row');
     //stuff to do on mouse enter
     //    console.log("++");
   },
   mouseleave: function () {
-    $(this).parent().removeClass('hover-rap');
+    $(this).parent().removeClass('hover-row');
     //    console.log("--");
     //stuff to do on mouse leave
   }
@@ -97,6 +97,64 @@ $(document).on({ //Наведение на вторичные звёздочки
     $(".star").removeClass("act");
   }
 }, ".star2");
+
+
+
+
+
+
+
+
+
+//выделение нескольких элементов, подобно выделению текста
+var markStart;
+$(document).on("mousedown", ".box", function () { //мыш нажата
+  // console.log("mousedown" + $(this).index(".box"));
+  $(document).on("mouseover", ".box", markText); //ставим обработчик на наведение
+  $(document).on("mouseup", "", markTextEnd); //ставим обработчик отжатие клавиши
+  var n = $(this).index(".box");
+  markStart = n;
+});
+
+function markText() { //пометить текст
+  var n;
+  var n2 = $(this).index(".box");
+  if (n2 > markStart) {
+    n = markStart;
+  } else {
+    n = n2;
+    n2 = markStart;
+  }
+  n2++;
+  $(".mark").removeClass("mark");
+  $(".box").slice(n, n2).addClass("mark"); //выделяем от n до n2
+  // console.log("markStart "+ n +" "+ n2);
+  $("#description").addClass("no-select"); //убрать визуальное выделение текста
+  clearSelection(); //снять выделение
+}
+
+function markTextEnd() {
+  console.warn("markTextEnd");
+  $(document).off("mouseover", ".box", markText); //убираем обработчик наведения
+    $(document).off("mouseup", "", markTextEnd);
+  $("#description").removeClass("no-select"); //отменить невыделяемость текста
+  clearSelection();
+}
+
+function clearSelection() {
+
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges();
+  } else { // старый IE
+    document.selection.empty();
+  }
+}
+
+
+
+
+
+
 
 
 

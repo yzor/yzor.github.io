@@ -5,11 +5,12 @@
             "sass.enabled": true,
             "sass.options": {
                 "outputDir": "../css/",
-                "sourceComments": false
+                "sourceComments": false,
+                "outputStyle": "compressed"
             },
             "brackets-git.gitPath": "git",
             "livedev.multibrowser": true,
-            "autoSavePrefs.timePrefs": 100,
+            "autoSavePrefs.timePrefs": 200,
             "autoSavePrefs.checkedPrefs": true,
             "linting.collapsed": false,
             "fonts.fontSize": "13px",
