@@ -2,9 +2,9 @@
   display: none;
 }
 
-.copy0 {
+.copy {
   text-align: center;
-//  vertical-align: center;
+  //  vertical-align: center;
   vertical-align: baseline;
   background: rgba(0, 0, 0, 0.69);
   //  background: red;
@@ -23,12 +23,26 @@
   //  opacity: 0.9;
   text-shadow: 0px 0px 11px black;
   transition: all 0.5s 0.3s;
-  &:after0 {
-//          width: 140vw;
+  &:active {
+    background: black;
+  }
+  &.done {
+    background: rgba(30, 118, 9, 0.76);
+    &:before {
+      content: 'скопировано';
+      //    color:red;
+    }
+  }
+  &:before {
+    content: 'копировать';
+    //    color:red;
+  }
+  &:after {
+    //          width: 140vw;
     transform-origin: 100vw 0vh;
     transition: all 0.5s 0.3s;
     content: "";
-//    background: red;
+    //    background: red;
     display: block;
     position: fixed;
     z-index: 999;
@@ -37,19 +51,18 @@
     top: 0px;
     transform-origin: 50vw -20vh;
   }
-  &:hover0 {
+  &:hover {
     transition: all 0.7s;
     transform: rotate(0deg);
     width: 140vw;
     opacity: 1;
-//    height: 60vh;
+    //    height: 60vh;
     top: 20vh;
     padding: 20vh 0;
     right: -40vh;
     &:after {
-          transition: all 0.7s;
+      transition: all 0.7s;
       transform-origin: 100vw -40vh;
-
       transform: rotate(-90deg);
     }
   }
@@ -88,7 +101,7 @@ body {
 //  height: 400px !important;
 //  width: 400px !important;
 //}
-#description {
+#d {
   //блок описания
   background: white;
   padding: 30px 20px 40px;

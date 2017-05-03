@@ -12,8 +12,8 @@
 
 
 //закладка при клике на элемент
-//$(document).on("click", "#description .box", function () {
-$(document).on("mousedown", "#description .box", function () {
+//$(document).on("click", "#d .box", function () {
+$(document).on("mousedown", "#d .box", function () {
   if ($(this).hasClass("mark")) {
     $(this).removeClass("mark");
   } else {
@@ -23,7 +23,7 @@ $(document).on("mousedown", "#description .box", function () {
 });
 
 //закладка при клике на номер ряда
-$(document).on("click", "#description b", function () {
+$(document).on("click", "#d b", function () {
   var $elm = $(this).parent();
   if ($elm.hasClass("mark-row")) {
     $elm.removeClass("mark-row");
@@ -44,7 +44,7 @@ $(document).on({ //наведение на номер ряда"1-й ряд:"...
     //    console.log("--");
     //stuff to do on mouse leave
   }
-}, "#description b"); //pass the element as an argument to .on
+}, "#d b"); //pass the element as an argument to .on
 
 
 //выделение рапорта в текущем ряду при клике на звезду
@@ -105,7 +105,7 @@ $(document).on({ //Наведение на вторичные звёздочки
 
 
 
-
+/*
 //выделение нескольких элементов, подобно выделению текста
 var markStart;
 $(document).on("mousedown", ".box", function () { //мыш нажата
@@ -129,15 +129,15 @@ function markText() { //пометить текст
   $(".mark").removeClass("mark");
   $(".box").slice(n, n2).addClass("mark"); //выделяем от n до n2
   // console.log("markStart "+ n +" "+ n2);
-  $("#description").addClass("no-select"); //убрать визуальное выделение текста
+  $("#d").addClass("no-select"); //убрать визуальное выделение текста
   clearSelection(); //снять выделение
 }
 
 function markTextEnd() {
   console.warn("markTextEnd");
   $(document).off("mouseover", ".box", markText); //убираем обработчик наведения
-    $(document).off("mouseup", "", markTextEnd);
-  $("#description").removeClass("no-select"); //отменить невыделяемость текста
+  $(document).off("mouseup", "", markTextEnd);
+  $("#d").removeClass("no-select"); //отменить невыделяемость текста
   clearSelection();
 }
 
@@ -150,7 +150,7 @@ function clearSelection() {
   }
 }
 
-
+*/
 
 
 
@@ -159,3 +159,11 @@ function clearSelection() {
 
 
 //при наведении на рапорт запускать такую безбашеную хрень как мелькание всех петель по очереди
+
+
+
+
+
+
+
+

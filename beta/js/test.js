@@ -1,3 +1,4 @@
+console.log("test");
 /* jshint -W117 */
 /* jshint -W098 */
 var Url0 = "https://max-3.github.io/test/js.psd";

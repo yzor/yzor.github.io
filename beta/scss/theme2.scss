@@ -105,7 +105,7 @@ $colorA: tomato;
   }
 }
 
-#description {
+#d {
   cursor: default;
   overflow: hidden;
   color: #4e4e4e;
@@ -121,7 +121,27 @@ $colorA: tomato;
   &.no-select ::selection {
     background: none;
   }
-  //10-й ряд:
+  i {
+    opacity: 0;
+    display: inline-block;
+    width: 1px;
+  }
+  .box i {
+    background: none;
+    opacity: 1;
+    width: auto;
+  }
+  *:not(.box)>i {
+    // тема бинг банг тупит со стрелкой ">" , поэтому пока способ выше
+    //    opacity: 0;
+    //    display: inline-block;
+    //    width: 1px;
+    //    //    background: red !important;
+    //    &::selection {
+    //      //      color: red;
+    //      //      background: blue //            background: none;
+    //    }
+  }
   p {
     cursor: default;
     padding-top: 26px; //отступ для строки номера ряда
@@ -146,6 +166,7 @@ $colorA: tomato;
        line-height: 26px;
       /**/
   }
+  //10-й ряд:
   b {
     font-size: 14px;
     background: tomato;
@@ -155,7 +176,7 @@ $colorA: tomato;
     margin-left: -40px;
     position: absolute;
     cursor: pointer;
-    transition: all 141ms 170ms;
+//    transition: all 141ms 170ms;
     box-shadow: 0px 0.1px 0px black;
     &::selection {
       background: none;
@@ -187,7 +208,7 @@ $colorA: tomato;
       z-index: -1;
     }
     &:before {
-      transition: all 141ms 170ms;
+//      transition: all 141ms 170ms;
       content: "";
       display: block;
       position: absolute;
@@ -220,15 +241,9 @@ $colorA: tomato;
     }
   }
   @include box-mode3();
-  *:not(.box)>i {
-    //пробел между боксами
-    opacity: 0;
-    display: inline-block;
-    width: 1px;
-    &::selection {
-      //      color: red;
-      //      background: blue //            background: none;
-    }
+  //пробел между боксами
+  .box i {
+    opacity: 1;
   }
   .star {
     border-radius: 50%;
@@ -317,12 +332,12 @@ $colorA: tomato;
       }
       .note {
         background: rgba(255, 215, 0, 0.34);
-        transition: all 0s;
+        transition: background 0s;
       }
     }
     .note {
       //@extend .box;
-      transition: all 1.6s 0.9s;
+      transition: background 1.6s 0.9s;
       border: dashed 1px #c6c6c6;
       display: inline-block;
       border-radius: 4px;
@@ -437,7 +452,7 @@ $colorA: tomato;
 @media only screen and (max-width: 767px) and (min-width: 480px) {}
 
 @media only screen and (max-width: 480px) and (min-width: 320px) {
-  #description b {
+  #d b {
     //    background: gold ;
     margin-left: -18px;
     transition: margin-left 0s;

@@ -1,40 +1,59 @@
-//
-//var txtForCopy = "(••)";
-//// $('.txt').on('input keyup', function(e) {
-////$('.txt').on('input', function (e) {
-////  txtForCopy = $(this).val();
-////  $(".copy").trigger("click"); //плагин ебаный не вызывается, вызываем кликом
-////  $('.txt').focus(); //плагин пиздит фокус, возвращаем
-////  $('.txt2').val(txtForCopy); //выводим что в буфере
-////  // console.log(txtForCopy);
-////});
-//$(document).on("click", ".copy", function () {
-// console.log("копи");
-//});
-//
-//
-//new Clipboard('.copy', {
-//  text: function () {
-//    return txtForCopy;
-//  }
-//});
+//console.clear();
+var copyTxt = "(••)";
 
-
-//https://clipboardjs.com/
-console.clear();
-var txtForCopy="ебаный плагин для копирования";
-// $('.txt').on('input keyup', function(e) {
-$('.txt').on('input', function(e) {
-  txtForCopy=$(this).val();
-  $( ".copy" ).trigger( "click" );//плагин ебаный не вызывается, вызываем кликом
-  $('.txt').focus();//плагин пиздит фокус, возвращаем
-  $('.txt2').val(txtForCopy);//выводим что в буфере
-  // console.log(txtForCopy);
+//var clipboard;
+$(function () {
+  //инициализировать после загрузки, иначене сработает
+  //параметр заглушка, чтобы можно было вызывать откуда угодно
+  copyTest("on");
 });
 
 
-new Clipboard('.copy', {
-  text: function() {
-    return txtForCopy;
+$(function () { //ready
+//  $('#description').on('mousedown', function (e) {
+//    setTimeout(function () {
+//      copyTest();
+//      // тут можно написать еще чего-нить что надо сделать тоже чере 3 секунды
+//      //alert(1001);
+//    }, 1000);
+//
+//
+//
+//  });
+}); //ready
+
+
+function copyTest(p) {
+  if (p == "on") {
+    $('.copy').on('mousedown', function (e) {
+      $(".copy").trigger("click"); //дабы сразу при нажатии срабатывало
+    });
+    var clipboard = new Clipboard('.copy', {
+      text: function () {
+        return copyTxt;
+      }
+    });
+    clipboard.on('success', function (e) {
+      //      $(".copy").toggleClass("done");
+      $(".copy").addClass("done");
+    });
+    clipboard.on('error', function (e) {
+      $(".copy").removeClass("done");
+      // console.error('Action:', e.action);
+      // console.error('Trigger:', e.trigger);
+      console.error(" copy ERROR :c");
+      //      alert(" copy ERROR :c");
+    });
+    //console.log("+++1");
+  } else {
+    $(".copy").trigger("click");
+    //console.log("+++2");
   }
-});
+}
+
+
+
+
+
+/////////////////
+// var clipboard = new Clipboard('.btn');
