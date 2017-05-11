@@ -1,4 +1,5 @@
-//console.clear();
+/* jshint -W117 */
+/* jshint -W098 */
 var copyTxt = "(••)";
 
 //var clipboard;

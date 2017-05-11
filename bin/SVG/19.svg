@@ -1,0 +1,118 @@
+<svg id="Каркас" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260" height="40" viewBox="0 0 260 40">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+      }
+
+      .cls-1, .cls-6 {
+        stroke-linejoin: round;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #00bfff;
+        filter: url(#filter);
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill-opacity: 0;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        fill: #00ff73;
+        filter: url(#filter-2);
+      }
+
+      .cls-5 {
+        fill: #ffc600;
+        filter: url(#filter-3);
+      }
+
+      .cls-6 {
+        fill: #d24a43;
+        stroke: #d96868;
+        opacity: 0.77;
+        filter: url(#filter-4);
+      }
+
+      .cls-7 {
+        font-size: 13px;
+        font-family: Ebrima;
+      }
+    </style>
+    <filter id="filter" x="80" y="0" width="100" height="40" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="60" y="0" width="100" height="40" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-3" x="0" y="0" width="240" height="40" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-4" x="59" y="-1" width="183" height="43" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="2.121" dy="2.121" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-color="#d96868"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feOffset result="offset-2" dx="-1.286" dy="1.532" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood result="flood-2" flood-color="#d96868"/>
+      <feComposite result="composite-2" operator="in" in2="blur-2"/>
+      <feBlend result="blend" mode="darken" in2="composite"/>
+      <feOffset result="offset-3" dx="1.554" dy="-1.259" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood result="flood-3" flood-color="#d96868"/>
+      <feComposite result="composite-3" operator="in" in2="blur-3"/>
+      <feBlend result="blend-2" mode="darken" in2="blend"/>
+      <feOffset result="offset-4" dx="-1.414" dy="-1.414" in="SourceAlpha"/>
+      <feGaussianBlur result="blur-4"/>
+      <feFlood result="flood-4" flood-color="#d96868"/>
+      <feComposite result="composite-4" operator="in" in2="blur-4"/>
+      <feBlend result="blend-3" mode="darken" in2="blend-2"/>
+      <feBlend result="blend-4" in="SourceGraphic"/>
+      <feGaussianBlur result="blur-5" in="SourceAlpha"/>
+      <feFlood result="flood-5" flood-color="#d96868"/>
+      <feComposite result="composite-5" operator="out" in2="blur-5"/>
+      <feOffset result="offset-5" dx="2.121" dy="2.121"/>
+      <feComposite result="composite-6" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-5" mode="darken" in2="blend-4"/>
+    </filter>
+  </defs>
+  <g id="Маска" class="cls-1">
+    <rect id="Холст" class="cls-2" width="240" height="40"/>
+    <g id="Раскраски">
+      <path id="_2_вм_лиц" data-name="2 вм лиц" class="cls-3" d="M100,0h20V20H100V0Zm40,0h20V20H140V0ZM80,20h20V40H80V20Zm40,0h20V40H120V20Zm40,0h20V40H160V20Z"/>
+      <path id="накид" class="cls-4" d="M80,0h20V20H80V0Zm40,0h20V20H120V0ZM60,20H80V40H60V20Zm40,0h20V40H100V20Zm40,0h20V40H140V20Z"/>
+      <path id="лицевая" class="cls-5" d="M0,0H80V20H60V40H0V0ZM160,0h80V40H180V20H160V0Z"/>
+    </g>
+  </g>
+  <g style="fill: #d24a43; filter: url(#filter-4)">
+    <rect id="Рапорт" class="cls-6" x="60" width="180" height="40" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#Рапорт" style="stroke: #d96868; filter: none; fill: none"/>
+  <g id="Нумерция">
+    <text id="Справа135" class="cls-7" x="243" y="-945">99<tspan x="243" dy="19.994">97</tspan><tspan x="243" dy="19.994">95</tspan><tspan x="243" dy="19.994">93</tspan><tspan x="243" dy="19.994">91</tspan><tspan x="243" dy="19.994">89</tspan><tspan x="243" dy="19.994">87</tspan><tspan x="243" dy="19.994">85</tspan><tspan x="243" dy="19.994">83</tspan><tspan x="243" dy="19.994">81</tspan><tspan x="243" dy="19.994">79</tspan><tspan x="243" dy="19.994">77</tspan><tspan x="243" dy="19.994">75</tspan><tspan x="243" dy="19.994">73</tspan><tspan x="243" dy="19.994">71</tspan><tspan x="243" dy="19.994">69</tspan><tspan x="243" dy="19.994">67</tspan><tspan x="243" dy="19.994">65</tspan><tspan x="243" dy="19.994">63</tspan><tspan x="243" dy="19.994">61</tspan><tspan x="243" dy="19.994">59</tspan><tspan x="243" dy="19.994">57</tspan><tspan x="243" dy="19.994">55</tspan><tspan x="243" dy="19.994">53</tspan><tspan x="243" dy="19.994">51</tspan><tspan x="243" dy="19.994">49</tspan><tspan x="243" dy="19.994">47</tspan><tspan x="243" dy="19.994">45</tspan><tspan x="243" dy="19.994">43</tspan><tspan x="243" dy="19.994">41</tspan><tspan x="243" dy="19.994">39</tspan><tspan x="243" dy="19.994">37</tspan><tspan x="243" dy="19.994">35</tspan><tspan x="243" dy="19.994">33</tspan><tspan x="243" dy="19.994">31</tspan><tspan x="243" dy="19.994">29</tspan><tspan x="243" dy="19.994">27</tspan><tspan x="243" dy="19.994">25</tspan><tspan x="243" dy="19.994">23</tspan><tspan x="243" dy="19.994">21</tspan><tspan x="243" dy="19.994">19</tspan><tspan x="243" dy="19.994">17</tspan><tspan x="243" dy="19.994">15</tspan><tspan x="243" dy="19.994">13</tspan><tspan x="243" dy="19.994">11</tspan><tspan x="243" dy="19.994">9</tspan><tspan x="243" dy="19.994">7</tspan><tspan x="243" dy="19.994">5</tspan><tspan x="243" dy="19.994">3</tspan><tspan x="243" dy="19.994">1</tspan></text>
+  </g>
+  <image id="Превью" width="260" height="40" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAAoAgMAAABlf2xgAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACVBMVEUfHx//uwAAAABHxDkJAAAAAWJLR0QCZgt8ZAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAYhJREFUSMetlsGOwyAMRF0J31Mp/E/2sPcc8P//ymJIAqQzVbItB2vUGjM1+KkiHyy1vCRav9K/KvyYHSFpUSl/7KV/OzXk7clHBdtDrWCLPIol7dSQtydTD2LiJyft1C0POa5ufdWm7nmYo6WYNy7aFPSwROIhH1vqizYFPWgkHiZvXd4r2hTug1eY/F7XPYRyzWtt/jqoIa8mazoqHKFW2E5eBjXk1eQ3fagnNzdC+lC+g33w/uXnmI86FO6Dsvfgd5h/vGhT0ENkHmZ/R3HJ+5qCHoT1wfwtWxm+pu7Nhc/T7Ps6dW82fabLtXfqjQczO0L9MF4LfYXGKLXra6vwHNb0eF5f07c8nNuLEElgSe4CIZLAknhAiCSwxB4CQCSDJfYQACJnAstUhv/sQQAiGSxz04AHsVdEMljmizPASQOINAzL0FXoOGkAkYZhuVU498FeEclgmboKXR8AIhksE/QQACITgSX2EAAiGSyxB0WIJLAkc4EQSWBJZhMhksDya5z8+N/gH2jYKoYyB78dAAAAAElFTkSuQmCC"/>
+</svg>
