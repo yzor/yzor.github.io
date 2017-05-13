@@ -1,24 +1,14 @@
 /* jshint -W117 */
 /* jshint -W098 */
-var N = 99;
+var N = 23;
 // $("#t1").val("//lorempixel.com/70/350/sports/947/");
 // $("#t3").val("/");
-
-//$(document).on("mousedown", "#d .box", function () {
-//  if ($(this).hasClass("mark")) {
-//    $(this).removeClass("mark");
-//  } else {
-//    $(".mark").removeClass("mark");
-//    $(this).addClass("mark");
-//  }
-//});
-
 
 $(function () {
   // Обработчик для .ready()
   $("#t1").val("https://yzorrykodelie.ru/узор-спицами-№");
   $("#t2").val(N);
-  // next();
+   next();
 
 
   // $('.txt').on('input keyup', function(e) {
