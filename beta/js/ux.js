@@ -3,6 +3,215 @@
 
 
 
+
+
+
+
+
+
+
+var nameLS = "MAXmark"+window.location.pathname;//имя для данной страницы
+if(localStorage.getItem(nameLS)){
+  NOW=localStorage.getItem(nameLS).split(',');
+  mark( NOW[0],NOW[1]);
+}else{
+  console.error("lkjlkj");
+}
+
+
+//pathname - строка пути
+
+var memory=[];
+var NOW=[0,2];
+// if(localStorage.getItem("NOW")){
+//   NOW=localStorage.getItem("NOW").split(',');
+//   // console.error(NOW);
+//  mark( NOW[0],NOW[1]);
+// }
+
+
+// var nameLS = "MAXmark"+window.location.pathname;//имя для данной страницы
+// if(localStorage.getItem(nameLS)){
+//   NOW=localStorage.getItem(nameLS).split(',');
+//   mark( NOW[0],NOW[1]);
+// }else{
+//   console.error("lkjlkj");
+// }
+
+
+
+
+
+ $('body').keydown(function (e) {//стрелки
+       console.warn(e.which);
+    if (e.which == 37||e.which == 65) { //лево
+      // jump("L","selected");
+      markL();
+      return false;
+    }
+    if (e.which == 38||e.which == 87) { //верх
+      // jump("U","selected");
+      markU();
+      return false;
+    }
+    if (e.which == 39||e.which == 68||e.which == 32||e.which == 13) { //право
+      // jump("R","selected");
+      //пробел 32
+      //интер 13
+      markR();
+      return false;
+    }
+    if (e.which == 40||e.which == 83) { //низ
+      // jump("D","selected");
+      markD();
+      return false;
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var $setRow = $('#d .row');
+$(document).on("mousedown", "#d .box", function () {
+  if ($(this).hasClass("mark")) {
+    $(this).removeClass("mark");
+  } else {
+    // $(".mark").removeClass("mark");
+    // $(this).addClass("mark");
+    var $setBox= $(this).closest(".row").find(".box");//список боксов в текущем ряду
+    var box=$setBox.index( $(this) );//номер бокса
+    var row=$setRow.index($(this).closest(".row")/*["0"]*/);//ряд
+    // NOW=[row,box];
+    // localStorage.setItem("NOW",row+","+box);
+    mark(row, box);
+  }
+
+
+
+});
+
+
+function focus(elm){
+  var Xscroll = $(document).scrollTop();//прокручено
+  var Xh = $(window).height();//высота экрана
+  var Xposition = $(elm).offset().top;//позиция элемента
+  var XhElm = $(elm).outerHeight();//.height();//высота элемента
+  if (
+    //прокручено - позиция элемента + 15%высоты окна < 0
+    Xscroll - Xposition + Xh*15/100 < 0 &&//верхний край
+    //прокручено - высота элемента + 85%высоты окна  > позиция элемента
+    Xscroll - XhElm + Xh*85/100 > Xposition //нижний край
+  ){
+  }else{
+  $('html, body').animate({ scrollTop: Xposition - Xh*15/100|0 }, { queue:false, duration:450 }
+ /*450*/);
+  //div.animate          ({ top: '-=100px' }, 600, 'имя функции', function () { … })
+  }
+}
+
+
+
+
+
+
+function mark(row, column){
+  // console.clear();
+  // row--;
+  // column--;
+
+  $('.mark').removeClass("mark");//удаляем старую отметку
+  $('.red').removeClass("red");//удаляем тестовй класс если ставили
+  $('#d .row').eq(row).find(".box").eq(column).addClass("mark");//выделяем
+  focus($('#d .row').eq(row).find(".box").eq(column));
+
+
+  //если нету символа вывести ошибку
+  if(!$('#d .row').eq(row).find(".box").eq(column).is('.box')){
+  console.error("нет такого символа>"+row+":"+column);
+  $('.row').addClass("red");
+  }
+  NOW=[row,column];
+  localStorage.setItem(nameLS,row+","+column);
+
+
+
+  //////INFO
+  console.log(NOW);
+  // console.log(
+    // $('#d p').eq(row).find(".box").length+"^"+
+     // $('#d p').length
+  // );
+
+
+}
+
+function markL(){
+  if(NOW[1]===0){//если первый бокс
+    NOW[1]=$('#d .row').eq(NOW[0]-1).find(".box").length;
+    rowT();
+  }
+  NOW[1]--;
+  mark(NOW[0],NOW[1]);
+}
+function markR(){
+  NOW[1]++;
+  if(NOW[1]==$('#d .row').eq(NOW[0]).find(".box").length){//последний бокс
+    NOW[1]=0;
+    rowB();
+  }
+  mark( NOW[0],NOW[1]);
+}
+
+
+function markU(){
+  // console.error(NOW[0]);
+  rowT();
+  mark(NOW[0],0);
+}
+function markD(){
+  rowB();
+  mark(NOW[0],0);
+}
+
+function rowT(){//следующий ряд
+  if(NOW[0]===0){//если первый ряд
+    NOW[0]=$('#d .row').length-1;
+  }else{
+    NOW[0]--;
+  }
+}
+function rowB(){//предыдущий ряд
+  if(NOW[0]==$('#d .row').length-1){//если последний ряд
+    NOW[0]=0;
+  }else{
+    NOW[0]++;
+  }
+}
+
+
+
+
+ $('#arrow-buttons').on('click', '#UP', function ()   {markU();});
+ $('#arrow-buttons').on('click', '#DOWN', function ()  {markD();});
+ $('#arrow-buttons').on('click', '#LEFT', function ()  {markL();});
+ $('#arrow-buttons').on('click', '#RIGHT', function () {markR();});
+
+
+
+
+
+
+
 //смена темы
 
 
@@ -10,7 +219,7 @@
 //ЗАКЛАДКИ
 
 
-
+/*
 //закладка при клике на элемент
 //$(document).on("click", "#d .box", function () {
 $(document).on("mousedown", "#d .box", function () {
@@ -21,7 +230,7 @@ $(document).on("mousedown", "#d .box", function () {
     $(this).addClass("mark");
   }
 });
-
+*/
 //закладка при клике на номер ряда
 $(document).on("click", "#d b", function () {
   var $elm = $(this).parent();
